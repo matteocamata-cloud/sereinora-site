@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "generated_from": "canonical-release-record",
+  "releases": [
+    {
+      "release_id": "water",
+      "element_name": "Water",
+      "public_title": "somewhere, sheltered.",
+      "work_type": "World",
+      "collection": "Elements",
+      "collection_order": 1,
+      "collection_artwork_9x16": "/assets/water-collection-9x16.png",
+      "world_artwork_16x9": "/assets/water-world-16x9.png",
+      "website_media": null,
+      "external_destination": "https://www.youtube.com/watch?v=z8QFPvhVJEE",
+      "emotional_line": null,
+      "public_status": "public",
+      "featured": false,
+      "latest_release": false
+    },
+    {
+      "release_id": "air",
+      "element_name": "Air",
+      "public_title": "softly, free.",
+      "work_type": "World",
+      "collection": "Elements",
+      "collection_order": 2,
+      "collection_artwork_9x16": "/assets/air-collection-9x16.png",
+      "world_artwork_16x9": "/assets/air-world-16x9.png",
+      "website_media": null,
+      "external_destination": "https://www.youtube.com/watch?v=NuMrxmYAT0U",
+      "emotional_line": null,
+      "public_status": "public",
+      "featured": false,
+      "latest_release": false
+    },
+    {
+      "release_id": "fire",
+      "element_name": "Fire",
+      "public_title": "last hour, remotely.",
+      "work_type": "World",
+      "collection": "Elements",
+      "collection_order": 3,
+      "collection_artwork_9x16": "/assets/fire-collection-9x16.jpg",
+      "world_artwork_16x9": "/assets/fire-room-after-them-q90.jpg",
+      "website_media": null,
+      "external_destination": "https://www.youtube.com/watch?v=W5x-cO3NFVw",
+      "emotional_line": null,
+      "public_status": "public",
+      "featured": false,
+      "latest_release": false
+    },
+    {
+      "release_id": "land",
+      "element_name": "Land",
+      "public_title": "what remains, moves.",
+      "work_type": "World",
+      "collection": "Elements",
+      "collection_order": 4,
+      "collection_artwork_9x16": "/assets/land-collection-9x16.png",
+      "world_artwork_16x9": "/assets/land-world-16x9.jpg",
+      "website_media": null,
+      "external_destination": "https://www.youtube.com/watch?v=jwHr0Sx1gKo",
+      "emotional_line": null,
+      "public_status": "public",
+      "featured": true,
+      "latest_release": true
+    }
+  ]
+}

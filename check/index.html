@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://sereinora.com/check/">
+  <meta name="description" content="A free written first read for hotels and venues with a recurring music, volume or silence decision. Send one dated situation; keeping your current setup is a valid answer.">
+  <meta name="referrer" content="no-referrer">
+  <title>Atmosphere Decision Check — a free first read — Sereinora</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/decisions/hotel-sound-handover/guide.css">
+  <link rel="stylesheet" href="check.css">
+  <script src="check.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">Skip to the check</a>
+<header class="shell masthead">
+  <a class="wordmark" href="/">Sereinora</a>
+  <nav aria-label="Check navigation">
+    <a href="#send" data-i18n="navSend">Send a situation</a>
+    <a href="#receive" data-i18n="navReceive">What you receive</a>
+    <a href="/decisions/hotel-sound-handover/" data-i18n="navGuide">Handover guide</a>
+    <button class="lang-toggle" id="lang-toggle" type="button" hidden aria-label="Lire en français">FR</button>
+  </nav>
+</header>
+<main id="main" tabindex="-1">
+  <section class="shell hero" aria-labelledby="title">
+    <p class="eyebrow" data-i18n="eyebrow">For spaces / Atmosphere Decision Check</p>
+    <h1 id="title"><span data-i18n="h1a">One recurring sound decision.</span><br><em data-i18n="h1b">A free written first read.</em></h1>
+    <p class="lede" data-i18n="lede">For hotels, restaurants and venues — especially groups running several sites — where music, volume or silence keeps being decided again on shift.</p>
+    <p class="intro" data-i18n="intro">Describe one dated situation. We reply in writing with an independent first read: whether it is a decision gap, something your current supplier should already handle, a question for an acoustic specialist, or nothing worth changing. Keeping your current setup is a valid answer.</p>
+    <a class="button" href="#send" data-i18n="heroCta">Describe your situation ↓</a>
+    <p class="small" data-i18n="heroSmall">Free. No audio, measurements, client outcomes or performance promises. This page saves and sends nothing; you send the message yourself.</p>
+  </section>
+
+  <div class="shell reading-layout">
+    <aside class="contents" aria-label="On this page">
+      <p class="eyebrow" data-i18n="tocTitle">On this page</p>
+      <a href="#receive" data-i18n="toc1">What you receive</a>
+      <a href="#send" data-i18n="toc2">Send one situation</a>
+      <a href="#after" data-i18n="toc3">If more is needed</a>
+      <a href="#limits" data-i18n="toc4">Limits and privacy</a>
+    </aside>
+    <article>
+      <section id="receive">
+        <p class="eyebrow" data-i18n="s1eyebrow">01 / What you receive</p>
+        <h2 data-i18n="s1h">One page, in writing, within five working days.</h2>
+        <ol class="deliverable">
+          <li><strong data-i18n="d1t">Our read of the situation.</strong> <span data-i18n="d1">Decision gap, supplier workflow, specialist question, or no change needed — with the reason.</span></li>
+          <li><strong data-i18n="d2t">Three questions for your current supplier or team.</strong> <span data-i18n="d2">So you can test whether what you already pay for resolves it.</span></li>
+          <li><strong data-i18n="d3t">Whether a paid review would be worth it.</strong> <span data-i18n="d3">And, as plainly, when it would not.</span></li>
+        </ol>
+        <p class="small" data-i18n="receiveSmall">The first read is based only on what you send. It is not a diagnosis, quotation or ranking of suppliers.</p>
+      </section>
+
+      <section id="send" class="decision-check" aria-labelledby="send-title">
+        <p class="eyebrow" data-i18n="s2eyebrow">02 / Send one situation</p>
+        <h2 id="send-title" data-i18n="s2h">Start with one room and one recent moment.</h2>
+        <p data-i18n="s2p">Unknown answers are fine — write “unknown”. Please do not include guest names, recordings or confidential information.</p>
+        <form id="check-form" novalidate hidden>
+          <label for="sites" data-i18n="lSites">How many sites do you operate?</label>
+          <select id="sites">
+            <option value="1" data-i18n="oSites1">One site</option>
+            <option value="2-3" data-i18n="oSites2">2–3 sites</option>
+            <option value="4-10" data-i18n="oSites3">4–10 sites</option>
+            <option value="10+" data-i18n="oSites4">More than 10</option>
+          </select>
+          <label for="venue" data-i18n="lVenue">Type of place</label>
+          <select id="venue">
+            <option value="hotel" data-i18n="oV1">Hotel</option>
+            <option value="restaurant" data-i18n="oV2">Restaurant or bar</option>
+            <option value="club" data-i18n="oV3">Members' club or nightlife venue</option>
+            <option value="retail" data-i18n="oV4">Shop or showroom</option>
+            <option value="wellness" data-i18n="oV5">Spa or wellness</option>
+            <option value="other" data-i18n="oV6">Other</option>
+          </select>
+          <label for="room" data-i18n="lRoom">Which room or space?</label>
+          <input id="room" type="text" autocomplete="off" data-i18n-ph="phRoom" placeholder="e.g. lobby lounge, ground floor">
+          <label for="moments" data-i18n="lMoments">Up to three moments it has to serve</label>
+          <input id="moments" type="text" autocomplete="off" data-i18n-ph="phMoments" placeholder="e.g. breakfast · afternoon work · evening drinks">
+          <label for="event" data-i18n="lEvent">One recent situation: what happened, when, and what it caused</label>
+          <textarea id="event" rows="4" data-i18n-ph="phEvent" placeholder="e.g. Tuesday 4 Nov, 19:30 — reception turned the music down for check-ins; the bar team turned it back up; two guests asked to move."></textarea>
+          <label for="current" data-i18n="lCurrent">What is in place today?</label>
+          <input id="current" type="text" autocomplete="off" data-i18n-ph="phCurrent" placeholder="e.g. supplier platform, playlist, staff routine — or unknown">
+          <label for="owner" data-i18n="lOwner">Who decides today, and who can override it on shift?</label>
+          <input id="owner" type="text" autocomplete="off" data-i18n-ph="phOwner" placeholder="e.g. GM sets it; duty managers change it; nobody restores it">
+          <label for="timing" data-i18n="lTiming">Any opening, refurbishment or change date?</label>
+          <input id="timing" type="text" autocomplete="off" data-i18n-ph="phTiming" placeholder="e.g. reopening March 2027 — or none">
+          <label for="sender" data-i18n="lSender">Your name, role and company (optional)</label>
+          <input id="sender" type="text" autocomplete="off">
+          <div class="cta-row form-actions">
+            <button id="compose" class="button" type="button" data-i18n="bCompose">Open in my email app</button>
+            <button id="copy" class="text-button" type="button" data-i18n="bCopy">Copy the text instead</button>
+          </div>
+          <p id="form-status" class="small" role="status" aria-live="polite"></p>
+          <label for="preview" data-i18n="lPreview">Your message (you can edit it in your email app)</label>
+          <textarea id="preview" rows="9" readonly></textarea>
+          <p class="small" data-i18n="formSmall">Opening your email app does not send anything. The message goes to contact@sereinora.com only when you press send.</p>
+        </form>
+        <div id="form-fallback">
+          <p data-i18n="fallback"><strong>Email us directly:</strong> write to <a href="mailto:contact@sereinora.com?subject=Atmosphere%20Decision%20Check">contact@sereinora.com</a> with the number of sites, the room, up to three moments it serves, one dated situation and its consequence, what is in place today, and who decides.</p>
+        </div>
+      </section>
+
+      <section id="after" class="next-step">
+        <p class="eyebrow" data-i18n="s3eyebrow">03 / If more is needed</p>
+        <h2 data-i18n="s3h">A bounded paid review — only if the first read supports it.</h2>
+        <p data-i18n="s3p1">An Independent Atmosphere Decision Brief considers one environment, up to three operating moments, your current supplier and the option of no change. It gives written recommendations, a proposed exception owner and comparison criteria, with one review and correction round.</p>
+        <p data-i18n="s3p2">For groups, we can scope whether the same rules should carry across sites. Fee and timing are set after a scope review; nothing is agreed by sending a situation.</p>
+        <div class="cta-row"><a class="button" href="/place-studies/001/buyer-summary.html" data-i18n="s3cta">Read the existing brief scope ↗</a></div>
+      </section>
+
+      <section id="limits" class="sources">
+        <h2 data-i18n="s4h">Limits and privacy.</h2>
+        <ul>
+          <li data-i18n="lim1">No music supply, licences, acoustic measurement, hardware or installation. Noise, room treatment and equipment design need a qualified specialist.</li>
+          <li data-i18n="lim2">No client outcomes are claimed and no result is guaranteed. Place Study 001 is a fictional example.</li>
+          <li data-i18n="lim3">This page has no forms that submit, no cookies and no analytics. It stores nothing. What you send by email is used only to prepare your first read.</li>
+          <li data-i18n="lim4">Playing music in a commercial setting has its own rights obligations; this check does not clear them.</li>
+        </ul>
+        <p><a href="/privacy" data-i18n="privacy">Privacy</a> · <a href="/terms" data-i18n="terms">Terms</a></p>
+      </section>
+    </article>
+  </div>
+</main>
+<footer class="shell footer"><span>Sereinora</span><a href="/">sereinora.com</a><a href="mailto:contact@sereinora.com">contact@sereinora.com</a></footer>
+</body>
+</html>
