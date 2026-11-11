@@ -1,0 +1,21 @@
+.q{border-top:1px solid var(--line);padding-block:18px}
+.q legend{font-weight:600;font-size:16px;padding:0;margin-bottom:10px}
+.q fieldset{border:0;margin:0;padding:0}
+.opt{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:15px;margin:6px 0;min-height:32px;cursor:pointer}
+.opt input{margin-top:5px;width:18px;height:18px;flex:none}
+.result{margin-top:30px;padding:26px;background:var(--paper);border:1px solid var(--line)}
+.level{display:inline-block;padding:4px 10px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--paper)}
+.level.high{background:#8c2f1c}.level.medium{background:#8a5a1e}.level.low{background:#2e5a3c}
+.finding{border-left:3px solid var(--accent);padding:6px 0 6px 16px;margin:14px 0}
+.finding strong{display:block}
+.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin:28px 0}
+.price-card{background:var(--ivory);padding:22px;display:flex;flex-direction:column;gap:6px}
+.price-card .amount{font-family:Didot,Baskerville,Georgia,serif;font-size:38px;line-height:1}
+.price-card .unit{font-size:13px}
+.price-card ul{padding-left:18px;font-size:15px;flex:1}
+.price-card .button{margin-top:10px}
+.notice{padding:16px 20px;border-left:3px solid #8c2f1c;background:var(--ivory);font-size:14px}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px;margin:26px 0}
+.stat{border-top:2px solid var(--ink);padding-top:10px}
+.stat b{font-family:Didot,Baskerville,Georgia,serif;font-size:34px;font-weight:400;display:block;line-height:1.1}
+.stat span{font-size:13px}
