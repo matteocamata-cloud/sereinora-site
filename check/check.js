@@ -74,7 +74,7 @@
       add('Music in videos you post is a separate question.', 'Music added to a video you post online is a different use from music played in your room. Check the platform’s music terms, or use music cleared for that use.');
     }
     if (a.type === 'fitness') {
-      add('Fitness classes have their own licensing questions.', 'Music used to choreograph classes can need licensing beyond background music. This check does not cover that in detail.');
+      add('Fitness classes have their own licensing questions.', 'Fitness classes are a separate music use. This check does not cover them. Ask your music provider and each PRO what their license covers for classes.');
     }
     if (a.spend === 'gt5k' || a.units !== '1') points += 1;
     if (!f.length) add('No obvious gap from these answers.', 'Keep your license and service contracts together and re-check when you add live music, DJs or new rooms.');
@@ -106,13 +106,13 @@
 
   function summary(a, r) {
     return [
-      'Hello Sereinora,', '', 'Here is my Music Exposure Check. Please tell me which audit fits and when you could deliver it.', '',
+      'Hello Sereinora,', '', a.letter === 'no' ? 'Here is my Music Exposure Check. Please tell me which audit fits and when you could deliver it.' : 'Here is my Music Exposure Check. I received a letter from a performing rights organization and would like the PRO Letter Pack. Please tell me when you could deliver it.', '',
       `Result: ${LABEL.level[r.level]}`,
       `Venue type: ${said('type')}`, `Size: ${said('size')}`,
       `Background music: ${said('src')}`, `Live music: ${said('live')}`, `DJs or karaoke: ${said('dj')}`,
       `Licenses paid directly: ${a.pro.length ? said('pro') : 'none'}`, `PRO contact in last 12 months: ${said('letter')}`,
       `Social videos with music: ${said('social')}`, `Venues operated: ${said('units')}`, `Yearly music spend per venue: ${said('spend')}`,
-      '', 'Business name:', 'Venue address (city, state):', 'My name and role:',
+      '', ...(a.letter === 'no' ? [] : ['Which PRO sent it:', 'Date of the letter:', 'Please attach a photo or PDF of the letter.', '']), 'Business name:', 'Venue address (city, state):', 'My name and role:',
     ].join('\n');
   }
 
@@ -138,12 +138,12 @@
     const offer = a.letter === 'legal'
       ? '<p>Because a legal deadline is involved, start with a US attorney. If useful, our <a href="/audit/#letter">PRO Letter Pack</a> ($295, 48 hours) gives your attorney a factual inventory.</p>'
       : a.letter === 'yes'
-        ? '<p><strong>Next step:</strong> the <a href="/audit/#letter">PRO Letter Pack</a> ($295, 48 hours): what they are asking, what you actually play, and the questions to put back to them.</p>'
+        ? '<p><strong>Next step:</strong> the <a href="/audit/#letter">PRO Letter Pack</a> ($295, 48 hours): what they are asking, what you actually play, and the questions to put back to them.' + ((a.live !== 'none' || a.dj === 'yes') ? ' The Letter Pack covers the letter. To compare your live music and DJ nights with the licenses you hold, see the <a href="/audit/#venue">Venue Music Audit</a> ($495).' : '') + ' Read first: <a href="/answers/pro-letter/">what to do when a PRO letter arrives</a>.</p>'
         : group
           ? '<p><strong>Next step:</strong> a <a href="/audit/#group">Group Audit</a> ($1,950 for up to 10 venues): one table of what every venue plays, pays and is missing.</p>'
           : '<p><strong>Next step:</strong> a <a href="/audit/#venue">Venue Music Audit</a> ($495, 5 business days): every music use, every license, the overlaps and the gaps, in writing. <a href="/sample/">See a sample report</a>.</p>';
     const text = summary(a, r);
-    const mail = `mailto:${TO}?subject=${encodeURIComponent('Music Exposure Check: audit request')}&body=${encodeURIComponent(text)}`;
+    const mail = `mailto:${TO}?subject=${encodeURIComponent(a.letter === 'no' ? 'Music Exposure Check: audit request' : 'Music Exposure Check: PRO Letter Pack request')}&body=${encodeURIComponent(text)}`;
     out.innerHTML =
       `<h2>Your result</h2><p><span class="signal ${r.level}">${LABEL.level[r.level]}</span></p>` +
       r.findings.map(f =>
