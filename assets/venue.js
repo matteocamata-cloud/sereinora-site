@@ -109,9 +109,7 @@
       li.append(a);
       list.append(li);
     }
-    const note = doc.createElement('p');
-    note.innerHTML = 'The languages most spoken at home in the US (<a href="https://www.census.gov/library/publications/2022/acs/acs-50.html">U.S. Census Bureau</a>). Machine translation by Google Translate, whose privacy policy applies. English is the reference version: check legal terms, figures and prices in English.';
-    menu.append(list, note);
+    menu.append(list);
     langBtn.after(menu);
     langBtn.setAttribute('aria-expanded', 'false');
     const setOpen = (open) => {
