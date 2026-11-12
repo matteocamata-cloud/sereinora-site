@@ -1,7 +1,8 @@
 // Full-site quality check, run before every publish.
 // Serves the repo locally, opens every page at 375 px and 1280 px, and fails on:
 // console errors, failed same-site requests, horizontal scroll, broken internal links,
-// missing title/description/canonical, or a commercial page without the legal footer.
+// missing title/description/canonical, or any page without the "not legal advice" line
+// (except the pages listed in LEGAL_EXEMPT).
 // Usage: node tools/qa.mjs            (optionally --shots DIR to save screenshots)
 import { createServer } from 'node:http';
 import { readFileSync, existsSync, statSync, readdirSync, mkdirSync } from 'node:fs';
@@ -43,6 +44,13 @@ function pages(dir) {
   return out.sort();
 }
 
+// Every page must carry the "not legal advice" line (CLAUDE.md). The check does not depend on
+// which stylesheet a page loads, so a page built outside assets/venue.css cannot slip through.
+// Exempt a page only with the founder's approval, and say why here.
+const LEGAL_EXEMPT = new Set([
+  '/elements/', // the old art-led homepage, preserved intact at the founder's request; it sells nothing
+]);
+
 const failures = [];
 const fail = (page, msg) => failures.push(`${page}: ${msg}`);
 const browser = await chromium.launch();
@@ -71,7 +79,7 @@ for (const page of pages(root)) {
       if (!info.title) fail(page, 'no <title>');
       if (info.venue && !info.description) fail(page, 'no meta description');
       if (info.venue && !info.canonical && page !== '/404.html') fail(page, 'no canonical link');
-      if (info.venue && !info.legal) fail(page, 'commercial page without "not legal advice" text');
+      if (!info.legal && !LEGAL_EXEMPT.has(page)) fail(page, 'page without "not legal advice" text');
       if (info.venue && info.h1 !== 1) fail(page, `${info.h1} <h1> elements (want 1)`);
       for (const href of info.links) {
         if (/^(mailto:|tel:|https?:|\/\/)/.test(href)) continue;
