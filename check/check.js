@@ -94,14 +94,24 @@
     level: { high: 'Several risk signals', medium: 'Some risk signals', low: 'Few risk signals' },
   };
 
+  // Plain-English answer text, read from the visible option labels (first line only, no hints).
+  const said = name => {
+    const picked = [...form.querySelectorAll(`input[name="${name}"]:checked`)]
+      .map(i => {
+        const span = i.closest('label')?.querySelector('span');
+        return span ? [...span.childNodes].filter(n => n.nodeType === 3).map(n => n.textContent).join('').trim() : i.value;
+      });
+    return picked.join('; ') || 'not answered';
+  };
+
   function summary(a, r) {
     return [
       'Hello Sereinora,', '', 'Here is my Music Exposure Check. Please tell me which audit fits and when you could deliver it.', '',
       `Result: ${LABEL.level[r.level]}`,
-      `Venue type: ${LABEL.type[a.type]}`, `Size: ${LABEL.size[a.size]}`,
-      `Background music: ${a.src.join(', ') || 'not answered'}`, `Live music: ${a.live}`, `DJs or karaoke: ${a.dj}`,
-      `Licenses paid directly: ${a.pro.join(', ') || 'none'}`, `PRO contact in last 12 months: ${a.letter}`,
-      `Social videos with music: ${a.social}`, `Venues operated: ${a.units}`, `Yearly music spend per venue: ${a.spend}`,
+      `Venue type: ${said('type')}`, `Size: ${said('size')}`,
+      `Background music: ${said('src')}`, `Live music: ${said('live')}`, `DJs or karaoke: ${said('dj')}`,
+      `Licenses paid directly: ${a.pro.length ? said('pro') : 'none'}`, `PRO contact in last 12 months: ${said('letter')}`,
+      `Social videos with music: ${said('social')}`, `Venues operated: ${said('units')}`, `Yearly music spend per venue: ${said('spend')}`,
       '', 'Business name:', 'Venue address (city, state):', 'My name and role:',
     ].join('\n');
   }
