@@ -20,3 +20,6 @@ US only: restaurants, bars and hotels. Funnel: `/check/` (free Music Exposure Ch
 - Every legal or numeric claim cites a source on the page. Sources were verified on 12 Nov 2026 (statute text, NRA/AHLA figures via Bloomberg/IBJ, Brownstein alert, provider pricing and terms). Re-verify before changing any figure, and update the "Last reviewed" date.
 - Terms and Privacy keep the Google/YouTube API text verbatim: it supports the Google OAuth verification. Edit only the venue-audit sections above it.
 - The sample report at `/sample/` is fictional and must stay labeled as such. Never present it, or any figure in it, as a real client or result.
+
+## Social media
+Social accounts are run by the `sereinora-social` agent (`.claude/agents/sereinora-social.md`). It drafts and recommends, and it publishes only posts the founder has approved one by one. Every rule above applies to posts, replies and bios. Note: with `.nojekyll`, every file in this repo (including this one and `.claude/`) is publicly served on sereinora.com, so keep secrets and personal details out of the repo.
