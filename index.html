@@ -1,131 +1,268 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="nojs">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f1e7">
-  <title>Sereinora — Music decisions for US restaurants, bars and hotels</title>
-  <meta name="description" content="Independent music decisions for US restaurants, bars and hotels: what you play, what you pay, and what you are missing. Free 2-minute Music Exposure Check; fixed-price Venue Music Audit.">
+  <meta name="theme-color" content="#f4f6f2">
+  <title>Sereinora: music license audits for US restaurants, bars and hotels</title>
+  <meta name="description" content="A fixed-price written audit of every music use in your US restaurant, bar or hotel against the licenses you hold. $495 per venue, in five business days, no call needed.">
   <link rel="canonical" href="https://sereinora.com/">
-  <link rel="stylesheet" href="/styles.css?v=balanced-navigation-weight">
-  <script src="/site.js?v=responsive-brand-composition" defer></script>
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="index,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sereinora">
+  <meta property="og:title" content="Know what music your venue plays, what you pay for, and what is missing">
+  <meta property="og:description" content="A fixed-price written audit of every music use in your US restaurant, bar or hotel against the licenses you hold. $495 per venue, in five business days, no call needed.">
+  <meta property="og:url" content="https://sereinora.com/">
+  <meta property="og:image" content="https://sereinora.com/assets/og.png">
+  <meta property="og:image:alt" content="Sereinora: a written music-license audit for US restaurants, bars and hotels">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/venue.css">
+  <script>document.documentElement.className='js'</script>
+  <script src="/assets/venue.js" defer></script>
+  
 </head>
-<body data-atmosphere="arrival">
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <nav class="nav shell" aria-label="Primary">
-      <a class="wordmark" href="#arrival" aria-label="Sereinora home">Sereinora</a>
-      <p class="frame-state" aria-live="polite"><span>Now</span> <b>Arrival</b></p>
-      <div class="nav-links">
-        <a href="#elements">Elements</a>
-        <a href="/check/">Free check</a>
-        <a href="/audit/">Venue Music Audit</a>
-        <a href="mailto:contact@sereinora.com">Contact</a>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="/" aria-label="Sereinora home"><svg viewBox="0 0 30 30" aria-hidden="true" focusable="false"><rect x="3" y="6" width="19" height="4.6" rx="2.3" fill="#10243a"/><rect x="8" y="12.7" width="19" height="4.6" rx="2.3" fill="#0b5e63"/><rect x="3" y="19.4" width="12" height="4.6" rx="2.3" fill="#10243a"/></svg>Sereinora</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="nav" id="site-nav" aria-label="Main"><a href="/check/">Free check</a><a href="/audit/">Venue audit</a><a href="/sample/">Sample report</a><a href="/answers/">Answers</a><a class="btn" href="/audit/#request">Request an audit</a></nav>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+
+<section class="hero wrap" data-hero>
+  <div class="hero-grid">
+    <h1>Know what music your venue plays, what you pay for, and what is missing.</h1>
+    <div>
+      <p class="lede">A fixed-price written audit for US restaurants, bars and hotels. We map every music use in your venue against every license you hold, then show you what overlaps, what is missing and what to do first.</p>
+      <div class="btn-row">
+        <a class="btn" href="/check/">Start the free check</a>
+        <a class="btn ghost" href="/sample/">See a sample report</a>
       </div>
-    </nav>
-  </header>
-  <main id="main">
-    <section class="arrival atmosphere" id="arrival" data-atmosphere="arrival" data-label="Arrival" aria-label="Sereinora">
-      <figure class="arrival-image" aria-hidden="true"><img src="/assets/sereinora-brand-background-2560x1440.jpg" alt="" width="2560" height="1440" fetchpriority="high" data-canonical-sha256="9fa9f536ed8389c52ebba31b9db813b0d0946aa5e3a64d89cd83db350b9bfce8"></figure>
-      <div class="arrival-wash" aria-hidden="true"></div>
-      <div class="shell arrival-inner">
-        <div class="arrival-copy">
-          <p class="chapter">Independent music decisions for US restaurants, bars and hotels</p>
-          <h1>Atmosphere,<br><i>made audible.</i></h1>
-          <p class="arrival-note">Music, volume and silence, decided on purpose.</p><p style="margin-top:18px;max-width:310px;font-size:14px"><a href="/check/">What is your music really costing you? Free 2-minute check →</a></p>
-        </div>
-        <div class="arrival-foot">
-          <a class="enter-link" href="#land">Scroll <span aria-hidden="true">↓</span></a>
-          <p>Different places.<br>Listen differently.</p>
-        </div>
+      <p class="small" style="margin-top:16px">Got a letter from BMI, ASCAP, SESAC or GMR? <a href="/answers/pro-letter/">Read this first</a>.</p>
+    </div>
+  </div>
+  <section class="daymap" data-daymap aria-labelledby="dm-title">
+  <div class="daymap-head"><h2 id="dm-title">One Friday at a fictional bar and grill</h2><p>Choose a bar to see what it means. Example only, not a real venue.</p></div>
+  <div class="dm-grid">
+    <div class="dm-axis" aria-hidden="true"><span style="left:0%">10a</span><span style="left:12.5%">12p</span><span style="left:25%">2p</span><span style="left:37.5%">4p</span><span style="left:50%">6p</span><span style="left:62.5%">8p</span><span style="left:75%">10p</span><span style="left:87.5%">12a</span><span style="left:100%">2a</span></div>
+    <div class="dm-lab">Background music</div><div class="dm-track"><button class="seg covered" type="button" style="--s:0;--l:15" aria-pressed="false" data-title="Background music: covered by the music service" data-text="A business music service usually covers the recorded music it supplies for public areas. Check its terms: that coverage does not extend to live sets, DJs or karaoke."><span>Music service</span></button></div>
+    <div class="dm-lab">Live band</div><div class="dm-track"><button class="seg gap" type="button" style="--s:10.5;--l:3" aria-pressed="false" data-title="Live band, 8:30 to 11:30 pm: gap" data-text="Live sets can draw on every catalog. This venue pays ASCAP and BMI directly, but not SESAC or GMR, and the music service does not cover live performance. Songs from SESAC or GMR writers would be unlicensed." data-default><span>Live band</span></button></div>
+    <div class="dm-lab">DJ or karaoke</div><div class="dm-track"><button class="seg gap" type="button" style="--s:13.5;--l:2" aria-pressed="false" data-title="DJ set, 11:30 pm to 1:30 am: gap" data-text="A DJ plays recorded songs from every catalog. Background-music services generally do not cover DJ sets, and two direct licenses still leave two catalogs uncovered."><span>DJ</span></button></div>
+    <div class="dm-lab">TV and radio</div><div class="dm-track"><button class="seg unknown" type="button" style="--s:1;--l:12" aria-pressed="false" data-title="Game-day TV: depends on size and equipment" data-text="At 4,200 sq ft this venue is over the 3,750 sq ft threshold for food and drink venues, so the broadcast exemption depends on how many speakers and screens it has (17 U.S.C. §110(5)(B)). The audit checks this against your floor plan."><span>Game-day TV</span></button></div>
+    <div class="dm-lab">Social video</div><div class="dm-track"><button class="seg unknown" type="button" style="--s:7.5;--l:0.9" aria-pressed="false" data-title="Social video: needs a check" data-text="Music in a video you post is a different use from music played in the room. The audit checks your posts against the platform’s music terms."><span>Post</span></button><button class="seg unknown" type="button" style="--s:12;--l:0.9" aria-pressed="false" data-title="Social video: needs a check" data-text="Music in a video you post is a different use from music played in the room. The audit checks your posts against the platform’s music terms."><span>Post</span></button></div>
+    <div class="dm-licenses" aria-label="Licenses this venue holds">
+      <b>Licenses held:</b>
+      <span class="chip held">ASCAP</span><span class="chip held">BMI</span>
+      <span class="chip none">SESAC not held</span><span class="chip none">GMR not held</span>
+      <span class="chip held">Music service</span>
+    </div>
+    <div class="dm-note" id="dm-note" aria-live="polite"><strong>Live band, 8:30 to 11:30 pm: gap</strong><span>Live sets can draw on every catalog. This venue pays ASCAP and BMI directly, but not SESAC or GMR, and the music service does not cover live performance. Songs from SESAC or GMR writers would be unlicensed.</span></div>
+  </div>
+  <ul class="legend" aria-label="Legend">
+    <li><i class="covered"></i>Covered</li><li><i class="gap"></i>Gap</li><li><i class="unknown"></i>Needs a check</li>
+  </ul>
+</section>
+</section>
+
+<div class="wrap" style="margin-top:8px">
+  <ul class="facts" aria-label="At a glance">
+    <li><b>$495 per venue</b>Fixed price, agreed in writing before work starts</li>
+    <li><b>5 business days</b>A written report by email</li>
+    <li><b>No call, no site visit</b>Everything runs by email</li>
+    <li><b>Sources on every rule</b>US statute and primary pages, linked</li>
+  </ul>
+</div>
+
+<section class="sec" id="why">
+  <div class="wrap">
+    <div class="sec-head"><h2>Music in a US venue is licensed several times over.</h2></div>
+    <div class="prose">
+      <p>Playing recorded or live music in a business is a public performance. In the US, songwriters are paid through performing rights organizations (PROs), mainly ASCAP, BMI, SESAC and GMR. Each licenses only the works of its own members, so one license does not cover another’s songs. A business music service generally covers only the recorded music it supplies, not your band, DJ or karaoke night.</p>
+    </div>
+    <ul class="stats" style="margin-top:28px">
+      <li><b>$4,500</b><span>a year on average: what the National Restaurant Association says its members pay to license music.</span></li>
+      <li><b>~200%</b><span>rise in per-hotel PRO fees from 2021 to 2025 at one unnamed global chain, as cited by the American Hotel &amp; Lodging Association.</span></li>
+      <li><b>$30,000</b><span>the usual ceiling on statutory damages per infringed work (the floor is $750). Up to $150,000 per work if the infringement is found willful.</span></li>
+    </ul>
+    <p class="small muted">Sources: <a href="https://www.ibj.com/articles/restaurants-bars-say-theyre-getting-squeezed-by-rising-music-licensing-costs">Bloomberg via Indianapolis Business Journal, “Restaurants, bars say they’re getting squeezed by rising music licensing costs” (July 9, 2025)</a>; <a href="https://www.law.cornell.edu/uscode/text/17/504">17 U.S.C. §504(c), statutory damages</a>; <a href="https://www.copyright.gov/policy/musiclicensingstudy/copyright-and-the-music-marketplace.pdf">U.S. Copyright Office, “Copyright and the Music Marketplace” (2015)</a>; <a href="https://www.sesac.com/what-is-a-performing-rights-organization-pro/">SESAC, “What is a performing rights organization?”</a>; <a href="https://help.cloudcovermusic.com/en/articles/6961602-faq-licensing">Pandora CloudCover, licensing FAQ</a>. These are ranges and reported figures, not predictions for your venue.</p>
+  </div>
+</section>
+
+<section class="sec band" id="delivers">
+  <div class="wrap">
+    <div class="sec-head"><h2>What you get in the report</h2><p>Specific to your venue, not a generic guide.</p></div>
+    
+<dl class="rows">
+  <div><dt>Music use map</dt><dd>Each room and each moment of the day: what plays, from where, how loud, and who changes it.</dd></div>
+  <div><dt>License table</dt><dd>ASCAP, BMI, SESAC, GMR and your music service: held, needed, overlapping or missing.</dd></div>
+  <div><dt>Exposure range</dt><dd>What a gap could cost under US copyright law, stated as a range from the statute, never as a prediction.</dd></div>
+  <div><dt>Savings to verify</dt><dd>Where you may be paying twice, with the exact question to ask each provider in writing before you cancel anything.</dd></div>
+  <div><dt>Action list</dt><dd>Ten actions in order, with who to contact and what to keep on file.</dd></div>
+  <div><dt>Volume and daypart rules</dt><dd>A one-page operating sheet so your team plays the right music at the right level at the right time.</dd></div>
+</dl>
+    <p style="margin-top:24px"><a class="btn ghost" href="/sample/">Open the sample report</a></p>
+  </div>
+</section>
+
+<section class="sec" id="how">
+  <div class="wrap">
+    <div class="sec-head"><h2>Four steps, all by email</h2></div>
+    
+<ol class="steps">
+  <li><h3>Request</h3><p>Email us, or send your answers from the free check. We confirm scope and price in writing.</p></li>
+  <li><h3>Intake</h3><p>A short form: rooms, music sources, live nights, plus copies of your music service contract and any PRO invoices or letters.</p></li>
+  <li><h3>Audit</h3><p>We map every use against every license you hold and your music service terms.</p></li>
+  <li><h3>Report</h3><p>A written report with overlaps, gaps, the exposure range and what to do first. One round of questions by email is included.</p></li>
+</ol>
+  </div>
+</section>
+
+<section class="sec band" id="pricing">
+  <div class="wrap">
+    <div class="sec-head"><h2>Fixed prices, paid once</h2><p>Prices exclude any license fees you decide to pay.</p></div>
+    
+<div class="tiers">
+  <article class="tier main" id="venue">
+    <h3>Venue Music Audit</h3>
+    <p class="price">$495</p>
+    <p class="for">per venue, delivered in 5 business days</p>
+    <ul>
+      <li>Every music use: background, live, DJ, karaoke, TV, social</li>
+      <li>Licenses held and needed, by PRO</li>
+      <li>Overlap check against your music service</li>
+      <li>Small-business exemption screen</li>
+      <li>Exposure range in dollars and a 10-point action list</li>
+    </ul>
+    <a class="btn" href="mailto:contact@sereinora.com?subject=Venue%20Music%20Audit%20request&body=Business%20name%3A%0AVenue%20city%2C%20state%3A%0ANumber%20of%20venues%3A%0AMy%20name%20and%20role%3A">Request a Venue Music Audit</a>
+  </article>
+  <article class="tier" id="group">
+    <h3>Group Audit</h3>
+    <p class="price">$1,950</p>
+    <p class="for">up to 10 venues, delivered in 10 business days</p>
+    <ul>
+      <li>Everything in the Venue Audit, for each venue</li>
+      <li>One spend table across the group</li>
+      <li>A single music-licensing standard for every venue</li>
+      <li>Where to consolidate services and licenses</li>
+    </ul>
+    <a class="btn ghost" href="mailto:contact@sereinora.com?subject=Group%20Audit%20request&body=Group%20name%3A%0ANumber%20of%20venues%20and%20cities%3A%0AMy%20name%20and%20role%3A">Request a Group Audit</a>
+  </article>
+  <article class="tier" id="letter">
+    <h3>PRO Letter Pack</h3>
+    <p class="price">$295</p>
+    <p class="for">for one PRO letter, delivered in 48 hours</p>
+    <ul>
+      <li>What the PRO is asking, in plain English</li>
+      <li>What you actually play, and where</li>
+      <li>The questions to put back to them</li>
+      <li>When to bring in a US attorney</li>
+    </ul>
+    <a class="btn ghost" href="mailto:contact@sereinora.com?subject=PRO%20Letter%20Pack%20request&body=Which%20PRO%3A%0ADate%20of%20the%20letter%3A%0ABusiness%20name%20and%20city%3A%0AMy%20name%20and%20role%3A">Send us the letter</a>
+  </article>
+</div>
+    <p class="small muted" style="margin-top:18px">Not sure which one fits? Start with the <a href="/check/">free check</a>.</p>
+  </div>
+</section>
+
+<section class="sec" id="limits">
+  <div class="wrap">
+    <div class="sec-head"><h2>Plainly, what we do and what we do not</h2></div>
+    
+<div class="split">
+  <div class="yes">
+    <h3>What the audit does</h3>
+    <ul>
+      <li>Maps every music use in the venue</li>
+      <li>Compares what you play with what you hold and with your music service terms</li>
+      <li>States exposure as a range taken from the statute</li>
+      <li>Lists the questions to ask each provider before you cancel anything</li>
+      <li>Gives your attorney the facts, if you need one</li>
+    </ul>
+  </div>
+  <div class="no">
+    <h3>What it does not do</h3>
+    <ul>
+      <li>Give legal advice. Sereinora is not a law firm</li>
+      <li>Negotiate with PROs on your behalf</li>
+      <li>Clear rights or certify that you are compliant</li>
+      <li>Promise savings or outcomes</li>
+      <li>Publish your name or results without your written permission</li>
+    </ul>
+  </div>
+</div>
+  </div>
+</section>
+
+<section class="sec band" id="faq">
+  <div class="wrap">
+    <div class="sec-head"><h2>Questions owners ask</h2></div>
+    <div class="prose" style="max-width:48rem"><div class="faq"><details><summary>Is this legal advice?</summary><div class="a"><p>No. Sereinora is not a law firm. The audit is a factual map of what you play, what you hold and where the two do not match. If you have a lawsuit, a demand with a deadline or a lawyer’s letter, speak to a US attorney first. Our report gives them the facts.</p></div></details><details><summary>Do I have to get on a call?</summary><div class="a"><p>No. Everything runs by email: a short intake form, the documents you already have, a written report, and one round of follow-up questions.</p></div></details><details><summary>What do you need from me?</summary><div class="a"><p>Your music service contract (or its name), any PRO invoices or letters, a list of rooms and live-music nights, the venue’s approximate floor area, and whether you post videos with music.</p></div></details><details><summary>Can you promise I will save money?</summary><div class="a"><p>No. The report shows where you may be paying twice and gives you the exact question to ask each provider, in writing, before you cancel anything.</p></div></details><details><summary>What happens to the documents I send?</summary><div class="a"><p>They are used only for your audit. We never publish your name or results without your written permission. See the <a href="/privacy/">privacy page</a> for details, including deletion on request.</p></div></details><details><summary>What if the audit finds a gap?</summary><div class="a"><p>The report states the exposure as a range under US copyright law and lists ten actions in order. It does not predict what a PRO or a court would do.</p></div></details></div></div>
+    <p style="margin-top:20px"><a class="textlink" href="/audit/#faq">More questions on the audit page</a></p>
+  </div>
+</section>
+
+<section class="sec" id="contact-sec">
+  <div class="wrap">
+<div class="contact-block" id="contact">
+  <div>
+    <h2>Ask a question first</h2>
+    <p>Everything runs by email. You get a written reply, not a sales call.</p>
+    <p class="email-line"><a href="mailto:contact@sereinora.com">contact@sereinora.com</a><button class="copy-btn" type="button" data-copy="contact@sereinora.com">Copy address</button></p>
+  </div>
+  <div class="btn-row"><a class="btn" href="/audit/#request">See audits and prices</a></div>
+</div></div>
+</section>
+
+<section class="sec band" id="elements">
+  <div class="wrap">
+    <div class="sec-head"><h2>Also from Sereinora: Elements</h2><p>Four one-hour ambient worlds, published on YouTube. Sound starts only when you press play.</p></div>
+    <div class="worlds">
+      <a class="world" href="/elements/#land"><img src="/assets/thumb/land.webp" alt="Rock and alpine vegetation after geological movement" width="480" height="640" loading="lazy"><span>Land<small>what remains, moves.</small></span></a>
+      <a class="world" href="/elements/#water-world"><img src="/assets/thumb/water.webp" alt="A warm sheltered room beside a rain-dark window" width="480" height="640" loading="lazy"><span>Water<small>somewhere, sheltered.</small></span></a>
+      <a class="world" href="/elements/#air-world"><img src="/assets/thumb/air.webp" alt="Sheer curtains moving beside an open window" width="480" height="640" loading="lazy"><span>Air<small>softly, free.</small></span></a>
+      <a class="world" href="/elements/#fire-world"><img src="/assets/thumb/fire.webp" alt="A quiet room held in deep amber light" width="480" height="640" loading="lazy"><span>Fire<small>last hour, remotely.</small></span></a>
+    </div>
+  </div>
+</section>
+</main>
+<nav class="sticky-cta" aria-label="Quick actions"><a class="btn ghost" href="/check/">Free check</a><a class="btn" href="/audit/#request">Request an audit</a></nav>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <h2>Sereinora</h2>
+        <p>Independent music-license audits for US restaurants, bars and hotels. Independent of ASCAP, BMI, SESAC, GMR and every music service.</p>
+        <p>Sereinora is not a law firm. Everything on this site is general information, not legal advice. We do not negotiate with PROs, clear rights or guarantee savings.</p>
       </div>
-    </section>
-    <section class="fire featured atmosphere" id="land" data-atmosphere="land" data-label="Land" data-release-id="land" aria-labelledby="featured-title">
-      <figure class="fire-image"><img src="/assets/land-world-16x9.jpg" alt="Rock and alpine vegetation after geological movement, from the Sereinora world Land" width="1920" height="1080" loading="eager"></figure>
-      <div class="fire-shade" aria-hidden="true"></div>
-      <div class="shell fire-content">
-        <p class="chapter">I — Elements</p>
-        <div class="fire-title-group"><h2 id="featured-title">Land</h2><p class="world-public-title">what remains, moves.</p></div>
-        <button class="listen-button" type="button" data-release-id="land" data-video-id="jwHr0Sx1gKo" data-title="what remains, moves." aria-haspopup="dialog" aria-controls="featured-player">
-          <span class="play-mark" aria-hidden="true">▶</span><span><b>Enter with sound</b><small>One hour · user initiated</small></span>
-        </button>
+      <div>
+        <h2>Services</h2>
+        <ul>
+          <li><a href="/check/">Free Music Exposure Check</a></li>
+          <li><a href="/audit/#venue">Venue Music Audit</a></li>
+          <li><a href="/audit/#group">Group Audit</a></li>
+          <li><a href="/audit/#letter">PRO Letter Pack</a></li>
+          <li><a href="/sample/">Sample report</a></li>
+        </ul>
       </div>
-      <p class="sound-note">Sound remains silent until you choose it.</p>
-    </section>
-    <section class="proposition atmosphere" data-atmosphere="proposition" data-label="Proposition" aria-labelledby="proposition-title">
-      <div class="shell proposition-grid">
-        <p class="chapter">What Sereinora is</p>
-        <h2 id="proposition-title">Original sound for places with a life of their own.</h2>
-        <p class="proposition-copy">Sereinora translates the emotional character of places, feelings and moments into original music and moving image.</p>
+      <div>
+        <h2>Company</h2>
+        <ul>
+          <li><a href="mailto:contact@sereinora.com">contact@sereinora.com</a></li>
+          <li><a href="/answers/">Answers</a></li>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/terms/">Terms</a></li>
+          <li><a href="/elements/">Sereinora Elements</a></li>
+        </ul>
       </div>
-    </section>
-    <section class="elements-catalog atmosphere" id="elements" data-atmosphere="elements" data-label="Elements" aria-labelledby="elements-title" hidden>
-      <div class="shell elements-inner">
-        <div class="elements-heading">
-          <p class="chapter">I — Elements</p>
-          <h2 id="elements-title">Elements</h2>
-        </div>
-        <div class="elements-sequence" data-release-catalog aria-live="polite"></div>
-      </div>
-    </section>
-    <section class="world world-water atmosphere" id="water-world" data-atmosphere="water" data-label="Water" data-release-id="water" aria-labelledby="water-world-title">
-      <figure class="world-image"><img src="/assets/water-world-16x9.png" alt="A warm sheltered room beside a rain-dark window, from the Sereinora world Water" width="1280" height="720" loading="lazy"></figure>
-      <div class="world-shade" aria-hidden="true"></div>
-      <div class="shell world-content">
-        <p class="chapter">I — Elements / 01</p>
-        <div class="world-title-group"><h2 id="water-world-title">Water</h2><p class="world-public-title">somewhere, sheltered.</p></div>
-        <button class="listen-button world-listen" type="button" data-release-id="water" data-video-id="z8QFPvhVJEE" data-title="somewhere, sheltered." aria-haspopup="dialog" aria-controls="world-player">
-          <span class="play-mark" aria-hidden="true">▶</span><span><b>Enter with sound</b><small>One hour · user initiated</small></span>
-        </button>
-      </div>
-      <p class="sound-note">Rain outside. Shelter within.</p>
-    </section>
-    <section class="world world-air atmosphere" id="air-world" data-atmosphere="air" data-label="Air" data-release-id="air" aria-labelledby="air-world-title">
-      <figure class="world-image"><img src="/assets/air-world-16x9.png" alt="Sheer curtains moving beside an open window, from the Sereinora world Air" width="3840" height="2160" loading="lazy"></figure>
-      <div class="world-shade" aria-hidden="true"></div>
-      <div class="shell world-content">
-        <p class="chapter">I — Elements / 02</p>
-        <div class="world-title-group"><h2 id="air-world-title">Air</h2><p class="world-public-title">softly, free.</p></div>
-        <button class="listen-button world-listen" type="button" data-release-id="air" data-video-id="NuMrxmYAT0U" data-title="softly, free." aria-haspopup="dialog" aria-controls="world-player">
-          <span class="play-mark" aria-hidden="true">▶</span><span><b>Enter with sound</b><small>One hour · user initiated</small></span>
-        </button>
-      </div>
-      <p class="sound-note">A room open to movement.</p>
-    </section>
-    <section class="world world-fire atmosphere" id="fire-world" data-atmosphere="fire" data-label="Fire" data-release-id="fire" aria-labelledby="fire-world-title">
-      <figure class="world-image"><img src="/assets/fire-room-after-them-q90.jpg" alt="A quiet room held in deep amber light, from the Sereinora world Fire" width="1536" height="1024" loading="lazy"></figure>
-      <div class="world-shade" aria-hidden="true"></div>
-      <div class="shell world-content">
-        <p class="chapter">I — Elements / 03</p>
-        <div class="world-title-group"><h2 id="fire-world-title">Fire</h2><p class="world-public-title">last hour, remotely.</p></div>
-        <button class="listen-button world-listen" type="button" data-release-id="fire" data-video-id="W5x-cO3NFVw" data-title="last hour, remotely." aria-haspopup="dialog" aria-controls="world-player">
-          <span class="play-mark" aria-hidden="true">▶</span><span><b>Enter with sound</b><small>One hour · user initiated</small></span>
-        </button>
-      </div>
-      <p class="sound-note">The room after everyone has gone.</p>
-    </section>
-    <!-- Originals remains deliberately unpublished until approved public works exist. -->
-    <template id="originals-structure" aria-hidden="true"><section data-sequence="originals"></section></template>
-    <section class="observation atmosphere" data-atmosphere="observation" data-label="Observation" aria-labelledby="observation-title">
-      <div class="shell observation-inner"><p class="chapter">An observation</p><blockquote id="observation-title">“A room should not sound the same at <span>17:00</span> and <i>23:00.</i>”</blockquote></div>
-    </section>
-    <section class="spaces atmosphere" id="spaces" data-atmosphere="spaces" data-label="For venues" aria-labelledby="spaces-title"><div class="shell spaces-inner"><p class="chapter">Sereinora for US venues · Venue Music Audit</p><h2 id="spaces-title">What you play, what you pay—and what you are missing.</h2><div class="spaces-close" style="display:block;max-width:800px"><p><em>Every song played in public is licensed—several times over.</em> ASCAP, BMI, SESAC and GMR each license only their own catalogue. Music services cover background music but not your band, DJ or karaoke night. Statutory damages run up to $150,000 per song.</p><p>The <a href="/audit/">Venue Music Audit</a> maps every music use in your venue against every license you hold: the overlaps you may be paying twice for, the gaps you are exposed on, and ten actions in order. Fixed price, $495 per venue, in writing within five business days. No call needed.</p><p>Start with the <a href="/check/">free 2-minute Music Exposure Check</a>. Got a letter from a PRO? <a href="/answers/pro-letter/">Read this first</a>.</p><p>Sereinora is not a law firm and does not give legal advice, negotiate with PROs or guarantee savings.</p><a class="conversation-link" href="/check/">Take the free check →</a></div></div></section>
-    <section class="closing atmosphere" data-atmosphere="closing" data-label="Closing" aria-label="Sereinora brand signature">
-      <div class="shell closing-inner"><div class="closing-identity"><p class="closing-wordmark">Sereinora</p><p class="brand-signature">Listen, longer.</p></div></div>
-    </section>
-  </main>
-  <footer>
-    <div class="shell footer-row"><p>© Sereinora</p><div class="footer-links"><a href="mailto:contact@sereinora.com">contact@sereinora.com</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a class="youtube-link" href="https://www.youtube.com/watch?v=jwHr0Sx1gKo" aria-label="Watch Land on YouTube"><img src="/assets/youtube-logo.svg" alt="YouTube" width="98" height="22"></a></div></div>
-  </footer>
-  <dialog class="player-dialog" id="featured-player" aria-labelledby="player-title">
-    <div class="player-top"><div><p>I — Elements / Land</p><h2 id="player-title">what remains, moves.</h2></div><button class="close-player" type="button" aria-label="Close Land and stop sound">Close <span aria-hidden="true">×</span></button></div>
-    <div class="player-frame" data-video-id="jwHr0Sx1gKo"></div>
-    <p class="player-note">Playing the approved Land world via YouTube. Closing this view stops the sound.</p>
-  </dialog>
-  <dialog class="player-dialog" id="world-player" aria-labelledby="world-player-title">
-    <div class="player-top"><div><p data-world-label>I — Elements</p><h2 id="world-player-title"></h2></div><button class="close-player" type="button" aria-label="Close World and stop sound">Close <span aria-hidden="true">×</span></button></div>
-    <div class="player-frame"></div>
-    <p class="player-note">Playing the approved Sereinora World via YouTube. Closing this view stops the sound.</p>
-  </dialog>
+    </div>
+    <p class="foot-base">© 2026 Sereinora. Sereinora is not affiliated with ASCAP, BMI, SESAC, GMR, Spotify, Apple, YouTube or any music service named on this site.</p>
+  </div>
+</footer>
 </body>
 </html>
