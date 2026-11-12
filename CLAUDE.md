@@ -1,6 +1,6 @@
 # sereinora-site
 
-Public static site for sereinora.com, served by GitHub Pages from `main` (root). `CNAME` = sereinora.com. No build step, no dependencies, no cookies, no analytics, no forms that send data.
+Public static site for sereinora.com, served by GitHub Pages from `main` (root). `CNAME` = sereinora.com. No build step, no dependencies, no cookies, no analytics, no forms that send data. Two opt-in exceptions, both disclosed on /privacy/: the assistant's AI mode sends chat messages to the Cloudflare Worker in `assistant/` and to Anthropic, and the language button opens pages through Google Translate.
 
 ## Market and offer (since 11 Nov 2026)
 US only: restaurants, bars and hotels. Funnel: `/check/` (free Music Exposure Check, runs in the browser) → `/audit/` (Venue Music Audit $495, Group Audit $1,950 for up to 10 venues, PRO Letter Pack $295) → email to contact@sereinora.com. Answer pages under `/answers/` bring search traffic.
@@ -20,3 +20,5 @@ US only: restaurants, bars and hotels. Funnel: `/check/` (free Music Exposure Ch
 - Every legal or numeric claim cites a source on the page. Sources were verified on 12 Nov 2026 (statute text, NRA/AHLA figures via Bloomberg/IBJ, Brownstein alert, provider pricing and terms). Re-verify before changing any figure, and update the "Last reviewed" date.
 - Terms and Privacy keep the Google/YouTube API text verbatim: it supports the Google OAuth verification. Edit only the venue-audit sections above it.
 - The sample report at `/sample/` is fictional and must stay labeled as such. Never present it, or any figure in it, as a real client or result.
+- Assistant: `assets/assistant.js` (button and panel on every page; `AI_ENDPOINT` empty = built-in answers only) and `assistant/` (Cloudflare Worker, rules in `assistant/worker/src/prompt.js`, eval in `assistant/worker/eval/`). Run `node assistant/build-knowledge.mjs` and redeploy the Worker after any page change so the assistant matches the site. Never loosen the legal-advice, pricing or refund rules in the prompt.
+- Language button: machine translation through Google Translate (`translate.goog`), 133 languages, English is the reference version.

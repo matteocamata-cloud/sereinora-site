@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /tools/
 Disallow: /.claude/
+Disallow: /assistant/
 
 Sitemap: https://sereinora.com/sitemap.xml

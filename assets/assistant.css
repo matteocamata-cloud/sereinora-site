@@ -1,0 +1,37 @@
+/* Sereinora assistant panel. Uses the tokens from venue.css (or sensible fallbacks). */
+.sa-launch{position:fixed;right:20px;bottom:20px;z-index:60;display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:0 18px 0 8px;background:var(--paper-2,#fbf8f1);color:var(--ink,#10243a);border:1px solid var(--ink,#10243a);border-radius:0;box-shadow:0 6px 24px rgba(16,36,58,.14);font:600 .7rem var(--f-ui,Arial,sans-serif);letter-spacing:.16em;text-transform:uppercase;cursor:pointer}
+.sa-launch:hover{background:var(--ink,#10243a);color:var(--paper,#f7f1e7)}
+.sa-launch-mark{display:inline-grid;place-items:center;width:30px;height:30px;border:1px solid currentColor;border-radius:50%;font:500 1rem/1 var(--f-disp,Georgia,serif);letter-spacing:0;text-transform:none}
+.sa-panel{position:fixed;right:20px;bottom:80px;z-index:61;display:flex;flex-direction:column;width:min(410px,calc(100vw - 40px));height:min(620px,calc(100vh - 110px));background:var(--paper-2,#fbf8f1);color:var(--ink,#10243a);border:1px solid var(--ink,#10243a);box-shadow:0 18px 60px rgba(16,36,58,.22);font-family:var(--f-read,Georgia,serif)}
+.sa-panel[hidden]{display:none}
+.sa-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:16px 18px 12px;border-bottom:1px solid var(--rule,#d3c6b0)}
+.sa-kicker{margin:0 0 4px;font:500 .64rem var(--f-ui,Arial,sans-serif);letter-spacing:.2em;text-transform:uppercase;color:var(--brown,#684832)}
+.sa-head h2{margin:0;font:500 1.3rem/1.15 var(--f-disp,Georgia,serif);letter-spacing:-.01em}
+.sa-close{flex:none;width:40px;height:40px;margin:-6px -8px 0 0;background:none;border:0;color:var(--ink,#10243a);font:400 1.6rem/1 var(--f-ui,Arial,sans-serif);cursor:pointer}
+.sa-close:hover{color:var(--brown,#684832)}
+.sa-note{margin:0;padding:10px 18px;font-size:.78rem;line-height:1.45;color:var(--ink-2,#43536a);background:var(--ivory,#efe6d6);border-bottom:1px solid var(--rule,#d3c6b0)}
+.sa-log{flex:1;overflow-y:auto;padding:16px 18px;display:flex;flex-direction:column;gap:12px;overscroll-behavior:contain}
+.sa-msg{max-width:92%;padding:10px 14px;font-size:.97rem;line-height:1.55;white-space:pre-wrap;overflow-wrap:anywhere}
+.sa-user{align-self:flex-end;background:var(--ink,#10243a);color:var(--paper,#f7f1e7)}
+.sa-assistant{align-self:flex-start;background:var(--paper,#f7f1e7);border:1px solid var(--rule,#d3c6b0)}
+.sa-assistant a{color:var(--brown,#684832)}
+.sa-error{border-color:var(--brick,#9c3b2b)}
+.sa-typing::after{content:"";display:inline-block;width:2.2em;height:1em;vertical-align:-.15em;background:radial-gradient(circle,var(--taupe,#857d6d) 2px,transparent 2.5px) 0 50%/0.73em 100% repeat-x;animation:sa-dots 1s steps(4) infinite}
+@keyframes sa-dots{from{width:0}to{width:2.2em}}
+.sa-starters{display:flex;flex-wrap:wrap;gap:8px;padding:0 18px 12px}
+.sa-starters button{padding:8px 12px;background:transparent;border:1px solid var(--rule,#d3c6b0);color:var(--ink,#10243a);font:.86rem/1.3 var(--f-read,Georgia,serif);text-align:left;cursor:pointer}
+.sa-starters button:hover{border-color:var(--ink,#10243a)}
+.sa-form{display:flex;gap:8px;padding:12px 18px;border-top:1px solid var(--rule,#d3c6b0)}
+.sa-form textarea{flex:1;min-height:46px;max-height:140px;padding:10px 12px;resize:vertical;background:#fff;border:1px solid var(--rule,#d3c6b0);border-radius:0;color:var(--ink,#10243a);font:1rem/1.4 var(--f-read,Georgia,serif)}
+.sa-form textarea:focus{outline:2px solid var(--focus,#9c3b2b);outline-offset:0;border-color:var(--ink,#10243a)}
+.sa-send{flex:none;min-width:76px;background:var(--ink,#10243a);color:var(--paper,#f7f1e7);border:1px solid var(--ink,#10243a);font:600 .7rem var(--f-ui,Arial,sans-serif);letter-spacing:.16em;text-transform:uppercase;cursor:pointer}
+.sa-send:hover{background:var(--brown,#684832);border-color:var(--brown,#684832)}
+.sa-send:disabled{opacity:.5;cursor:default}
+.sa-foot{margin:0;padding:0 18px 12px;font-size:.8rem;color:var(--ink-2,#43536a)}
+@media (max-width:560px){
+  .sa-launch{right:16px;bottom:16px;padding:0 14px 0 6px}
+  .sa-panel{inset:0;width:100%;height:100%;border:0}
+}
+@media (prefers-reduced-motion:reduce){.sa-typing::after{animation:none;width:2.2em}}
+@media print{.sa-launch,.sa-panel{display:none!important}}
+.sa-local{border-style:dashed}
