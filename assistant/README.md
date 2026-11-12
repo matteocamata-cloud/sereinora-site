@@ -2,7 +2,9 @@
 
 The "Ask a question" button on every page. Two modes:
 
-- **Built-in answers** (live as soon as the site is published): answers the most common questions from the site's own wording, in the browser. No cost, nothing leaves the visitor's browser.
+- **Built-in answers** (live as soon as the site is published, free): curated answers for the key questions (prices, delivery, refund, payment, letters, lawsuits, TVs, damages, what we need), then a search over every section of the site (`assets/assistant-index.json`). Basic Spanish and French keywords work, and other languages are pointed to the language button. Everything runs in the visitor's browser.
+- **Page-aware:** suggested questions and a one-time, dismissible prompt match the page the visitor is reading. The prompt appears after 25 seconds or once most of the page is read, never opens the chat by itself, and shows once per visit.
+- **Leads:** after the first answer, the visitor gets one-tap buttons for the free check, audits and prices, and "Email this conversation", which opens their email app with the conversation already written out.
 - **AI mode** (after setup below): Claude Opus 5.5 answers any question, in any language. It is grounded only in the published pages: `build-knowledge.mjs` copies them into the Worker. It falls back to the built-in answers whenever the AI service is unavailable, so a visitor always gets an answer.
 
 ## Files

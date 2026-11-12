@@ -70,69 +70,58 @@
     if (foot) new IntersectionObserver(([e]) => { footIn = e.isIntersecting; apply(); }).observe(foot);
   }
 
-  /* Language picker: opens the page through Google Translate in the chosen language.
+  /* Language picker: the languages most spoken at home in the US, opened through Google Translate.
      Nothing is loaded from Google unless the visitor picks a language. */
   const langBtn = doc.querySelector('.lang-btn');
   if (langBtn) {
-    const CODES = 'af sq am ar hy as ay az bm eu be bn bho bs bg ca ceb ny zh-CN zh-TW co hr cs da dv doi nl eo et ee tl fi fr fy gl ka de el gn gu ht ha haw iw hi hmn hu is ig ilo id ga it ja jw kn kk km rw gom ko kri ku ckb ky lo la lv ln lt lg lb mk mai mg ms ml mt mi mr mni-Mtei lus mn my ne no or om ps fa pl pt pa qu ro ru sm sa gd nso sr st sn sd si sk sl so es su sw sv tg ta tt te th ti ts tr tk ak uk ur ug uz vi cy xh yi yo zu'.split(' ');
-    const BCP = { iw: 'he', jw: 'jv', gom: 'kok', 'mni-Mtei': 'mni', 'zh-CN': 'zh-Hans', 'zh-TW': 'zh-Hant', tl: 'fil' };
+    // Order follows U.S. Census Bureau, "Language Use in the United States: 2019" (ACS-50), Table 1.
+    const LANGS = [
+      ['en', 'English', 'English'], ['es', 'Español', 'Spanish'], ['zh-CN', '中文（简体）', 'Chinese, Simplified'],
+      ['zh-TW', '中文（繁體）', 'Chinese, Traditional'], ['fr', 'Français', 'French'], ['tl', 'Tagalog', 'Tagalog (Filipino)'],
+      ['vi', 'Tiếng Việt', 'Vietnamese'], ['ar', 'العربية', 'Arabic'], ['ko', '한국어', 'Korean'], ['ru', 'Русский', 'Russian'],
+      ['de', 'Deutsch', 'German'], ['hi', 'हिन्दी', 'Hindi'], ['pt', 'Português', 'Portuguese'], ['ht', 'Kreyòl ayisyen', 'Haitian Creole'],
+      ['it', 'Italiano', 'Italian'], ['ur', 'اردو', 'Urdu'], ['pl', 'Polski', 'Polish'], ['fa', 'فارسی', 'Persian'],
+    ];
     const proxied = location.hostname.endsWith('.translate.goog');
-    const params = new URLSearchParams(location.search);
-    const current = proxied ? params.get('_x_tr_tl') : 'en';
-    const name = (code, inLang) => {
-      try { return new Intl.DisplayNames([inLang], { type: 'language' }).of(BCP[code] || code) || code; } catch { return code; }
-    };
-    const path = location.pathname + location.hash;
+    const current = proxied ? new URLSearchParams(location.search).get('_x_tr_tl') || 'en' : 'en';
     const urlFor = (code) => code === 'en'
-      ? 'https://sereinora.com' + path
-      : 'https://sereinora-com.translate.goog' + location.pathname + '?_x_tr_sl=en&_x_tr_tl=' + encodeURIComponent(code) + '&_x_tr_hl=' + encodeURIComponent(code) + '&_x_tr_pto=wapp' + location.hash;
-    if (proxied && current) {
+      ? 'https://sereinora.com' + location.pathname + location.hash
+      : 'https://sereinora-com.translate.goog' + location.pathname + '?_x_tr_sl=en&_x_tr_tl=' + code + '&_x_tr_hl=' + code + '&_x_tr_pto=wapp' + location.hash;
+    const cur = LANGS.find((l) => l[0] === current);
+    if (cur && current !== 'en') {
       langBtn.querySelector('span').textContent = current.split('-')[0].toUpperCase();
-      langBtn.setAttribute('aria-label', 'Language: ' + name(current, 'en') + '. Choose another language');
+      langBtn.setAttribute('aria-label', 'Language: ' + cur[2] + '. Choose another language');
     }
-    let panel = null;
-    const build = () => {
-      const items = [['en', 'English', 'English'], ...CODES.map((c) => [c, name(c, BCP[c] || c), name(c, 'en')])]
-        .sort((a, b) => (a[0] === 'en' ? -1 : b[0] === 'en' ? 1 : a[2].localeCompare(b[2])));
-      panel = doc.createElement('div');
-      panel.className = 'lang-panel';
-      panel.id = 'lang-panel';
-      panel.hidden = true;
-      panel.setAttribute('translate', 'no');
-      panel.innerHTML = '<section class="lang-box" role="dialog" aria-modal="true" aria-labelledby="lang-title">' +
-        '<div class="lang-head"><h2 id="lang-title">Read this site in your language</h2><button class="lang-close" type="button" aria-label="Close">×</button></div>' +
-        '<p class="lang-note">Machine translation by Google Translate in over 130 languages. Choosing a language opens this page through Google, whose privacy policy applies. The English original is the reference version: legal terms, figures and prices can be mistranslated, so check them in English before relying on them.</p>' +
-        '<input class="lang-search" type="search" placeholder="Search languages" aria-label="Search languages">' +
-        '<ul class="lang-list"></ul></section>';
-      const list = panel.querySelector('.lang-list');
-      for (const [code, own, en] of items) {
-        const li = doc.createElement('li');
-        const a = doc.createElement('a');
-        a.href = urlFor(code);
-        a.lang = BCP[code] || code;
-        a.dataset.search = (own + ' ' + en + ' ' + code).toLowerCase();
-        a.append(own);
-        if (own !== en) { const s = doc.createElement('small'); s.textContent = en; a.append(s); }
-        if (code === current) a.setAttribute('aria-current', 'true');
-        li.append(a);
-        list.append(li);
-      }
-      const search = panel.querySelector('.lang-search');
-      search.addEventListener('input', () => {
-        const q = search.value.trim().toLowerCase();
-        list.querySelectorAll('a').forEach((a) => { a.parentElement.hidden = q && !a.dataset.search.includes(q); });
-      });
-      const close = () => { panel.hidden = true; langBtn.focus(); };
-      panel.querySelector('.lang-close').addEventListener('click', close);
-      panel.addEventListener('click', (e) => { if (e.target === panel) close(); });
-      panel.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
-      doc.body.append(panel);
+    const menu = doc.createElement('div');
+    menu.className = 'lang-menu';
+    menu.id = 'lang-panel';
+    menu.hidden = true;
+    menu.setAttribute('translate', 'no');
+    const list = doc.createElement('ul');
+    for (const [code, own, en] of LANGS) {
+      const a = doc.createElement('a');
+      a.href = urlFor(code);
+      a.lang = code;
+      a.append(own);
+      if (own !== en) { const s = doc.createElement('small'); s.textContent = en; a.append(s); }
+      if (code === current) a.setAttribute('aria-current', 'true');
+      const li = doc.createElement('li');
+      li.append(a);
+      list.append(li);
+    }
+    const note = doc.createElement('p');
+    note.innerHTML = 'The languages most spoken at home in the US (<a href="https://www.census.gov/library/publications/2022/acs/acs-50.html">U.S. Census Bureau</a>). Machine translation by Google Translate, whose privacy policy applies. English is the reference version: check legal terms, figures and prices in English.';
+    menu.append(list, note);
+    langBtn.after(menu);
+    langBtn.setAttribute('aria-expanded', 'false');
+    const setOpen = (open) => {
+      menu.hidden = !open;
+      langBtn.setAttribute('aria-expanded', String(open));
+      if (open) menu.querySelector('[aria-current], a').focus();
     };
-    langBtn.addEventListener('click', () => {
-      if (!panel) build();
-      panel.hidden = false;
-      panel.querySelector('.lang-search').focus();
-    });
+    langBtn.addEventListener('click', (e) => { e.stopPropagation(); setOpen(menu.hidden); });
+    doc.addEventListener('click', (e) => { if (!menu.hidden && !menu.contains(e.target)) setOpen(false); });
+    doc.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !menu.hidden) { setOpen(false); langBtn.focus(); } });
   }
 
   /* Sereinora assistant: the "Ask a question" button on every page (config in assets/assistant.js). */

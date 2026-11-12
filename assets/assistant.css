@@ -35,3 +35,17 @@
 @media (prefers-reduced-motion:reduce){.sa-typing::after{animation:none;width:2.2em}}
 @media print{.sa-launch,.sa-panel{display:none!important}}
 .sa-local{border-style:dashed}
+.sa-local{border-style:dashed}
+.sa-actions{display:flex;flex-wrap:wrap;gap:6px;padding:0 18px 10px}
+.sa-act{padding:6px 10px;border:1px solid var(--ink,#10243a);color:var(--ink,#10243a);font:600 .64rem var(--f-ui,Arial,sans-serif);letter-spacing:.12em;text-transform:uppercase;text-decoration:none}
+.sa-act:hover{background:var(--ink,#10243a);color:var(--paper,#f7f1e7)}
+.sa-nudge{position:fixed;right:20px;bottom:76px;z-index:60;display:flex;align-items:flex-start;max-width:min(300px,calc(100vw - 40px));background:var(--paper-2,#fbf8f1);border:1px solid var(--ink,#10243a);box-shadow:0 10px 30px rgba(16,36,58,.16);animation:sa-in .35s ease-out}
+.sa-nudge[hidden]{display:none}
+.sa-nudge::after{content:"";position:absolute;right:28px;bottom:-7px;width:12px;height:12px;background:inherit;border-right:1px solid var(--ink,#10243a);border-bottom:1px solid var(--ink,#10243a);transform:rotate(45deg)}
+.sa-nudge-text{flex:1;padding:12px 4px 12px 14px;background:none;border:0;color:var(--ink,#10243a);font:.92rem/1.4 var(--f-read,Georgia,serif);text-align:left;cursor:pointer}
+.sa-nudge-text:hover{color:var(--brown,#684832)}
+.sa-nudge-close{flex:none;width:36px;height:36px;background:none;border:0;color:var(--ink-2,#43536a);font:1.2rem/1 var(--f-ui,Arial,sans-serif);cursor:pointer}
+@keyframes sa-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (max-width:560px){.sa-nudge{right:16px;bottom:70px}}
+@media (prefers-reduced-motion:reduce){.sa-nudge{animation:none}}
+@media print{.sa-nudge{display:none!important}}
