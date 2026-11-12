@@ -75,8 +75,8 @@ Pillars, each mapped to a page you must read before drafting:
 2. **"A letter arrived":** `/answers/pro-letter/`, which leads to the PRO Letter Pack. Tone: calm triage, never "don't pay", never "you must pay".
 3. **Self-check prompts:** three questions an owner can answer in two minutes, then `/check/`. The Check runs in the browser and sends no data. You may say exactly that, because it's true.
 4. **Method and proof:** what an audit inspects, what the written report looks like (`/sample/`, labelled fictional), why fixed price and in writing (`/audit/`).
-5. **Operator decisions:** future decision pages for hotel and group operators. `/decisions/hotel-sound-handover/` is excluded until it is brought into line with CLAUDE.md: it has no "not legal advice" line, cites French guidance and sells an offer that isn't on `/audit/`. Use a page in this pillar only if it carries the "not legal advice" line and its offers match `/audit/`.
-6. **Atmosphere (sparingly):** `/place-studies/001/` and `/elements/`, as brand texture only, never as a music offer.
+5. **Operator decisions (future):** hotel and multi-unit operator pages, if the founder publishes them. The earlier `/decisions/` and `/place-studies/` pages were retired on 12 Nov 2026 because they sold an offer that is no longer available. Never link to them.
+6. **Atmosphere (sparingly):** `/elements/` as brand texture only, never as a music offer.
 
 Hooks: concrete, specific, no clickbait. Prefer a real question an owner types into Google (the answer-page H1s are good models). No emoji walls, no hashtag stacks (0-3 relevant tags), no "🚨". US English. Plain words. Short sentences.
 
