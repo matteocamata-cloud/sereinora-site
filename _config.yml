@@ -1,0 +1,10 @@
+# GitHub Pages builds this repo with Jekyll for one reason: to keep internal
+# files off sereinora.com. No page has front matter or Liquid tags, so Jekyll
+# copies every public file unchanged. Files and folders starting with "." or
+# "_" (.claude/, this file) are never published.
+# Keep this list in sync with any new internal file at the repo root.
+# No theme: GitHub Pages would otherwise inject its default Primer theme files.
+theme: null
+exclude:
+  - CLAUDE.md
+  - tools/

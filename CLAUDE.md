@@ -2,6 +2,8 @@
 
 Public static site for sereinora.com, served by GitHub Pages from `main` (root). `CNAME` = sereinora.com. No build step, no dependencies, no cookies, no analytics, no forms that send data.
 
+Internal files stay off the public site through `_config.yml`: Pages runs Jekyll only to drop `CLAUDE.md`, `tools/` and anything starting with `.` or `_` (such as `.claude/`). Never add front matter (`---`) or `{{ }}`/`{% %}` to a page, because Jekyll would then rewrite it. Add any new internal root file to `exclude:`. The repo itself stays readable on GitHub, so keep secrets and personal details out of it.
+
 ## Market and offer (since 11 Nov 2026)
 US only: restaurants, bars and hotels. Funnel: `/check/` (free Music Exposure Check, runs in the browser) → `/audit/` (Venue Music Audit $495, Group Audit $1,950 for up to 10 venues, PRO Letter Pack $295) → email to contact@sereinora.com. Answer pages under `/answers/` bring search traffic.
 
@@ -22,4 +24,4 @@ US only: restaurants, bars and hotels. Funnel: `/check/` (free Music Exposure Ch
 - The sample report at `/sample/` is fictional and must stay labeled as such. Never present it, or any figure in it, as a real client or result.
 
 ## Social media
-Social accounts are run by the `sereinora-social` agent (`.claude/agents/sereinora-social.md`). It drafts and recommends, and it publishes only posts the founder has approved one by one. Every rule above applies to posts, replies and bios. Note: with `.nojekyll`, every file in this repo (including this one and `.claude/`) is publicly served on sereinora.com, so keep secrets and personal details out of the repo.
+Social accounts are run by the `sereinora-social` agent (`.claude/agents/sereinora-social.md`). It drafts and recommends, and it publishes only posts the founder has approved one by one. Every rule above applies to posts, replies and bios.
