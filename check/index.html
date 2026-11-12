@@ -1,142 +1,119 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="nojs">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#f4f6f2">
+  <title>Free Music Exposure Check: 2 minutes, 10 questions | Sereinora</title>
+  <meta name="description" content="Free 2-minute Music Exposure Check for US restaurants, bars and hotels: see which music licenses probably apply, where you may be paying twice and where you may be exposed.">
   <link rel="canonical" href="https://sereinora.com/check/">
-  <meta name="description" content="Free 2-minute Music Exposure Check for US restaurants, bars and hotels: see which music licenses probably apply, where you may be paying twice, and where you may be exposed.">
   <meta name="referrer" content="no-referrer">
-  <title>Music Exposure Check — free, 2 minutes — Sereinora</title>
-  <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="/decisions/hotel-sound-handover/guide.css">
-  <link rel="stylesheet" href="/assets/us.css">
-  <script src="check.js" defer></script>
+  <meta name="robots" content="index,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sereinora">
+  <meta property="og:title" content="Free Music Exposure Check: 2 minutes, 10 questions | Sereinora">
+  <meta property="og:description" content="Free 2-minute Music Exposure Check for US restaurants, bars and hotels: see which music licenses probably apply, where you may be paying twice and where you may be exposed.">
+  <meta property="og:url" content="https://sereinora.com/check/">
+  <meta property="og:image" content="https://sereinora.com/assets/og.png">
+  <meta property="og:image:alt" content="Sereinora: a written music-license audit for US restaurants, bars and hotels">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/venue.css">
+  <script>document.documentElement.className='js'</script>
+  <script src="/assets/venue.js" defer></script>
+  
+  <script src="/check/check.js" defer></script>
 </head>
 <body>
-<a class="skip" href="#main">Skip to the check</a>
-<header class="shell masthead">
-  <a class="wordmark" href="/">Sereinora</a>
-  <nav aria-label="Main">
-    <a href="/check/">Free check</a>
-    <a href="/audit/">Venue Music Audit</a>
-    <a href="/answers/pro-letter/">Got a PRO letter?</a>
-  </nav>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="/" aria-label="Sereinora home"><svg viewBox="0 0 30 30" aria-hidden="true" focusable="false"><rect x="3" y="6" width="19" height="4.6" rx="2.3" fill="#10243a"/><rect x="8" y="12.7" width="19" height="4.6" rx="2.3" fill="#0b5e63"/><rect x="3" y="19.4" width="12" height="4.6" rx="2.3" fill="#10243a"/></svg>Sereinora</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="nav" id="site-nav" aria-label="Main"><a href="/check/" aria-current="page">Free check</a><a href="/audit/">Venue audit</a><a href="/sample/">Sample report</a><a href="/answers/">Answers</a><a class="btn" href="/audit/#request">Request an audit</a></nav>
+  </div>
 </header>
 <main id="main" tabindex="-1">
-  <section class="shell hero" aria-labelledby="title">
-    <p class="eyebrow">For US restaurants, bars and hotels / Music Exposure Check</p>
-    <h1 id="title">What is the music in your venue <em>really costing you?</em></h1>
-    <p class="lede">Ten questions, two minutes. See which music licenses probably apply, where you may be paying twice, and where you may be exposed.</p>
-    <a class="button" href="#check">Start the free check ↓</a>
-    <p class="small">Runs entirely in your browser. Nothing is stored or sent. General information only — not legal advice.</p>
-  </section>
 
-  <div class="shell reading-layout">
-    <aside class="contents" aria-label="On this page">
-      <p class="eyebrow">On this page</p>
-      <a href="#why">Why it matters</a>
-      <a href="#check">The check</a>
-      <a href="#limits">Limits</a>
-    </aside>
-    <article>
-      <section id="why">
-        <p class="eyebrow">01 / Why it matters</p>
-        <h2>Music in a US venue is licensed several times over.</h2>
-        <p>Playing recorded or live music in a business is a public performance. Songwriters' rights are licensed by performing-rights organizations (PROs) — mainly ASCAP, BMI, SESAC and GMR — and one PRO's license does not cover another's songs.</p>
-        <div class="stat-row">
-          <div class="stat"><b>$4,500</b><span>average yearly music licensing reported by restaurant-association members</span></div>
-          <div class="stat"><b>~200%</b><span>rise in PRO costs per hotel 2021–2025 reported by one global chain</span></div>
-          <div class="stat"><b>$750–$150,000</b><span>statutory damages per song infringed (the top of the range requires wilfulness)</span></div>
-        </div>
-        <p class="small">Sources: Bloomberg via IBJ (Jul 2025); 17 U.S.C. §504. See <a href="#sources">sources</a>.</p>
-      </section>
+<section class="page-hero"><div class="wrap">
+  <p class="crumbs"><a href="/">Home</a> / Free Music Exposure Check</p>
+  <h1>What is the music in your venue really costing you?</h1>
+  <p class="lede">Ten questions, two minutes. See which licenses probably apply, where you may be paying twice, and where you may be exposed.</p>
+  <p class="small muted" style="margin-top:14px">Runs entirely in your browser. Nothing is stored or sent. General information only, not legal advice.</p>
+</div></section>
 
-      <section id="check" class="decision-check" aria-labelledby="check-title">
-        <p class="eyebrow">02 / The check</p>
-        <h2 id="check-title">Answer for one venue.</h2>
-        <form id="exposure-form" novalidate hidden>
-          <div class="q"><fieldset><legend>1. What kind of venue is it?</legend>
-            <label class="opt"><input type="radio" name="type" value="food" checked> Restaurant, bar, café or lounge</label>
-            <label class="opt"><input type="radio" name="type" value="hotel"> Hotel</label>
-            <label class="opt"><input type="radio" name="type" value="retail"> Store or showroom</label>
-            <label class="opt"><input type="radio" name="type" value="fitness"> Gym or fitness studio</label>
-            <label class="opt"><input type="radio" name="type" value="other"> Other</label>
-          </fieldset></div>
-          <div class="q"><fieldset><legend>2. How big is it (gross square feet, excluding parking)?</legend>
-            <label class="opt"><input type="radio" name="size" value="small"> Under 2,000 sq ft</label>
-            <label class="opt"><input type="radio" name="size" value="mid"> 2,000 – 3,749 sq ft</label>
-            <label class="opt"><input type="radio" name="size" value="large" checked> 3,750 sq ft or more</label>
-          </fieldset></div>
-          <div class="q"><fieldset><legend>3. Where does the background music come from? (tick all)</legend>
-            <label class="opt"><input type="checkbox" name="src" value="service"> A business music service (e.g. Soundtrack, Mood Media, Rockbot, Cloud Cover)</label>
-            <label class="opt"><input type="checkbox" name="src" value="personal"> A personal Spotify, Apple Music, YouTube or Pandora account</label>
-            <label class="opt"><input type="checkbox" name="src" value="radio"> Radio or TV broadcast</label>
-            <label class="opt"><input type="checkbox" name="src" value="owned"> Our own downloads, CDs or vinyl</label>
-            <label class="opt"><input type="checkbox" name="src" value="none"> No background music</label>
-          </fieldset></div>
-          <div class="q"><fieldset><legend>4. Live music?</legend>
-            <label class="opt"><input type="radio" name="live" value="none" checked> Never</label>
-            <label class="opt"><input type="radio" name="live" value="some"> Occasionally</label>
-            <label class="opt"><input type="radio" name="live" value="weekly"> Weekly or more</label>
-          </fieldset></div>
-          <div class="q"><fieldset><legend>5. DJs or karaoke?</legend>
-            <label class="opt"><input type="radio" name="dj" value="no" checked> No</label>
-            <label class="opt"><input type="radio" name="dj" value="yes"> Yes</label>
-          </fieldset></div>
-          <div class="q"><fieldset><legend>6. Which licenses do you pay directly? (tick all)</legend>
-            <label class="opt"><input type="checkbox" name="pro" value="ASCAP"> ASCAP</label>
-            <label class="opt"><input type="checkbox" name="pro" value="BMI"> BMI</label>
-            <label class="opt"><input type="checkbox" name="pro" value="SESAC"> SESAC</label>
-            <label class="opt"><input type="checkbox" name="pro" value="GMR"> GMR</label>
-            <label class="opt"><input type="checkbox" name="pro" value="unknown"> I don't know</label>
-          </fieldset></div>
-          <div class="q"><fieldset><legend>7. In the last 12 months, has a PRO sent you a letter, invoice or call?</legend>
-            <label class="opt"><input type="radio" name="letter" value="no" checked> No</label>
-            <label class="opt"><input type="radio" name="letter" value="yes"> Yes</label>
-            <label class="opt"><input type="radio" name="letter" value="legal"> Yes — and it mentions a lawsuit, a lawyer or a deadline</label>
-          </fieldset></div>
-          <div class="q"><fieldset><legend>8. Do you post videos with music on social media?</legend>
-            <label class="opt"><input type="radio" name="social" value="no" checked> No</label>
-            <label class="opt"><input type="radio" name="social" value="yes"> Yes</label>
-          </fieldset></div>
-          <div class="q"><fieldset><legend>9. How many venues do you operate?</legend>
-            <label class="opt"><input type="radio" name="units" value="1" checked> One</label>
-            <label class="opt"><input type="radio" name="units" value="2-3"> 2 – 3</label>
-            <label class="opt"><input type="radio" name="units" value="4-10"> 4 – 10</label>
-            <label class="opt"><input type="radio" name="units" value="11+"> 11 or more</label>
-          </fieldset></div>
-          <div class="q"><fieldset><legend>10. Roughly what do you spend on music per venue per year (service + licenses)?</legend>
-            <label class="opt"><input type="radio" name="spend" value="unknown" checked> Don't know</label>
-            <label class="opt"><input type="radio" name="spend" value="lt1k"> Under $1,000</label>
-            <label class="opt"><input type="radio" name="spend" value="1to5k"> $1,000 – $5,000</label>
-            <label class="opt"><input type="radio" name="spend" value="gt5k"> Over $5,000</label>
-          </fieldset></div>
-          <button class="button" id="score" type="submit">See my result</button>
-        </form>
-        <div id="result" class="result" hidden aria-live="polite"></div>
-        <noscript><p><strong>This check needs JavaScript.</strong> Email <a href="mailto:contact@sereinora.com?subject=Music%20Exposure%20Check">contact@sereinora.com</a> with your venue type, size, music sources, live music/DJ use and the licenses you pay, and we will reply in writing.</p></noscript>
-      </section>
+<section class="sec" style="padding-bottom:0"><div class="wrap prose">
+  <h2>Why it matters</h2>
+  <p>Playing recorded or live music in a business is a public performance. Songwriters’ rights are licensed by performing rights organizations (PROs), mainly ASCAP, BMI, SESAC and GMR, and one PRO’s license does not cover another’s songs.</p>
+  <ul class="stats" style="margin-top:22px">
+    <li><b>$4,500</b><span>a year on average: what the National Restaurant Association says its members pay to license music.</span></li>
+    <li><b>~200%</b><span>rise in per-hotel PRO fees 2021 to 2025 at one unnamed global chain, cited by the American Hotel &amp; Lodging Association.</span></li>
+    <li><b>$30,000</b><span>the usual ceiling on statutory damages per infringed work (the floor is $750). Up to $150,000 per work if willful.</span></li>
+  </ul>
+  <p class="small muted">Sources: <a href="https://www.ibj.com/articles/restaurants-bars-say-theyre-getting-squeezed-by-rising-music-licensing-costs">Bloomberg via Indianapolis Business Journal, “Restaurants, bars say they’re getting squeezed by rising music licensing costs” (July 9, 2025)</a>; <a href="https://www.law.cornell.edu/uscode/text/17/504">17 U.S.C. §504(c), statutory damages</a>.</p>
+</div></section>
 
-      <section id="limits">
-        <p class="eyebrow">03 / Limits</p>
-        <h2>What this check is — and is not.</h2>
-        <p>It applies published rules of thumb to your answers. It is general information, not legal advice, and it cannot see your contracts. Sereinora is not a law firm and does not negotiate with PROs. If you have received a lawsuit, a demand with a deadline, or a letter from a lawyer, speak to a US attorney first.</p>
-        <p>Your answers never leave your browser unless you choose to email them to us.</p>
-      </section>
+<section class="sec" id="check"><div class="wrap prose">
+  <h2>Answer for one venue</h2>
+  
+<form id="exposure-form" class="check-form" novalidate hidden>
+<fieldset class="q"><legend>1. What kind of venue is it?</legend><div class="opts"><label class="opt"><input type="radio" name="type" value="food" checked><span>Restaurant, bar, café or lounge</span></label><label class="opt"><input type="radio" name="type" value="hotel"><span>Hotel</span></label><label class="opt"><input type="radio" name="type" value="retail"><span>Store or showroom</span></label><label class="opt"><input type="radio" name="type" value="fitness"><span>Gym or fitness studio</span></label><label class="opt"><input type="radio" name="type" value="other"><span>Other</span></label></div></fieldset>
+<fieldset class="q"><legend>2. How big is it?</legend><p class="hint">Gross square feet, excluding customer parking.</p><div class="opts"><label class="opt"><input type="radio" name="size" value="small"><span>Under 2,000 sq ft</span></label><label class="opt"><input type="radio" name="size" value="mid"><span>2,000 to 3,749 sq ft</span></label><label class="opt"><input type="radio" name="size" value="large" checked><span>3,750 sq ft or more</span></label></div></fieldset>
+<fieldset class="q"><legend>3. Where does the background music come from?</legend><p class="hint">Tick all that apply.</p><div class="opts"><label class="opt"><input type="checkbox" name="src" value="service"><span>A business music service<small>For example Soundtrack, Mood Media, Rockbot or Pandora CloudCover</small></span></label><label class="opt"><input type="checkbox" name="src" value="personal"><span>A personal Spotify, Apple Music, YouTube or Pandora account</span></label><label class="opt"><input type="checkbox" name="src" value="radio"><span>Radio or TV broadcast</span></label><label class="opt"><input type="checkbox" name="src" value="owned"><span>Our own downloads, CDs or vinyl</span></label><label class="opt"><input type="checkbox" name="src" value="none"><span>No background music</span></label></div></fieldset>
+<fieldset class="q"><legend>4. Live music?</legend><div class="opts"><label class="opt"><input type="radio" name="live" value="none" checked><span>Never</span></label><label class="opt"><input type="radio" name="live" value="some"><span>Occasionally</span></label><label class="opt"><input type="radio" name="live" value="weekly"><span>Weekly or more</span></label></div></fieldset>
+<fieldset class="q"><legend>5. DJs or karaoke?</legend><div class="opts"><label class="opt"><input type="radio" name="dj" value="no" checked><span>No</span></label><label class="opt"><input type="radio" name="dj" value="yes"><span>Yes</span></label></div></fieldset>
+<fieldset class="q"><legend>6. Which licenses do you pay directly?</legend><p class="hint">Tick all that apply.</p><div class="opts"><label class="opt"><input type="checkbox" name="pro" value="ASCAP"><span>ASCAP</span></label><label class="opt"><input type="checkbox" name="pro" value="BMI"><span>BMI</span></label><label class="opt"><input type="checkbox" name="pro" value="SESAC"><span>SESAC</span></label><label class="opt"><input type="checkbox" name="pro" value="GMR"><span>GMR</span></label><label class="opt"><input type="checkbox" name="pro" value="unknown"><span>I do not know</span></label></div></fieldset>
+<fieldset class="q"><legend>7. In the last 12 months, has a PRO sent you a letter, invoice or call?</legend><div class="opts"><label class="opt"><input type="radio" name="letter" value="no" checked><span>No</span></label><label class="opt"><input type="radio" name="letter" value="yes"><span>Yes</span></label><label class="opt"><input type="radio" name="letter" value="legal"><span>Yes, and it mentions a lawsuit, a lawyer or a deadline</span></label></div></fieldset>
+<fieldset class="q"><legend>8. Do you post videos with music on social media?</legend><div class="opts"><label class="opt"><input type="radio" name="social" value="no" checked><span>No</span></label><label class="opt"><input type="radio" name="social" value="yes"><span>Yes</span></label></div></fieldset>
+<fieldset class="q"><legend>9. How many venues do you operate?</legend><div class="opts"><label class="opt"><input type="radio" name="units" value="1" checked><span>One</span></label><label class="opt"><input type="radio" name="units" value="2-3"><span>2 to 3</span></label><label class="opt"><input type="radio" name="units" value="4-10"><span>4 to 10</span></label><label class="opt"><input type="radio" name="units" value="11+"><span>11 or more</span></label></div></fieldset>
+<fieldset class="q"><legend>10. Roughly what do you spend on music per venue per year?</legend><p class="hint">Music service plus licenses.</p><div class="opts"><label class="opt"><input type="radio" name="spend" value="unknown" checked><span>I do not know</span></label><label class="opt"><input type="radio" name="spend" value="lt1k"><span>Under $1,000</span></label><label class="opt"><input type="radio" name="spend" value="1to5k"><span>$1,000 to $5,000</span></label><label class="opt"><input type="radio" name="spend" value="gt5k"><span>Over $5,000</span></label></div></fieldset>
+<button class="btn" id="score" type="submit">See my result</button>
+</form>
+  <div id="result" class="result" tabindex="-1" hidden></div>
+  <noscript><p class="note"><strong>This check needs JavaScript.</strong> Email <a href="mailto:contact@sereinora.com?subject=Music%20Exposure%20Check">contact@sereinora.com</a> with your venue type, size, music sources, live music or DJ use and the licenses you pay, and we will reply in writing.</p></noscript>
+</div></section>
 
-      <section id="sources" class="sources">
-        <h2>Sources</h2>
-        <ul>
-          <li><a href="https://www.ibj.com/articles/restaurants-bars-say-theyre-getting-squeezed-by-rising-music-licensing-costs">Bloomberg via IBJ — Restaurants, bars say they're getting squeezed by rising music licensing costs (Jul 2025)</a></li>
-          <li><a href="https://www.law.cornell.edu/uscode/text/17/504">17 U.S.C. §504 — statutory damages</a></li>
-          <li><a href="https://www.law.cornell.edu/uscode/text/17/110">17 U.S.C. §110(5) — exemption for certain establishments</a></li>
-          <li><a href="https://www.bhfs.com/insight/music-licensing-under-the-microscope/">Brownstein — Music licensing under the microscope (Nov 2026)</a></li>
-        </ul>
-      </section>
-    </article>
-  </div>
+<section class="sec band" id="limits"><div class="wrap prose">
+  <h2>What this check is, and is not</h2>
+  <p>It applies published rules of thumb to your answers. It is general information, not legal advice, and it cannot see your contracts. Sereinora is not a law firm and does not negotiate with PROs. If you have received a lawsuit, a demand with a deadline, or a letter from a lawyer, speak to a US attorney first.</p>
+  <p>Your answers never leave your browser unless you choose to email them to us.</p>
+  <div class="sources"><h2>Sources</h2><ol><li><a href="https://www.law.cornell.edu/uscode/text/17/504">17 U.S.C. §504(c), statutory damages</a></li><li><a href="https://www.law.cornell.edu/uscode/text/17/110">17 U.S.C. §110(5), exemption for certain establishments</a></li><li><a href="https://www.ibj.com/articles/restaurants-bars-say-theyre-getting-squeezed-by-rising-music-licensing-costs">Bloomberg via Indianapolis Business Journal, “Restaurants, bars say they’re getting squeezed by rising music licensing costs” (July 9, 2025)</a></li><li><a href="https://www.bhfs.com/insight/music-licensing-under-the-microscope/">Brownstein client alert, “Music licensing under the microscope” (Nov. 9, 2026)</a></li><li><a href="https://www.copyright.gov/policy/musiclicensingstudy/copyright-and-the-music-marketplace.pdf">U.S. Copyright Office, “Copyright and the Music Marketplace” (2015)</a></li><li><a href="https://www.sesac.com/what-is-a-performing-rights-organization-pro/">SESAC, “What is a performing rights organization?”</a></li><li><a href="https://help.cloudcovermusic.com/en/articles/6961602-faq-licensing">Pandora CloudCover, licensing FAQ</a></li><li><a href="https://www.spotify.com/us/legal/end-user-agreement/">Spotify End User Agreement, section 3</a></li></ol></div>
+  <p class="reviewed">Last reviewed November 12, 2026.</p>
+</div></section>
 </main>
-<footer class="shell footer"><span>© Sereinora · Not a law firm · General information, not legal advice</span><a href="mailto:contact@sereinora.com">contact@sereinora.com</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></footer>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <h2>Sereinora</h2>
+        <p>Independent music-license audits for US restaurants, bars and hotels. Independent of ASCAP, BMI, SESAC, GMR and every music service.</p>
+        <p>Sereinora is not a law firm. Everything on this site is general information, not legal advice. We do not negotiate with PROs, clear rights or guarantee savings.</p>
+      </div>
+      <div>
+        <h2>Services</h2>
+        <ul>
+          <li><a href="/check/">Free Music Exposure Check</a></li>
+          <li><a href="/audit/#venue">Venue Music Audit</a></li>
+          <li><a href="/audit/#group">Group Audit</a></li>
+          <li><a href="/audit/#letter">PRO Letter Pack</a></li>
+          <li><a href="/sample/">Sample report</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul>
+          <li><a href="mailto:contact@sereinora.com">contact@sereinora.com</a></li>
+          <li><a href="/answers/">Answers</a></li>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/terms/">Terms</a></li>
+          <li><a href="/elements/">Sereinora Elements</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot-base">© 2026 Sereinora. Sereinora is not affiliated with ASCAP, BMI, SESAC, GMR, Spotify, Apple, YouTube or any music service named on this site.</p>
+  </div>
+</footer>
 </body>
 </html>

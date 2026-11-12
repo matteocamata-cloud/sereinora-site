@@ -12,3 +12,11 @@ US only: restaurants, bars and hotels. Funnel: `/check/` (free Music Exposure Ch
 - Prices change only with the founder's approval.
 - Keep pages dependency-free and accessible: test with Playwright at 375 px and 1280 px, no console errors, no broken internal links, no horizontal scroll.
 - Publishing (push to `main`) needs the founder's approval for new public copy.
+
+## Structure (since 12 Nov 2026 revamp)
+- `/` sells the audit. The old art-led homepage is preserved intact at `/elements/` (uses `styles.css` + `site.js`).
+- All commercial and legal pages share `assets/venue.css` + `assets/venue.js` (self-hosted fonts in `assets/fonts/`, no third-party requests). Keep header and footer identical across pages.
+- `/about/` is a gated draft: `noindex`, not linked, not in the sitemap, with `[[FOUNDER: …]]` markers. Do not link or publish it until every marker is replaced with a verifiable fact.
+- Every legal or numeric claim cites a source on the page. Sources were verified on 12 Nov 2026 (statute text, NRA/AHLA figures via Bloomberg/IBJ, Brownstein alert, provider pricing and terms). Re-verify before changing any figure, and update the "Last reviewed" date.
+- Terms and Privacy keep the Google/YouTube API text verbatim: it supports the Google OAuth verification. Edit only the venue-audit sections above it.
+- The sample report at `/sample/` is fictional and must stay labeled as such. Never present it, or any figure in it, as a real client or result.
