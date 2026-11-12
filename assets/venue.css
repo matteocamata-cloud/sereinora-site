@@ -461,3 +461,19 @@ h3{font-size:1.22rem}
 .finding h3{font-size:1.12rem}
 .sheet h2{font-size:1.35rem}
 .actions li::before{font-size:1.05rem}
+
+/* Professional finish */
+.stats.two{grid-template-columns:repeat(2,1fr);max-width:860px}
+@media(max-width:760px){.stats.two{grid-template-columns:1fr}}
+.standards{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--ink)}
+.standards article{padding:22px 24px 6px 0}
+.standards article+article{padding-left:24px;border-left:1px solid var(--rule)}
+.standards h3{font-size:1.12rem;margin:0 0 8px}
+.standards p{font-size:.96rem;line-height:1.6;color:var(--ink-2);margin:0}
+@media(max-width:900px){.standards{grid-template-columns:1fr 1fr}.standards article:nth-child(3){padding-left:0;border-left:0}.standards article:nth-child(n+3){border-top:1px solid var(--rule)}}
+@media(max-width:560px){.standards{grid-template-columns:1fr}.standards article,.standards article+article{padding-left:0;border-left:0}.standards article+article{border-top:1px solid var(--rule)}}
+.menu-item li::before{content:"";top:15px;width:10px;height:1px;background:var(--brown)}
+.menu-item li{padding-left:22px}
+.sec-head p{font-style:normal}
+.page-hero .lede{font-style:normal}
+.hub span{font-style:normal}
