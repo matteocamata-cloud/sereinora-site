@@ -1,10 +1,14 @@
 /* Sereinora: refined editorial system. Cream paper, Didot-style serif, tracked small caps, hairlines.
    One stylesheet, no dependencies, self-hosted fonts. */
 
-@font-face{font-family:"Atkinson Hyperlegible Next";src:url("/assets/fonts/atkinson-next.woff2") format("woff2");font-weight:200 800;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-@font-face{font-family:"Atkinson Hyperlegible Next";src:url("/assets/fonts/atkinson-next-italic.woff2") format("woff2");font-weight:200 800;font-style:italic;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-@font-face{font-family:"Atkinson Hyperlegible Next";src:url("/assets/fonts/atkinson-next-ext.woff2") format("woff2");font-weight:200 800;font-style:normal;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
-@font-face{font-family:"Atkinson Hyperlegible Next";src:url("/assets/fonts/atkinson-next-ext-italic.woff2") format("woff2");font-weight:200 800;font-style:italic;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Source Serif 4";src:url("/assets/fonts/source-serif-4.woff2") format("woff2");font-weight:200 900;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Source Serif 4";src:url("/assets/fonts/source-serif-4-italic.woff2") format("woff2");font-weight:200 900;font-style:italic;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Source Serif 4";src:url("/assets/fonts/source-serif-4-ext.woff2") format("woff2");font-weight:200 900;font-style:normal;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Source Serif 4";src:url("/assets/fonts/source-serif-4-ext-italic.woff2") format("woff2");font-weight:200 900;font-style:italic;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Mona Sans";src:url("/assets/fonts/mona-sans.woff2") format("woff2");font-weight:200 900;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Mona Sans";src:url("/assets/fonts/mona-sans-italic.woff2") format("woff2");font-weight:200 900;font-style:italic;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Mona Sans";src:url("/assets/fonts/mona-sans-ext.woff2") format("woff2");font-weight:200 900;font-style:normal;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Mona Sans";src:url("/assets/fonts/mona-sans-ext-italic.woff2") format("woff2");font-weight:200 900;font-style:italic;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
 @font-face{font-family:"Bodoni Moda";src:url("/assets/fonts/bodoni-moda.woff2") format("woff2");font-weight:400 700;font-style:normal;font-display:swap}
 
 :root{
@@ -15,8 +19,8 @@
   --rule:#d3c6b0;
   --sage:#3f6b4f; --brick:#9c3b2b; --ochre:#8a5a12; --taupe:#857d6d;
   --focus:#9c3b2b;
-  --f-sans:"Atkinson Hyperlegible Next",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-  --f-disp:var(--f-sans);
+  --f-sans:"Mona Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --f-disp:"Source Serif 4",Georgia,"Times New Roman",serif;
   --f-read:var(--f-sans);
   --f-ui:var(--f-sans);
   --f-brand:"Bodoni Moda","Didot","Bodoni 72",Baskerville,Georgia,serif;
@@ -499,9 +503,9 @@ h3{font-size:1.22rem}
 @media print{.lang-btn,.lang-menu{display:none!important}}
 
 /* =====================================================================
-   Readable type (Atkinson Hyperlegible Next): same sizes, no tight tracking
+   Type: Source Serif 4 headings (optical sizes) + Mona Sans text and UI
    ===================================================================== */
-h1,h2,h3,h4{font-weight:650;letter-spacing:0}
-h1,.hero h1,.page-hero h1{letter-spacing:-.005em}
-h1 em,h2 em,h3 em{font-weight:650}
+h1,h2,h3,h4{font-weight:600;letter-spacing:-.01em;font-optical-sizing:auto}
+h1,.hero h1,.page-hero h1{letter-spacing:-.015em}
+h1 em,h2 em,h3 em{font-weight:600}
 body{font-optical-sizing:auto;font-kerning:normal;line-height:1.62}
