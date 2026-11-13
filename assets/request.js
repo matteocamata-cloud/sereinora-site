@@ -50,10 +50,16 @@
   const copyBtn = $('req-copy');
   const count = $('note-count');
   const countLive = $('note-live');
+  const countryField = $('country-field');
+  const countryName = $('country-name');
+  const serviceSet = $('service-set');
+  const cityLabel = $('city-label');
+  const cityHint = $('city-hint');
 
   if (fallback) fallback.hidden = true;
   form.hidden = false;
 
+  const abroad = () => (form.querySelector('input[name="country"]:checked') || {}).value === 'other';
   const one = (name) => (form.querySelector(`input[name="${name}"]:checked`) || {}).value || '';
   const many = (name) => [...form.querySelectorAll(`input[name="${name}"]:checked`)].map((i) => i.value);
   const clean = (s) => String(s || '').replace(/\s+/g, ' ').trim();
@@ -84,7 +90,11 @@
     const rows = [];
     const says = [];
     let brief = '';
-    if (service === 'letter') {
+    if (abroad()) {
+      const c = clean(countryName.value);
+      says.push(`Audits currently cover venues in the United States. We cannot quote for ${c || 'your country'} yet, and we do not apply US rules to it. Send this request and we will write to you when we cover it.`);
+      brief = 'None: the venue is outside the United States, which audits do not cover yet.';
+    } else if (service === 'letter') {
       rows.push({ name: 'PRO Letter Pack', detail: 'per letter, delivered in 48 hours', price: usd(PRICE.letter) });
       brief = `PRO Letter Pack, ${usd(PRICE.letter)} per letter.`;
     } else if (!Number.isInteger(n) || n < 1) {
@@ -155,7 +165,7 @@
     if (v === 'legal') {
       if (!legal.firstChild) {
         const p = el('p', 'note');
-        p.append(el('strong', '', 'Because a lawsuit, a lawyer or a deadline is involved, please speak to a US attorney first, without waiting.'),
+        p.append(el('strong', '', 'Because a lawsuit, a lawyer or a deadline is involved, please speak to a licensed attorney first, without waiting.'),
           ' If useful, the PRO Letter Pack ($295) can give your attorney a factual inventory.');
         legal.append(p);
       }
@@ -182,6 +192,8 @@
   function answers() {
     return {
       service: one('service') || 'unsure',
+      abroad: abroad(),
+      country: clean(countryName.value),
       venues: venues.value.trim(),
       business: clean(business.value),
       city: clean(city.value),
@@ -202,8 +214,10 @@
   }
 
   function compose(a, noteText) {
-    const svc = SERVICES[a.service] || SERVICES.unsure;
-    const subject = `Audit request: ${svc.name}, ${a.business || 'business name not given'}`;
+    const svc = a.abroad ? { name: 'Coverage request (venue outside the US)' } : (SERVICES[a.service] || SERVICES.unsure);
+    const subject = a.abroad
+      ? `Coverage request: ${a.country || 'country not given'}, ${a.business || 'business name not given'}`
+      : `Audit request: ${svc.name}, ${a.business || 'business name not given'}`;
     const e = estimate(a.service, venueCount());
     // Kept compact on purpose: every character counts towards the mailto length limit.
     const L = [
@@ -212,7 +226,8 @@
       `Service: ${svc.name}`,
       `Number of venues: ${a.venues || 'not given'}`,
       `Business name: ${a.business || 'not given'}`,
-      `Venue city and state: ${a.city || 'not given'}`,
+      `Venue country: ${a.abroad ? (a.country || 'not given') : 'United States'}`,
+      `${a.abroad ? 'Venue city' : 'Venue city and state'}: ${a.city || 'not given'}`,
       `Venue type: ${TYPES[a.type] || 'not given'}`,
       `Name and role: ${a.who || 'not given'}`,
       `Music uses: ${a.uses.length ? a.uses.map((u) => USES[u]).join('; ') : 'not given'}`,
@@ -257,8 +272,9 @@
       return Number.isInteger(n) && n >= 1 && n <= VENUES_MAX ? ''
         : 'Enter a whole number of venues from 1 to 50. For more than 50, enter 50 and give the total under Anything else.';
     }, 'Number of venues'],
+    [countryName, 'country-err', () => (!abroad() || clean(countryName.value) ? '' : 'Enter the country of the venue.'), 'Country'],
     [business, 'business-err', () => (clean(business.value) ? '' : 'Enter the business name.'), 'Business name'],
-    [city, 'city-err', () => (clean(city.value) ? '' : 'Enter the venue city and state, for example Austin, TX.'), 'Venue city and state'],
+    [city, 'city-err', () => (clean(city.value) ? '' : abroad() ? 'Enter the venue city.' : 'Enter the venue city and state, for example Austin, TX.'), 'Venue city'],
   ];
 
   function setError(input, errId, msg) {
@@ -367,7 +383,17 @@
   });
 
   /* ---------- Keep everything in step with the answers ---------- */
+  function renderCountry() {
+    const away = abroad();
+    countryField.hidden = !away;
+    serviceSet.hidden = away;
+    cityLabel.textContent = away ? 'Venue city' : 'Venue city and state';
+    cityHint.textContent = away ? 'For a group, the main city.' : 'For example: Austin, TX. For a group, the main city.';
+    if (!away && countryName.hasAttribute('aria-invalid')) setError(countryName, 'country-err', '');
+  }
+
   function update(ev) {
+    renderCountry();
     renderEstimate();
     renderLetter();
     renderCount();

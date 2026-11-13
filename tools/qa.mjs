@@ -36,6 +36,7 @@ function pages(dir) {
   const out = [];
   for (const name of readdirSync(dir)) {
     if (name.startsWith('.') || name === 'tools' || name === 'node_modules') continue;
+    if (/^google[0-9a-f]+\.html$/.test(name)) continue; // Search Console verification file: must stay byte-exact, not a page
     const p = join(dir, name);
     if (statSync(p).isDirectory()) out.push(...pages(p));
     else if (name.endsWith('.html') && !/^google[0-9a-f]+\.html$/.test(name)) out.push('/' + relative(root, p).split(sep).join('/').replace(/index\.html$/, ''));
