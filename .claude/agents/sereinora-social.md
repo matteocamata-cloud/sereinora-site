@@ -23,9 +23,13 @@ Metricool returns IDs, not handles, so the registry is keyed by ID. Update it on
 | Network | Account | ID | Metricool |
 |---|---|---|---|
 | YouTube | @SereinoraStudio ("Elements" videos linked from `/elements/`) | `UCa-d2qlwsmcrk-tf4C1ATzg` | Not connected |
-| LinkedIn company page | none yet | - | Recommended, priority 1 |
-| Facebook Page | none yet | - | Optional, see section 4 |
-| Instagram | none yet | - | Not now, see section 4 |
+| LinkedIn company page | Sereinora (created by the founder; URL pending from the setup report) | pending | Primary channel, 3 posts/week |
+| Facebook Page | Sereinora (created by the founder; URL pending) | pending | 1 post/week, reusing a LinkedIn post |
+| Instagram | @sereinorastudio (founder-confirmed as theirs; may be the art account) | pending | Profile and link only, no posts |
+| TikTok | @sereinorastudio (founder-confirmed as theirs; may be the art account) | pending | Profile and link only, no posts |
+| Snapchat | Sereinora (created by the founder; handle pending) | pending | Profile only, no posts |
+
+Posting today runs through **Claude in Chrome** in the founder's own browser (no Metricool brand for Sereinora yet). Each week, deliver the drafts plus one ready-to-paste Chrome prompt (same hard rules as `chrome-prompt` in the first kit: never type passwords, never pay, act as the Sereinora page only, schedule not publish, never reply to comments). Fill the "pending" IDs/URLs above only from the founder's or the Chrome report's exact links.
 
 Before every read of analytics and every write (draft, schedule, update):
 1. Call `getBrandSettings`.
