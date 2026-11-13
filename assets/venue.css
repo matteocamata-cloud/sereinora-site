@@ -629,3 +629,8 @@ thead th{text-transform:none;letter-spacing:0;font-size:.85rem}
 .toc p{font:600 .9rem var(--f-ui);letter-spacing:0;text-transform:none}
 .toc{font-size:.92rem}
 .reviewed{letter-spacing:0}
+/* Jurisdiction label: says once, per page, which country's rules the page uses. One per country page; see CLAUDE.md "Countries". */
+.scope{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin:18px 0 0;font:500 .8rem/1.4 var(--f-ui);color:var(--ink-2)}
+.scope b{display:inline-flex;align-items:center;gap:8px;padding:4px 11px;border:1px solid var(--rule);border-radius:999px;font-weight:600;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);background:var(--paper-2)}
+.scope b::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--sage)}
+.scope a{color:var(--brown)}
