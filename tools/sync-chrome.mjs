@@ -11,7 +11,7 @@ const footer = readFileSync(join(root, 'tools/partials/footer.html'), 'utf8').tr
 const check = process.argv.includes('--check');
 
 // Nav links that get aria-current="page" when the page sits under them.
-const NAV = ['/check/', '/audit/', '/sample/', '/answers/', '/about/'];
+const NAV = ['/check/', '/audit/', '/sample/', '/answers/', '/help/', '/about/'];
 
 function pages(dir) {
   const out = [];
