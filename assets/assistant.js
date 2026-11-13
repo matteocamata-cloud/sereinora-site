@@ -51,7 +51,7 @@
   const CURATED = [
     [/lawsuit|sued|summons|court|attorney|lawyer|deadline|settle|demanda|abogad|tribunal|plazo|avocat|procès/i, 'If a letter or message mentions a lawsuit, a lawyer, a court or a deadline, please speak to a US attorney first, without waiting. If useful, the PRO Letter Pack ($295, delivered in 48 hours) gives your attorney a factual inventory: https://sereinora.com/audit/'],
     [/\b(refund|late)\b/i, 'If we miss the delivery date we confirmed in writing, you get a full refund. The delivery clock starts when we have your payment and the documents we asked for.'],
-    [/\b(pay|payment|card|order|buy|book)\b/i, 'Email ' + MAIL + ' or use the buttons on https://sereinora.com/audit/. We reply with a written confirmation of scope and price, and instructions for paying. Work starts once payment is confirmed.'],
+    [/\b(pay|payment|card|order|buy|book)\b/i, 'Use the short request form at https://sereinora.com/request/ or email ' + MAIL + '. We reply with a written confirmation of scope and price, and instructions for paying. Work starts once payment is confirmed.'],
     [/\b(group|chain|several|multiple)\b|\b([2-9]|10|two|three|four|five|six|seven|eight|nine|ten)\s+(bars|restaurants|venues|locations|hotels|sites|places)\b/i, 'For 2 to 10 venues, the Group Audit costs $1,950 and is delivered in 10 business days: everything in the Venue Audit for each venue, one spend table across the group, a single music-licensing standard for every venue, and where to consolidate services and licenses. https://sereinora.com/audit/'],
     [/^(?!.*(licen|ascap|bmi|sesac|gmr|fee|rate|pro\b)).*(how much|price|pricing|cost|cu[aá]nto|precio|costo|cuesta|combien|prix|tarif|多少钱|价格|giá|magkano|presyo)/i, 'Venue Music Audit: $495 per venue, delivered in 5 business days. Group Audit: $1,950 for up to 10 venues, 10 business days. PRO Letter Pack: $295 for one PRO letter, 48 hours. Details: https://sereinora.com/audit/'],
     [/\b(law firm|legal advice|human|real person|robot|chatbot)\b|\bai\b/i, 'Sereinora is not a law firm, and this assistant gives general information from the site’s pages, not legal advice. For anything specific to your venue, email ' + MAIL + ' and a person replies in writing.'],
@@ -172,7 +172,7 @@
   const emailLink = el('a', { class: 'sa-act', href: 'mailto:' + MAIL, text: 'Email this conversation' });
   const actions = el('div', { class: 'sa-actions', hidden: '' },
     el('a', { class: 'sa-act', href: '/check/', text: 'Free 2-minute check' }),
-    el('a', { class: 'sa-act', href: '/audit/', text: 'Audits and prices' }),
+    el('a', { class: 'sa-act', href: '/request/', text: 'Request an audit' }),
     emailLink);
   const input = el('textarea', { id: 'sa-input', rows: '2', maxlength: String(MAX), placeholder: AI ? 'Ask any question, in any language' : 'Ask a question', 'aria-label': 'Your question' });
   const sendBtn = el('button', { class: 'sa-send', type: 'submit', text: 'Send' });

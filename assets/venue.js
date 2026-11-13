@@ -122,6 +122,9 @@
     doc.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !menu.hidden) { setOpen(false); langBtn.focus(); } });
   }
 
+  /* Print / save as PDF buttons */
+  doc.querySelectorAll('[data-print]').forEach((b) => b.addEventListener('click', () => window.print()));
+
   /* Sereinora assistant: the "Ask a question" button on every page (config in assets/assistant.js). */
   const sa = doc.createElement('script');
   sa.src = '/assets/assistant.js';
