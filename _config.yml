@@ -8,3 +8,4 @@ theme: null
 exclude:
   - CLAUDE.md
   - tools/
+  - assistant/
