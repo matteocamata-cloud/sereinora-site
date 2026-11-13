@@ -11,3 +11,4 @@ Run both before every publish. Playwright is used from the global install.
 
 `.claude/workflows/website-manager.js` runs seven independent inspectors (QA, live site, cited sources, CLAUDE.md compliance, freshness of dated facts, customer journey, search growth), has skeptics re-check each finding, applies safe mechanical fixes, and writes a plain-English report. `.claude/agents/website-manager.md` is the standing brief for running it. Run it weekly and before every publish: ask Claude to "run the website manager".
 - `node tools/og.mjs` regenerates the share image of every commercial page (`assets/og/`, used for og:image and twitter:image) and the home-screen icons. Run it after adding a page or changing a page title.
+- `node tools/indexnow.mjs` notifies Bing and other IndexNow search engines of every sitemap URL. Run it after each publish (the key file at the site root must stay).
