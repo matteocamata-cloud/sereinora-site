@@ -23,7 +23,7 @@ Metricool returns IDs, not handles, so the registry is keyed by ID. Update it on
 | Network | Account | ID | Metricool |
 |---|---|---|---|
 | YouTube | @SereinoraStudio ("Elements" videos linked from `/elements/`) | `UCa-d2qlwsmcrk-tf4C1ATzg` | Not connected |
-| LinkedIn company page | Sereinora (created by the founder; URL pending from the setup report) | pending | Primary channel, 3 posts/week |
+| LinkedIn company page | https://www.linkedin.com/company/sereinora/ | `139953953` | Primary channel, 3 posts/week (posting via Claude in Chrome) |
 | Facebook Page | Sereinora (created by the founder; URL pending) | pending | 1 post/week, reusing a LinkedIn post |
 | Instagram | @sereinorastudio (founder-confirmed as theirs; may be the art account) | pending | Profile and link only, no posts |
 | TikTok | @sereinorastudio (founder-confirmed as theirs; may be the art account) | pending | Profile and link only, no posts |
