@@ -55,3 +55,10 @@
 .sa-send{font-size:.95rem;border-radius:6px}
 .sa-act{font-size:.85rem;border-radius:6px}
 .sa-kicker{font-size:.82rem;font-weight:600}
+/* v3 house finish: a quieter launcher */
+.sa-launch{min-height:44px;padding:0 16px 0 6px;border-radius:999px;background:var(--ink,#0f2338);color:#eef2f5;border-color:var(--ink,#0f2338);box-shadow:0 10px 30px rgba(10,24,40,.25);font:500 .88rem var(--f-ui,Arial,sans-serif);letter-spacing:0;text-transform:none}
+.sa-launch:hover{background:var(--night,#0a1828);color:#fff}
+.sa-launch-mark{width:30px;height:30px;border-color:rgba(238,242,245,.4)}
+.sa-panel{border-color:var(--rule,#d5dad9);border-radius:4px;box-shadow:0 30px 90px rgba(10,24,40,.28)}
+.sa-kicker{letter-spacing:0;text-transform:none;font-size:.82rem}
+.sa-send{letter-spacing:0;text-transform:none;font-size:.9rem;border-radius:2px}

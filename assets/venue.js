@@ -36,6 +36,59 @@
     segs.forEach(s => s.addEventListener('click', () => show(s)));
     const first = map.querySelector('.seg[data-default]') || segs[0];
     if (first) show(first);
+
+    /* Hover reads a bar without clicking (mouse and pen only; touch keeps tap) */
+    segs.forEach(s => s.addEventListener('pointerenter', e => { if (e.pointerType !== 'touch') show(s); }));
+
+    /* Time scrubber: a hairline that follows the pointer and reads the hour */
+    const grid = map.querySelector('.dm-grid');
+    const tracks = [...map.querySelectorAll('.dm-track')];
+    if (grid && tracks.length && window.matchMedia('(hover:hover)').matches) {
+      const line = doc.createElement('div');
+      line.className = 'dm-scrub';
+      line.setAttribute('aria-hidden', 'true');
+      line.appendChild(doc.createElement('span'));
+      map.appendChild(line);
+      const label = line.firstChild;
+      const fmt = f => {
+        const mins = Math.round((10 * 60 + f * 16 * 60) / 15) * 15;
+        let h = Math.floor(mins / 60) % 24; const m = mins % 60;
+        const ap = h >= 12 ? 'pm' : 'am'; h = h % 12 || 12;
+        return h + ':' + String(m).padStart(2, '0') + ' ' + ap;
+      };
+      map.addEventListener('pointermove', e => {
+        if (e.pointerType === 'touch') return;
+        const mr = map.getBoundingClientRect();
+        const a = tracks[0].getBoundingClientRect();
+        const z = tracks[tracks.length - 1].getBoundingClientRect();
+        const inside = e.clientX >= a.left && e.clientX <= a.right && e.clientY >= a.top - 24 && e.clientY <= z.bottom + 8;
+        line.classList.toggle('on', inside);
+        if (!inside) return;
+        const f = (e.clientX - a.left) / a.width;
+        line.style.left = (e.clientX - mr.left) + 'px';
+        line.style.top = (a.top - mr.top - 22) + 'px';
+        line.style.height = (z.bottom - a.top + 22) + 'px';
+        label.textContent = fmt(f);
+      });
+      map.addEventListener('pointerleave', () => line.classList.remove('on'));
+    }
+  }
+
+  /* Hero light: a soft glow follows the pointer across the night hero */
+  const heroV3 = doc.querySelector('.hero.v3');
+  if (heroV3 && window.matchMedia('(hover:hover) and (prefers-reduced-motion:no-preference)').matches) {
+    let raf = 0;
+    heroV3.addEventListener('pointermove', e => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = 0;
+        const r = heroV3.getBoundingClientRect();
+        heroV3.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100).toFixed(2) + '%');
+        heroV3.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100).toFixed(2) + '%');
+        heroV3.classList.add('lit');
+      });
+    });
+    heroV3.addEventListener('pointerleave', () => heroV3.classList.remove('lit'));
   }
 
   /* Copy buttons (for people without a mail app configured) */
