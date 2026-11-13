@@ -45,7 +45,7 @@
 <section class="page-hero"><div class="wrap">
   <p class="crumbs"><a href="/">Home</a> / Free Music Exposure Check</p>
   <h1>Music Exposure Check</h1>
-  <p class="lede">Ten questions, about two minutes. See which licenses probably apply, where you may be paying twice, and where you may be exposed. The check uses US rules for now.</p>
+  <p class="lede">Ten questions, about two minutes. See which licenses probably apply, where you may be paying twice, and where you may be exposed. The check uses US rules for now: it is for venues in the United States (<a href="/coverage/">where we work</a>).</p>
   <p class="small muted" style="margin-top:14px">Runs entirely in your browser. Nothing is stored or sent. General information only, not legal advice.</p>
 </div></section>
 
@@ -64,6 +64,14 @@
   <h2>Answer for one venue</h2>
   
 <form id="exposure-form" class="check-form" novalidate hidden>
+<fieldset class="q" id="q-country"><legend>First: where is the venue?</legend><p class="hint">The check uses US rules, so it only works for venues in the United States.</p><div class="opts"><label class="opt"><input type="radio" name="country" value="us" checked><span>United States</span></label><label class="opt"><input type="radio" name="country" value="other"><span>Another country</span></label></div>
+<div class="country-other" id="country-other" hidden>
+<div class="req-field"><label for="country-name">Which country?</label><input class="req-input" type="text" id="country-name" name="country-name" maxlength="60" autocomplete="country-name"></div>
+<p class="note">This check, and our audits, use US rules. We will not apply them to a venue in another country, because the answer could be wrong for you. Tell us where you are: we add countries where venues ask for us, and we will write to you when we cover yours. <a href="/coverage/">Where we work</a></p>
+<div class="result-actions"><a class="btn" id="country-mail" href="mailto:contact@sereinora.com?subject=Coverage%20request">Ask for my country</a></div>
+<p class="small muted">This opens your own email app. Nothing is sent until you press send.</p>
+</div></fieldset>
+<div id="us-only">
 <fieldset class="q"><legend>1. What kind of venue is it?</legend><div class="opts"><label class="opt"><input type="radio" name="type" value="food" checked><span>Restaurant, bar, café or lounge</span></label><label class="opt"><input type="radio" name="type" value="hotel"><span>Hotel</span></label><label class="opt"><input type="radio" name="type" value="retail"><span>Store or showroom</span></label><label class="opt"><input type="radio" name="type" value="fitness"><span>Gym or fitness studio</span></label><label class="opt"><input type="radio" name="type" value="other"><span>Other</span></label></div></fieldset>
 <fieldset class="q"><legend>2. How big is it?</legend><p class="hint">Gross square feet, excluding customer parking.</p><div class="opts"><label class="opt"><input type="radio" name="size" value="small"><span>Under 2,000 sq ft</span></label><label class="opt"><input type="radio" name="size" value="mid"><span>2,000 to 3,749 sq ft</span></label><label class="opt"><input type="radio" name="size" value="large" checked><span>3,750 sq ft or more</span></label></div></fieldset>
 <fieldset class="q"><legend>3. Where does the background music come from?</legend><p class="hint">Tick all that apply.</p><div class="opts"><label class="opt"><input type="checkbox" name="src" value="service"><span>A business music service<small>For example Soundtrack, Mood Media, Rockbot or Pandora CloudCover</small></span></label><label class="opt"><input type="checkbox" name="src" value="personal"><span>A personal Spotify, Apple Music, YouTube or Pandora account</span></label><label class="opt"><input type="checkbox" name="src" value="radio"><span>Radio or TV broadcast</span></label><label class="opt"><input type="checkbox" name="src" value="owned"><span>Our own downloads, CDs or vinyl</span></label><label class="opt"><input type="checkbox" name="src" value="none"><span>No background music</span></label></div></fieldset>
@@ -75,6 +83,7 @@
 <fieldset class="q"><legend>9. How many venues do you operate?</legend><div class="opts"><label class="opt"><input type="radio" name="units" value="1" checked><span>One</span></label><label class="opt"><input type="radio" name="units" value="2-3"><span>2 to 3</span></label><label class="opt"><input type="radio" name="units" value="4-10"><span>4 to 10</span></label><label class="opt"><input type="radio" name="units" value="11+"><span>11 or more</span></label></div></fieldset>
 <fieldset class="q"><legend>10. Roughly what do you spend on music per venue per year?</legend><p class="hint">Music service plus licenses.</p><div class="opts"><label class="opt"><input type="radio" name="spend" value="unknown" checked><span>I do not know</span></label><label class="opt"><input type="radio" name="spend" value="lt1k"><span>Under $1,000</span></label><label class="opt"><input type="radio" name="spend" value="1to5k"><span>$1,000 to $5,000</span></label><label class="opt"><input type="radio" name="spend" value="gt5k"><span>Over $5,000</span></label></div></fieldset>
 <button class="btn" id="score" type="submit">See my result</button>
+</div>
 </form>
   <div id="result" class="result" tabindex="-1" hidden></div>
   <noscript><p class="note"><strong>This check needs JavaScript.</strong> Email <a href="mailto:contact@sereinora.com?subject=Music%20Exposure%20Check">contact@sereinora.com</a> with your venue type, size, music sources, live music or DJ use and the licenses you pay, and we will reply in writing.</p></noscript>
@@ -113,6 +122,7 @@
         <ul>
           <li><a href="mailto:contact@sereinora.com">contact@sereinora.com</a></li>
           <li><a href="/about/">About</a></li>
+          <li><a href="/coverage/">Where we work</a></li>
           <li><a href="/answers/">Answers</a></li>
           <li><a href="/checklist/">Licensing checklist</a></li>
           <li><a href="/answers/glossary/">Glossary</a></li>
