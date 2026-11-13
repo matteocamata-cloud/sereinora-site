@@ -4,6 +4,8 @@ Public static site for sereinora.com, served by GitHub Pages from `main` (root).
 
 Internal files stay off the public site through `_config.yml`: Pages runs Jekyll only to drop `CLAUDE.md`, `tools/`, `assistant/` and anything starting with `.` or `_` (such as `.claude/`). Never add front matter (`---`) or `{{ }}`/`{% %}` to a page, because Jekyll would then rewrite it. Add any new internal root file to `exclude:`. The repo itself stays readable on GitHub, so keep secrets and personal details out of it.
 
+Never delete or rename `google9b2b52b82e96b0c8.html` (Google Search Console ownership, verified 13 Nov 2026) or `95cfccb5e7fc64375bd765d8f7fb179c.txt` (IndexNow key): removing either breaks search-engine access. Run `node tools/indexnow.mjs` after each publish.
+
 ## Market and offer (since 11 Nov 2026)
 US only: restaurants, bars and hotels. Funnel: `/check/` (free Music Exposure Check, runs in the browser) → `/audit/` → `/request/` (request form that composes an email; nothing is sent by the site) (Venue Music Audit $495, Group Audit $1,950 for up to 10 venues, PRO Letter Pack $295) → email to contact@sereinora.com. Answer pages under `/answers/` bring search traffic.
 
