@@ -9,7 +9,7 @@ const root = new URL('..', import.meta.url).pathname;
 // Public pages the assistant may draw on (the art page /elements/ is excluded: it is not about the service).
 const PAGES = ['/', '/check/', '/audit/', '/sample/', '/about/', '/answers/', '/answers/pro-letter/',
   '/answers/spotify-for-business/', '/answers/small-business-exemption/', '/answers/live-music-dj-karaoke/',
-  '/answers/ascap-bmi-sesac-gmr/', '/answers/music-license-cost/', '/answers/glossary/', '/answers/hotel-music-licensing/', '/answers/social-video-music/', '/checklist/', '/request/', '/terms/', '/privacy/'];
+  '/answers/ascap-bmi-sesac-gmr/', '/answers/music-license-cost/', '/answers/glossary/', '/answers/hotel-music-licensing/', '/answers/social-video-music/', '/answers/unlicensed-music/', '/answers/holiday-music/', '/checklist/', '/request/', '/terms/', '/privacy/'];
 
 const ENT = { amp: '&', lt: '<', gt: '>', quot: '"', '#39': "'", nbsp: ' ', rsquo: '’', lsquo: '‘', ldquo: '“', rdquo: '”', mdash: '—', ndash: '–', sect: '§', hellip: '…' };
 const decode = (s) => s.replace(/&(#\d+|#x[0-9a-f]+|\w+);/gi, (m, e) =>
