@@ -13,7 +13,7 @@ const server = createServer((req, res) => {
   let p = join(root, decodeURIComponent(req.url.split('?')[0]));
   if (existsSync(p) && statSync(p).isDirectory()) p = join(p, 'index.html');
   if (!existsSync(p)) { res.writeHead(404); res.end(); return; }
-  res.writeHead(200, { 'content-type': TYPES[extname(p)] || 'application/octet-stream' });
+  res.writeHead(200, { 'content-type': TYPES[extname(p)] || 'application/octet-stream', 'access-control-allow-origin': '*' });
   res.end(readFileSync(p));
 }).listen(0);
 const base = `http://127.0.0.1:${server.address().port}`;
