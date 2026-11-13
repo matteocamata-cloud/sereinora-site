@@ -60,7 +60,7 @@
       add('You may be paying twice for background music.', 'Some music services state that their license covers the recorded music they supply for public areas. If that is all you play, a direct PRO license may overlap. Ask each provider in writing before you cancel anything.', ['ccfaq']);
     }
     if (a.src.includes('radio') && (foodSmall || otherSmall) && !live && !a.src.includes('personal') && !a.src.includes('owned')) {
-      add('You may qualify for the small-business exemption.', '17 U.S.C. §110(5)(B) can exempt certain licensed radio and TV broadcasts in food and drink venues under 3,750 sq ft and other businesses under 2,000 sq ft, with no direct charge to hear them. It does not cover streaming, recordings or live music.', ['s110']);
+      add('Your size is under the numbers in the broadcast exemption.', '17 U.S.C. §110(5)(B) sets an exemption for certain licensed radio and TV broadcasts in food and drink venues under 3,750 sq ft and other businesses under 2,000 sq ft, with no direct charge to hear them. It does not cover streaming, recordings or live music. Whether it applies to you depends on all its conditions.', ['s110']);
     } else if (a.src.includes('radio') && a.size === 'large') {
       points += 1;
       add('Broadcasts in a larger venue depend on your equipment.', 'At or above the size limits, the exemption applies only with no more than 6 speakers in total (4 per room) and, for video, no more than 4 screens (1 per room, none over 55 inches).', ['s110']);
@@ -77,7 +77,7 @@
       add('Fitness classes have their own licensing questions.', 'Fitness classes are a separate music use. This check does not cover them. Ask your music provider and each PRO what their license covers for classes.');
     }
     if (a.spend === 'gt5k' || a.units !== '1') points += 1;
-    if (!f.length) add('No obvious gap from these answers.', 'Keep your license and service contracts together and re-check when you add live music, DJs or new rooms.');
+    if (!f.length) add('No open question from these answers.', 'Keep your license and service contracts together and re-check when you add live music, DJs or new rooms.');
 
     const level = points >= 5 ? 'high' : points >= 2 ? 'medium' : 'low';
     return { level, findings: f };
