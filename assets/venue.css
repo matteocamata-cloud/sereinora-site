@@ -945,3 +945,65 @@ h3{font-size:1.15rem;line-height:1.3}
 .hero.v3{--mx:70%;--my:20%}
 .hero.v3.lit::before{background:radial-gradient(520px 420px at var(--mx) var(--my),rgba(120,160,205,.16),transparent 65%),radial-gradient(1100px 520px at 78% 8%,rgba(64,104,148,.18),transparent 62%),radial-gradient(800px 600px at 0% 100%,rgba(176,148,97,.06),transparent 60%)}
 .btn,.btn.ghost,.hero.v3 .btn,.cta-band .btn{font-weight:500}
+
+/* =====================================================================
+   v3 inner pages: one house. Night header on every page, night page heads,
+   white reading surface below. Fixes found in the inner-page review.
+   ===================================================================== */
+.site-header{background:rgba(10,24,40,.97);border-bottom-color:var(--night-line);backdrop-filter:none;-webkit-backdrop-filter:none}
+.brand,.brand:hover,.lang-btn,.menu-btn{color:var(--on-night)}
+.nav a{color:var(--on-night-2)}
+.nav a:hover{color:#fff;box-shadow:inset 0 -1px 0 var(--brass)}
+.nav a[aria-current="page"]{color:#fff;box-shadow:inset 0 -1px 0 var(--brass)}
+.nav .btn{background:var(--on-night);border-color:var(--on-night);color:var(--night)}
+.nav .btn:hover{background:#fff;border-color:#fff;color:var(--night)}
+.menu-btn{border-color:rgba(233,237,241,.3)}
+.lang-btn:hover,.lang-btn[aria-expanded="true"]{border-color:rgba(233,237,241,.3);color:#fff}
+@media(max-width:1100px){.js .nav{background:var(--night);border-bottom-color:var(--night-line)}.js .nav a{border-bottom-color:var(--night-line)}}
+
+.page-hero{position:relative;isolation:isolate;overflow:hidden;background:var(--night);color:var(--on-night);border-bottom:0;padding:clamp(56px,6.5vw,104px) 0 clamp(48px,5.5vw,88px)}
+.page-hero::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(900px 420px at 85% 0%,rgba(64,104,148,.20),transparent 62%)}
+.page-hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(176,148,97,.55) 30%,rgba(176,148,97,.55) 70%,transparent)}
+.page-hero h1{color:#f6f8fa}
+.page-hero .lede{color:var(--on-night-2)}
+.page-hero .crumbs,.page-hero .crumbs a{color:var(--on-night-2)}
+.page-hero .crumbs a{text-decoration-color:rgba(233,237,241,.3)}
+.page-hero .crumbs a:hover{color:#fff}
+.page-hero .small,.page-hero .muted{color:var(--on-night-2)}
+.page-hero a:not(.btn){color:var(--on-night);text-decoration-color:var(--brass)}
+.page-hero .btn{background:var(--on-night);border-color:var(--on-night);color:var(--night)}
+.page-hero .btn:hover{background:#fff;border-color:#fff;color:var(--night)}
+.page-hero .btn.ghost{background:transparent;color:var(--on-night);border-color:rgba(233,237,241,.34)}
+.page-hero .btn.ghost:hover{border-color:var(--on-night);color:#fff}
+.page-hero .scope{color:var(--on-night-2)}
+.page-hero .scope b{background:transparent;border-color:rgba(233,237,241,.28);color:var(--on-night)}
+.page-hero .scope a{color:var(--on-night)}
+.scope b{text-transform:none;letter-spacing:0;font-size:.78rem;font-weight:500}
+
+/* Buttons inside reading text keep button colours (link colour was bleeding in) */
+.prose a.btn,.article-body a.btn,.next-step a.btn,.contact-block a.btn{color:var(--paper);text-decoration:none}
+.prose a.btn.ghost,.article-body a.btn.ghost,.next-step a.btn.ghost,.contact-block a.btn.ghost{color:var(--ink)}
+.prose a.btn:hover,.article-body a.btn:hover,.next-step a.btn:hover{color:#fff}
+
+/* Old tracked capitals still left in a few components */
+.sources h2,.sources h3{font:500 .86rem var(--f-ui);letter-spacing:0;text-transform:none;color:var(--ink)}
+.copy-btn,.sheet-flag,.signal,.sa-act{letter-spacing:0;text-transform:none;font-weight:500;font-size:.85rem}
+.copy-btn{border-radius:2px;border-color:var(--rule-strong)}
+.sheet-flag{border-radius:2px}
+.signal{border-radius:2px}
+
+/* Check and form options: calm selection */
+.opt{background:#fff;border-color:var(--rule);min-height:48px;padding:12px 16px;transition:border-color .15s}
+.opt:hover{border-color:var(--rule-strong)}
+.opt:has(input:checked){border-color:var(--ink);box-shadow:none;background:#fff}
+.opt input{accent-color:var(--ink)}
+.q legend{font-weight:400}
+
+/* Reading pages: a clean white sheet for the article body */
+.toc p{font:500 .86rem var(--f-ui);color:var(--ink)}
+.toc a{border-left-color:var(--rule)}
+.toc a:hover{border-left-color:var(--brass)}
+.next-step{background:#fff;border-color:var(--rule);padding:clamp(22px,3vw,34px)}
+.reviewed{color:var(--ink-3)}
+
+@media print{.site-header,.page-hero::before,.page-hero::after{display:none}.page-hero{background:#fff;color:#000;padding:10px 0}.page-hero h1,.page-hero .lede,.page-hero .crumbs{color:#000}}

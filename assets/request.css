@@ -93,3 +93,7 @@ textarea.req-input{max-width:none;resize:vertical;min-height:132px}
 #next .email-line{margin-bottom:8px}
 
 @media print{.req-estimate{position:static}.req-submit,.req-preview .small{display:none}}
+/* v3 house finish */
+.req-estimate{background:#fff;border:1px solid var(--rule);outline:0;border-radius:2px;box-shadow:0 1px 2px rgba(15,35,56,.05),0 24px 60px -28px rgba(15,35,56,.25)}
+.req-estimate h2{font:500 .86rem var(--f-ui);letter-spacing:0;text-transform:none;color:var(--ink-2)}
+.est-tag{letter-spacing:0;text-transform:none;font-weight:500;font-size:.72rem;border-radius:2px}
