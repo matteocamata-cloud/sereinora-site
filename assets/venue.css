@@ -614,3 +614,18 @@ h1,h2,h3{font-variation-settings:"opsz" 60}
 .cta-band.v2::before{display:none}
 .cta-band .eyebrow{color:#f2d58a}
 .cta-band .btn{border-radius:var(--r)}
+
+/* Client guide tables */
+.guide-table{overflow-x:auto;margin:0 0 1em;border:1px solid var(--rule);border-radius:var(--r);background:var(--paper-2)}
+.guide-table table{width:100%;border-collapse:collapse;font:.98rem/1.45 var(--f-ui)}
+.guide-table th,.guide-table td{text-align:left;vertical-align:top;padding:12px 14px;border-bottom:1px solid var(--rule)}
+.guide-table tr:last-child td{border-bottom:0}
+.guide-table th{font-weight:600;background:var(--ivory)}
+.guide-table td:first-child{width:52%}
+.article-body h3{font-size:1.2rem;margin-top:1.2em}
+.guide-table table{min-width:0}
+.guide-table thead th{font:600 .9rem var(--f-ui);letter-spacing:0;text-transform:none;border-bottom:1px solid var(--rule)}
+thead th{text-transform:none;letter-spacing:0;font-size:.85rem}
+.toc p{font:600 .9rem var(--f-ui);letter-spacing:0;text-transform:none}
+.toc{font-size:.92rem}
+.reviewed{letter-spacing:0}

@@ -39,6 +39,8 @@
       ['What does my result mean?', 'Which audit fits my answers?', 'Is this check legal advice?']],
     [/^\/sample/, 'Questions about the sample report? Ask here.',
       ['Is this a real client?', 'What will my report contain?', 'How long does an audit take?']],
+    [/^\/help/, 'Can’t find something in the guide? Ask here.',
+      ['How do I pay?', 'When does the delivery clock start?', 'What if the report is late?']],
     [/^\/coverage/, 'Is your venue outside the US? Ask here.',
       ['Do you cover my country?', 'Can I use the check outside the US?', 'Which country comes next?']],
     [/^\/about/, 'Questions about Sereinora? Ask here.',
