@@ -62,10 +62,11 @@
   .cl-page .fields i{flex:1;border-bottom:.6pt solid #000;height:3.6mm}
   .cl-page .article{display:block;padding-top:3mm}
   .cl-page .article-body{max-width:none}
-  .cl-page .cl-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:7mm;align-items:start}
+  .cl-page .cl-grid{columns:2;column-gap:7mm;column-rule:.4pt solid #ddd}
   .cl-page .cl-col>section{margin:0 0 3.2mm;break-inside:auto}
-  .cl-page h2{font-size:10.5pt;line-height:1.2;margin:0 0 1.4mm;color:#000}
-  .cl-page section h3{font-size:8.6pt;margin:2mm 0 1mm}
+  .cl-page h2{font-size:10.5pt;line-height:1.2;margin:0 0 1.4mm;color:#000;break-after:avoid}
+  .cl-page section h3{font-size:8.6pt;margin:2mm 0 1mm;break-after:avoid}
+  .cl-page .cl-intro{break-after:avoid}
   .cl-page .cl-intro{font-size:7.6pt;line-height:1.3;margin:0 0 1.2mm;color:#222}
   .cl-page .checks{border-top:.8pt solid #000;margin:0 0 1.2mm}
   .cl-page .checks li{grid-template-columns:3.4mm minmax(0,1fr);gap:2mm;padding:1.3mm 0;border-bottom:.4pt solid #bbb;break-inside:avoid}
@@ -75,5 +76,6 @@
   .cl-page .checks .why{font-size:7.2pt;line-height:1.28;margin:.5mm 0 0;color:#333}
   .cl-page .opts-inline{gap:1mm 3.5mm}
   .cl-page .opts-inline label{min-height:0;padding:0;border:0;background:none;gap:1.2mm;font-size:8.4pt}
-  .cl-page .reviewed{font-size:7pt;margin:2.4mm 0 0;padding-top:1.6mm;border-top:.4pt solid #bbb;color:#333}
+  .cl-page .checks input:checked+div label,.cl-page .opts-inline label{color:#000}
+  .cl-page .reviewed{max-width:none;font-size:7pt;margin:2.4mm 0 0;padding-top:1.6mm;border-top:.4pt solid #bbb;color:#333}
 }

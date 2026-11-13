@@ -87,7 +87,7 @@ textarea.req-input{max-width:none;resize:vertical;min-height:132px}
 /* Composed email, shown after the first attempt */
 .req-preview{margin-top:28px}
 .req-preview>label{display:block;font:600 1.12rem/1.3 var(--f-disp);margin:0 0 6px}
-.req-preview textarea{font:400 .9rem/1.55 var(--f-ui);background:var(--paper-2);min-height:320px}
+.req-preview textarea{font:400 .9rem/1.55 var(--f-ui);background:var(--paper-2);min-height:200px;overflow:auto}
 .req-preview .small{margin:10px 0 0}
 
 /* What happens next: three steps */

@@ -17,10 +17,10 @@
   const PRICE = { venue: 495, group: 1950, letter: 295 };
 
   const SERVICES = {
-    venue: { name: 'Venue Music Audit', terms: '$495 per venue, delivered in 5 business days' },
-    group: { name: 'Group Audit', terms: '$1,950 for up to 10 venues, delivered in 10 business days' },
-    letter: { name: 'PRO Letter Pack', terms: '$295 for one PRO letter, delivered in 48 hours' },
-    unsure: { name: 'Not sure yet', terms: '' },
+    venue: { name: 'Venue Music Audit' },
+    group: { name: 'Group Audit' },
+    letter: { name: 'PRO Letter Pack' },
+    unsure: { name: 'Not sure yet' },
   };
   const TYPES = { restaurant: 'Restaurant', bar: 'Bar', hotel: 'Hotel', other: 'Other' };
   const USES = {
@@ -28,7 +28,7 @@
     dj: 'DJ or karaoke', tv: 'TVs or radio', social: 'Videos with music on social media', unsure: 'Not sure',
   };
   const LETTERS = { no: 'No', yes: 'Yes', legal: 'Yes, and it mentions a lawsuit, a lawyer or a deadline' };
-  const TERMS = 'Prices are in US dollars and exclude any license fees you decide to pay. Scope and price are confirmed in writing before any work starts.';
+  const TERMS_EMAIL = 'Prices are in US dollars and exclude any license fees. Scope and price are confirmed in writing before any work starts.';
   const SHORTENED = '[Shortened to fit an email link.]';
 
   const $ = (id) => doc.getElementById(id);
@@ -79,19 +79,23 @@
     return parseInt(raw, 10);
   }
 
-  // Returns { rows: [{ name, detail, price, lower }], says: [sentences], plain: text for the email }
+  // Returns { rows: [{ name, detail, price, lower }], says: [sentences], brief: one line for the email }
   function estimate(service, n) {
     const rows = [];
     const says = [];
-    const plural = (k, one, many) => (k === 1 ? one : many);
+    let brief = '';
     if (service === 'letter') {
       rows.push({ name: 'PRO Letter Pack', detail: 'per letter, delivered in 48 hours', price: usd(PRICE.letter) });
+      brief = `PRO Letter Pack, ${usd(PRICE.letter)} per letter.`;
     } else if (!Number.isInteger(n) || n < 1) {
       says.push('Enter the number of venues to see the estimate.');
+      brief = 'None (number of venues not given).';
     } else if (n > GROUP_MAX) {
       says.push('The Group Audit covers up to 10 venues. Write to us and we will confirm scope and price in writing.');
+      brief = 'More than 10 venues: the Group Audit covers up to 10 venues, so scope and price are to be confirmed in writing.';
     } else if (n === 1 && service !== 'group') {
       rows.push({ name: 'Venue Music Audit', detail: '1 venue, delivered in 5 business days', price: usd(PRICE.venue) });
+      brief = `Venue Music Audit, ${usd(PRICE.venue)} for 1 venue.`;
     } else {
       const separate = n * PRICE.venue;
       const sepRow = n === 1
@@ -99,23 +103,27 @@
         : { name: 'Separate Venue Music Audits', detail: `${n} × ${usd(PRICE.venue)}`, price: usd(separate) };
       const groupRow = { name: 'Group Audit', detail: 'up to 10 venues, delivered in 10 business days', price: usd(PRICE.group) };
       const sepName = n === 1 ? 'the Venue Music Audit' : 'separate Venue Music Audits';
-      const verb = n === 1 ? 'is' : 'are';
+      const sepBrief = n === 1 ? `Venue Music Audit ${usd(separate)}` : `Separate Venue Music Audits ${n} × ${usd(PRICE.venue)} = ${usd(separate)}`;
+      const groupBrief = `Group Audit ${usd(PRICE.group)} (up to 10 venues)`;
       if (separate < PRICE.group) {
         sepRow.lower = true;
         rows.push(sepRow, groupRow);
-        says.push(`For ${n} ${plural(n, 'venue', 'venues')}, ${sepName} (${usd(separate)}) ${verb} lower than the Group Audit (${usd(PRICE.group)}).`);
+        says.push(`For ${n} ${n === 1 ? 'venue' : 'venues'}, ${sepName} (${usd(separate)}) ${n === 1 ? 'is' : 'are'} lower than the Group Audit (${usd(PRICE.group)}).`);
         if (n > 1) says.push('The Group Audit adds one spend table across the group and a single music-licensing standard for every venue.');
+        brief = `${sepBrief}, lower than the ${groupBrief}.`;
       } else if (separate > PRICE.group) {
         groupRow.lower = true;
         rows.push(groupRow, sepRow);
         says.push(`Separate Venue Music Audits for ${n} venues would be ${n} × ${usd(PRICE.venue)} = ${usd(separate)}, which is higher.`);
+        brief = `${groupBrief}. ${sepBrief} would be higher.`;
       } else {
         rows.push(groupRow, sepRow);
         says.push(`For ${n} venues, both come to ${usd(PRICE.group)}.`);
+        brief = `${groupBrief} or ${sepBrief}: the same.`;
       }
     }
     const plain = rows.map((r) => `${r.name}: ${r.price} (${r.detail})`).concat(says).join('\n');
-    return { rows, says, plain };
+    return { rows, says, plain, brief };
   }
 
   let lastEstimate = '';
@@ -197,28 +205,28 @@
     const svc = SERVICES[a.service] || SERVICES.unsure;
     const subject = `Audit request: ${svc.name}, ${a.business || 'business name not given'}`;
     const e = estimate(a.service, venueCount());
+    // Kept compact on purpose: every character counts towards the mailto length limit.
     const L = [
-      'Hello Sereinora,',
+      'Audit request from sereinora.com/request/',
       '',
-      'I would like to request an audit. My answers:',
-      '',
-      `Service: ${svc.name}${svc.terms ? ` (${svc.terms})` : ''}`,
+      `Service: ${svc.name}`,
       `Number of venues: ${a.venues || 'not given'}`,
       `Business name: ${a.business || 'not given'}`,
       `Venue city and state: ${a.city || 'not given'}`,
       `Venue type: ${TYPES[a.type] || 'not given'}`,
-      `My name and role: ${a.who || 'not given'}`,
+      `Name and role: ${a.who || 'not given'}`,
       `Music uses: ${a.uses.length ? a.uses.map((u) => USES[u]).join('; ') : 'not given'}`,
-      `Letter from ASCAP, BMI, SESAC or GMR: ${LETTERS[a.letter] || 'not answered'}`,
+      `Letter from a PRO: ${LETTERS[a.letter] || 'not answered'}`,
     ];
-    if (a.deadline) L.push(`Deadline date in the letter: ${longDate(a.deadline)}`);
+    if (a.deadline) L.push(`Deadline in the letter: ${longDate(a.deadline)}`);
     L.push('', 'Anything else:', noteText || 'Nothing to add.');
-    L.push('', 'Estimate shown on sereinora.com/request/:', e.plain, TERMS);
-    L.push('', 'Please reply with a written confirmation of scope and price, and instructions for paying.');
+    L.push('', `Estimate shown: ${e.brief}`, TERMS_EMAIL);
     return { subject, body: L.join('\n') };
   }
 
-  const mailto = (m) => `mailto:${TO}?subject=${encodeURIComponent(m.subject)}&body=${encodeURIComponent(m.body.replace(/\n/g, '\r\n'))}`;
+  // RFC 6068: , : ; $ / @ may stay unencoded in a mailto query, which leaves more room for the note.
+  const enc = (s) => encodeURIComponent(s).replace(/%(2C|3A|3B|24|2F|40)/g, (m) => decodeURIComponent(m));
+  const mailto = (m) => `mailto:${TO}?subject=${enc(m.subject)}&body=${enc(m.body.replace(/\n/g, '\r\n'))}`;
 
   // The full text goes to the preview and the clipboard. The mailto link stays under MAX_URL:
   // if needed, "Anything else" is shortened (and the email says so).
@@ -289,6 +297,10 @@
     const r = build();
     previewText.value = r.text;
     mailLink.href = r.url;
+    if (!preview.hidden) {   // show the whole email without an inner scrollbar
+      previewText.style.height = 'auto';
+      previewText.style.height = (previewText.scrollHeight + 2) + 'px';
+    }
     return r;
   }
 
@@ -306,9 +318,9 @@
   form.addEventListener('submit', (ev) => {
     ev.preventDefault();
     if (!validate()) return;
-    const r = renderOutput();
     preview.hidden = false;
     shown = true;
+    const r = renderOutput();
     say(['Your email app should open with the request. Check it, then send it to ' + TO + '.',
       'If nothing opens, use Copy request and paste it into any email, or copy the text below.'].concat(lengthNotes(r)));
     window.location.href = r.url;
@@ -337,9 +349,9 @@
   let copyTimer = 0;
   copyBtn.addEventListener('click', async () => {
     if (!validate()) return;
-    const r = renderOutput();
     preview.hidden = false;
     shown = true;
+    const r = renderOutput();
     const ok = await copyText(r.text);
     if (ok) {
       copyBtn.textContent = 'Copied';
