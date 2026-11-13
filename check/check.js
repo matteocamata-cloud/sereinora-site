@@ -8,6 +8,29 @@
   const TO = 'contact@sereinora.com';
   form.hidden = false;
 
+  /* Country gate: the check uses US rules, so it stops for venues elsewhere (no US rules applied). */
+  const usOnly = document.getElementById('us-only');
+  const otherBox = document.getElementById('country-other');
+  const countryName = document.getElementById('country-name');
+  const countryMail = document.getElementById('country-mail');
+  const setCountryMail = () => {
+    const c = countryName.value.replace(/\s+/g, ' ').trim();
+    const body = ['Hello Sereinora,', '', 'My venue is outside the United States. Please tell me when you cover my country.', '',
+      `Country: ${c}`, 'City:', 'Type of venue (restaurant, bar, hotel):', 'Number of venues:'].join('\n');
+    countryMail.href = `mailto:${TO}?subject=${encodeURIComponent('Coverage request' + (c ? ': ' + c : ''))}&body=${encodeURIComponent(body)}`;
+  };
+  const gate = () => {
+    const away = (form.querySelector('input[name="country"]:checked') || {}).value === 'other';
+    otherBox.hidden = !away;
+    usOnly.hidden = away;
+    if (away) out.hidden = true;
+    setCountryMail();
+  };
+  form.querySelectorAll('input[name="country"]').forEach(i => i.addEventListener('change', gate));
+  countryName.addEventListener('input', setCountryMail);
+  window.addEventListener('pageshow', gate);
+  gate();
+
   const SRC = {
     s110: ['17 U.S.C. §110(5)', 'https://www.law.cornell.edu/uscode/text/17/110'],
     s504: ['17 U.S.C. §504(c)', 'https://www.law.cornell.edu/uscode/text/17/504'],
@@ -108,6 +131,7 @@
     return [
       'Hello Sereinora,', '', a.letter === 'no' ? 'Here is my Music Exposure Check. Please tell me which audit fits and when you could deliver it.' : 'Here is my Music Exposure Check. I received a letter from a performing rights organization and would like the PRO Letter Pack. Please tell me when you could deliver it.', '',
       `Result: ${LABEL.level[r.level]}`,
+      'Venue country: United States',
       `Venue type: ${said('type')}`, `Size: ${said('size')}`,
       `Background music: ${said('src')}`, `Live music: ${said('live')}`, `DJs or karaoke: ${said('dj')}`,
       `Licenses paid directly: ${a.pro.length ? said('pro') : 'none'}`, `PRO contact in last 12 months: ${said('letter')}`,
@@ -132,6 +156,7 @@
 
   form.addEventListener('submit', e => {
     e.preventDefault();
+    if (usOnly.hidden) return; // venue outside the US: no result from US rules
     const a = answers();
     const r = assess(a);
     const group = a.units !== '1';

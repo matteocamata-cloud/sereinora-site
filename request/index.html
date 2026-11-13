@@ -55,7 +55,21 @@
       <p class="muted">Business name and city are required. Everything else is optional and helps us confirm the right scope.</p>
     </div>
 
-    <fieldset class="q" aria-describedby="service-hint">
+    <fieldset class="q" aria-describedby="country-hint">
+      <legend>First: where is the venue?</legend>
+      <p class="hint" id="country-hint">Audits currently cover venues in the United States; more countries are coming.</p>
+      <div class="opts">
+        <label class="opt"><input type="radio" name="country" value="us" checked><span>United States</span></label>
+        <label class="opt"><input type="radio" name="country" value="other"><span>Another country<small>We add countries where venues ask for us</small></span></label>
+      </div>
+      <div class="req-field country-other" id="country-field" hidden>
+        <label for="country-name">Which country?</label>
+        <input class="req-input" type="text" id="country-name" name="country-name" maxlength="60" autocomplete="country-name" aria-describedby="country-err">
+        <p class="req-error" id="country-err"></p>
+      </div>
+    </fieldset>
+
+    <fieldset class="q" id="service-set" aria-describedby="service-hint">
       <legend>1. Which service?</legend>
       <p class="hint" id="service-hint">Prices are the published ones on the <a href="/audit/#prices">audit page</a>.</p>
       <div class="opts">
@@ -76,7 +90,7 @@
     <aside class="req-estimate" aria-labelledby="est-title">
       <h2 id="est-title">Estimate</h2>
       <div class="est-body" id="estimate" aria-live="polite" aria-atomic="true"></div>
-      <p class="est-terms">Audits currently cover venues in the United States. If your venue is elsewhere, write to contact@sereinora.com and we will tell you when your country is covered. Prices are in US dollars and exclude any license fees you decide to pay. Scope and price are confirmed in writing before any work starts.</p>
+      <p class="est-terms">Audits currently cover venues in the United States (<a href="/coverage/">where we work</a>). Prices are in US dollars and exclude any license fees you decide to pay. Scope and price are confirmed in writing before any work starts.</p>
     </aside>
 
     <fieldset class="q">
@@ -87,7 +101,7 @@
         <p class="req-error" id="business-err"></p>
       </div>
       <div class="req-field">
-        <label for="city">Venue city and state</label>
+        <label for="city" id="city-label">Venue city and state</label>
         <p class="req-hint" id="city-hint">For example: Austin, TX. For a group, the main city.</p>
         <input class="req-input" type="text" id="city" name="city" maxlength="100" required aria-describedby="city-hint city-err">
         <p class="req-error" id="city-err"></p>
@@ -203,6 +217,7 @@
         <ul>
           <li><a href="mailto:contact@sereinora.com">contact@sereinora.com</a></li>
           <li><a href="/about/">About</a></li>
+          <li><a href="/coverage/">Where we work</a></li>
           <li><a href="/answers/">Answers</a></li>
           <li><a href="/checklist/">Licensing checklist</a></li>
           <li><a href="/answers/glossary/">Glossary</a></li>

@@ -39,6 +39,8 @@
       ['What does my result mean?', 'Which audit fits my answers?', 'Is this check legal advice?']],
     [/^\/sample/, 'Questions about the sample report? Ask here.',
       ['Is this a real client?', 'What will my report contain?', 'How long does an audit take?']],
+    [/^\/coverage/, 'Is your venue outside the US? Ask here.',
+      ['Do you cover my country?', 'Can I use the check outside the US?', 'Which country comes next?']],
     [/^\/about/, 'Questions about Sereinora? Ask here.',
       ['Are you a law firm?', 'Who prepares the audit?', 'Are you connected to ASCAP or BMI?']],
     [/./, 'Questions about music licensing for your venue? Ask anytime.',
@@ -50,6 +52,7 @@
   // 1) Curated answers for the most important intents (exact site wording, checked first).
   const CURATED = [
     [/lawsuit|sued|summons|court|attorney|lawyer|deadline|settle|demanda|abogad|tribunal|plazo|avocat|procès/i, 'If a letter or message mentions a lawsuit, a lawyer, a court or a deadline, please speak to a licensed attorney first, without waiting. If useful, the PRO Letter Pack ($295, delivered in 48 hours) gives your attorney a factual inventory: https://sereinora.com/audit/'],
+    [/\b(countr(y|ies)|international|abroad|outside the (us|u\.s\.|united states)|canada|uk|united kingdom|england|ireland|australia|new zealand|europe|france|germany|spain|italy|mexico|where do you work)\b/i, 'Audits currently cover venues in the United States; more countries are coming. We do not apply US rules to a venue in another country. Tell us where your venue is at ' + MAIL + ': we add countries where venues ask for us, and we will write to you when we cover yours. See https://sereinora.com/coverage/.'],
     [/\b(refund|late)\b/i, 'If we miss the delivery date we confirmed in writing, you get a full refund. The delivery clock starts when we have your payment and the documents we asked for.'],
     [/\b(pay|payment|card|order|buy|book)\b/i, 'Use the short request form at https://sereinora.com/request/ or email ' + MAIL + '. We reply with a written confirmation of scope and price, and instructions for paying. Work starts once payment is confirmed.'],
     [/\b(group|chain|several|multiple)\b|\b([2-9]|10|two|three|four|five|six|seven|eight|nine|ten)\s+(bars|restaurants|venues|locations|hotels|sites|places)\b/i, 'For 2 to 10 venues, the Group Audit costs $1,950 and is delivered in 10 business days: everything in the Venue Audit for each venue, one spend table across the group, a single music-licensing standard for every venue, and where to consolidate services and licenses. https://sereinora.com/audit/'],
