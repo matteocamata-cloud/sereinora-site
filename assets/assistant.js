@@ -49,7 +49,7 @@
   // ---------- Built-in answers
   // 1) Curated answers for the most important intents (exact site wording, checked first).
   const CURATED = [
-    [/lawsuit|sued|summons|court|attorney|lawyer|deadline|settle|demanda|abogad|tribunal|plazo|avocat|procès/i, 'If a letter or message mentions a lawsuit, a lawyer, a court or a deadline, please speak to a US attorney first, without waiting. If useful, the PRO Letter Pack ($295, delivered in 48 hours) gives your attorney a factual inventory: https://sereinora.com/audit/'],
+    [/lawsuit|sued|summons|court|attorney|lawyer|deadline|settle|demanda|abogad|tribunal|plazo|avocat|procès/i, 'If a letter or message mentions a lawsuit, a lawyer, a court or a deadline, please speak to a licensed attorney first, without waiting. If useful, the PRO Letter Pack ($295, delivered in 48 hours) gives your attorney a factual inventory: https://sereinora.com/audit/'],
     [/\b(refund|late)\b/i, 'If we miss the delivery date we confirmed in writing, you get a full refund. The delivery clock starts when we have your payment and the documents we asked for.'],
     [/\b(pay|payment|card|order|buy|book)\b/i, 'Use the short request form at https://sereinora.com/request/ or email ' + MAIL + '. We reply with a written confirmation of scope and price, and instructions for paying. Work starts once payment is confirmed.'],
     [/\b(group|chain|several|multiple)\b|\b([2-9]|10|two|three|four|five|six|seven|eight|nine|ten)\s+(bars|restaurants|venues|locations|hotels|sites|places)\b/i, 'For 2 to 10 venues, the Group Audit costs $1,950 and is delivered in 10 business days: everything in the Venue Audit for each venue, one spend table across the group, a single music-licensing standard for every venue, and where to consolidate services and licenses. https://sereinora.com/audit/'],
@@ -115,7 +115,7 @@
     }
     const foreign = /[^\u0000-\u024f\s\d.,;:!?¿¡'"()$%-]/.test(q) || /\b(el|la|los|las|que|qué|cómo|como|para|una|est|les|des|pour|của|là|ang|mga|ist|und|não|uma)\b/i.test(q);
     if (!parts.length && foreign) parts.push('Quick answers work best in English. To read this site in your language, use the language button at the top of the page. You can also write to contact@sereinora.com.');
-    if (!parts.length) parts.push('Good question. Sereinora’s pages don’t cover that, so I can’t give you a reliable answer here. Sereinora helps US restaurants, bars and hotels understand their music licenses: the free two-minute check is at https://sereinora.com/check/ and cited answers are at https://sereinora.com/answers/.');
+    if (!parts.length) parts.push('Good question. Sereinora’s pages don’t cover that, so I can’t give you a reliable answer here. Sereinora helps restaurants, bars and hotels understand their music licenses: the free two-minute check is at https://sereinora.com/check/ and cited answers are at https://sereinora.com/answers/.');
     parts.push(`For anything specific to your venue, email ${MAIL} and we will reply in writing. General information, not legal advice.`);
     return parts.join('\n\n');
   }

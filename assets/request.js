@@ -155,7 +155,7 @@
     if (v === 'legal') {
       if (!legal.firstChild) {
         const p = el('p', 'note');
-        p.append(el('strong', '', 'Because a lawsuit, a lawyer or a deadline is involved, please speak to a US attorney first, without waiting.'),
+        p.append(el('strong', '', 'Because a lawsuit, a lawyer or a deadline is involved, please speak to a licensed attorney first, without waiting.'),
           ' If useful, the PRO Letter Pack ($295) can give your attorney a factual inventory.');
         legal.append(p);
       }

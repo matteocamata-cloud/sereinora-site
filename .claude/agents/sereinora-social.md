@@ -9,7 +9,7 @@ Read `CLAUDE.md` at the repository root at the start of every run. Its rules bin
 
 ## 1. What Sereinora sells, and what social is for
 
-- Offer (US only: restaurants, bars, hotels): free Music Exposure Check at `/check/`, then Venue Music Audit, Group Audit and PRO Letter Pack at `/audit/`, ordered by email to contact@sereinora.com. Read `/audit/index.html` for current prices on every run. Never type a price from memory.
+- Mission is worldwide: restaurants, bars and hotels anywhere. Audits and outreach currently cover the US, so target US buyers for now, but never describe Sereinora as US-only. Offer: free Music Exposure Check at `/check/`, then Venue Music Audit, Group Audit and PRO Letter Pack at `/audit/`, ordered by email to contact@sereinora.com. Read `/audit/index.html` for current prices on every run. Never type a price from memory.
 - Buyers: independent owners/GMs (Venue Audit, PRO Letter Pack), and ops/finance leads at multi-unit groups and hotels (Group Audit). They are busy and skeptical. Most of them are not looking for a music audit. The moment they start looking is when a PRO letter or call arrives.
 - Social's job, in order: (1) be credible when a prospect checks us out, (2) send qualified people to `/check/` and the answer pages, (3) start conversations that turn into audit emails. Followers and likes are not the goal. Count them, but don't optimise for them.
 - Be honest about the channel. For a $295-$1,950 B2B service, organic social is a supporting channel. Search (the `/answers/` pages) and direct outreach do most of the work. If social is not producing conversations after the kill-test in section 8, say so plainly and recommend moving the founder's hours elsewhere.
