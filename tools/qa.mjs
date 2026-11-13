@@ -39,7 +39,7 @@ function pages(dir) {
     if (/^google[0-9a-f]+\.html$/.test(name)) continue; // Search Console verification file: must stay byte-exact, not a page
     const p = join(dir, name);
     if (statSync(p).isDirectory()) out.push(...pages(p));
-    else if (name.endsWith('.html')) out.push('/' + relative(root, p).split(sep).join('/').replace(/index\.html$/, ''));
+    else if (name.endsWith('.html') && !/^google[0-9a-f]+\.html$/.test(name)) out.push('/' + relative(root, p).split(sep).join('/').replace(/index\.html$/, ''));
   }
   return out.sort();
 }
