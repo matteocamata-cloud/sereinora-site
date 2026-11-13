@@ -48,7 +48,7 @@ h1{margin-top:18px;font:600 ${title.length > 60 ? 54 : 64}px/1.08 "Source Serif 
 .foot{margin-top:18px;display:flex;justify-content:space-between;font:500 20px "Mona Sans";color:#43536a}
 </style></head><body><div class="frame"></div><div class="in">
 <div class="brand">Sereinora</div><div class="kicker">${esc(kicker)}</div><h1>${esc(title)}</h1><div class="rule"></div>
-<div class="foot"><span>Music-license audits for US restaurants, bars and hotels</span><span>sereinora.com</span></div></div></body></html>`;
+<div class="foot"><span>Music-license audits for restaurants, bars and hotels</span><span>sereinora.com</span></div></div></body></html>`;
 const icon = (size, pad) => `<!doctype html><html><head><meta charset="utf-8"><style>${FONTS}
 *{margin:0}body{width:${size}px;height:${size}px;background:#10243a;display:grid;place-items:center}
 span{font:500 ${Math.round(size * (pad ? 0.5 : 0.66))}px/1 "Bodoni Moda",Georgia,serif;color:#f7f1e7;transform:translateY(-3%)}
@@ -64,7 +64,7 @@ for (const file of pages(root)) {
   const rel = relative(root, file).split(sep).join('/').replace(/index\.html$/, '');
   const slug = rel.replace(/\/$/, '').replace(/\//g, '-') || 'home';
   const h1 = decode((html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/) || [, 'Sereinora'])[1]).replace(/\s+/g, ' ').trim();
-  const crumbs = rel.startsWith('answers/') && rel !== 'answers/' ? 'Answers' : rel === '' ? 'For US restaurants, bars and hotels' : decode((html.match(/<title>([^|<]*)/) || [, ''])[1]).split(':')[0].trim();
+  const crumbs = rel.startsWith('answers/') && rel !== 'answers/' ? 'Answers' : rel === '' ? 'For restaurants, bars and hotels' : decode((html.match(/<title>([^|<]*)/) || [, ''])[1]).split(':')[0].trim();
   await page.setContent(card(crumbs, h1), { waitUntil: 'networkidle' });
   await page.evaluate(() => document.fonts.ready);
   await page.screenshot({ path: join(root, `assets/og/${slug}.png`) });

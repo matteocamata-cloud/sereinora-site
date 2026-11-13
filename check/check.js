@@ -35,7 +35,7 @@
 
     if (a.letter === 'legal') {
       points += 5;
-      add('Talk to a US attorney first.', 'A letter that mentions a lawsuit, a lawyer or a deadline needs legal advice. An audit can give your attorney the facts, but it does not replace one.');
+      add('Talk to a licensed attorney first.', 'A letter that mentions a lawsuit, a lawyer or a deadline needs legal advice. An audit can give your attorney the facts, but it does not replace one.');
     } else if (a.letter === 'yes') {
       points += 2;
       add('A PRO has already contacted you.', 'In October 2026, ASCAP-affiliated publishers and songwriters filed infringement suits against hospitality businesses in several states, and several complaints reportedly allege repeated licensing contact before suit. Respond on time and with facts: what you play, where, and under which license.', ['bhfs']);
@@ -136,7 +136,7 @@
     const r = assess(a);
     const group = a.units !== '1';
     const offer = a.letter === 'legal'
-      ? '<p>Because a legal deadline is involved, start with a US attorney. If useful, our <a href="/audit/#letter">PRO Letter Pack</a> ($295, 48 hours) gives your attorney a factual inventory.</p>'
+      ? '<p>Because a legal deadline is involved, start with a licensed attorney. If useful, our <a href="/audit/#letter">PRO Letter Pack</a> ($295, 48 hours) gives your attorney a factual inventory.</p>'
       : a.letter === 'yes'
         ? '<p><strong>Next step:</strong> the <a href="/audit/#letter">PRO Letter Pack</a> ($295, 48 hours): what they are asking, what you actually play, and the questions to put back to them.' + ((a.live !== 'none' || a.dj === 'yes') ? ' The Letter Pack covers the letter. To compare your live music and DJ nights with the licenses you hold, see the <a href="/audit/#venue">Venue Music Audit</a> ($495).' : '') + ' Read first: <a href="/answers/pro-letter/">what to do when a PRO letter arrives</a>.</p>'
         : group
