@@ -49,3 +49,7 @@
 @media (max-width:560px){.sa-nudge{right:16px;bottom:70px}}
 @media (prefers-reduced-motion:reduce){.sa-nudge{animation:none}}
 @media print{.sa-nudge{display:none!important}}
+
+/* v2: sentence case, rounded like the rest of the site */
+.sa-launch{border-radius:999px;font-weight:650;letter-spacing:0!important;text-transform:none!important;box-shadow:0 6px 20px rgba(16,36,58,.14)}
+.sa-launch *{letter-spacing:0;text-transform:none}

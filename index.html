@@ -41,31 +41,30 @@
 </header>
 <main id="main" tabindex="-1">
 
-<section class="hero" data-hero>
-  <img class="hero-bg" src="/assets/hero-fire.webp" alt="" width="1536" height="1024" fetchpriority="high">
-  <div class="hero-shade" aria-hidden="true"></div>
-  <div class="wrap">
-    <p class="eyebrow">For restaurants, bars and hotels</p>
-    <h1>Know what music your venue plays, what you pay for, and <em>what is missing.</em></h1>
-    <p class="lede">A fixed-price written audit of every music use in your venue against the licenses you hold. $495 per venue, in five business days, with no call.</p>
-    <div class="btn-row">
-      <a class="btn" href="/check/">Start the free check</a>
-      <a class="btn ghost" href="/sample/">See a sample report</a>
+<section class="hero2" aria-labelledby="hero-title">
+  <div class="wrap hero2-top">
+    <h1 id="hero-title">See what your music licenses really cover.</h1>
+    <div class="hero2-side">
+      <p class="lede">Background music, live bands, DJs, TVs and the videos you post. We check each one against the licenses you pay for. Then we tell you, in plain English, what is covered, what you may be paying for twice, and what is missing.</p>
+      <div class="btn-row">
+        <a class="btn" href="/check/">Start the free 2-minute check</a>
+        <a class="btn ghost" href="/sample/">See a sample report</a>
+      </div>
+      <p class="small">Got a letter from BMI, ASCAP, SESAC or GMR? <a href="/answers/pro-letter/">Read this first</a>.</p>
     </div>
-    <p class="small" style="margin-top:18px">Got a letter from BMI, ASCAP, SESAC or GMR? <a href="/answers/pro-letter/">Read this first</a>.</p>
   </div>
 </section>
 
 <div class="wrap daymap-wrap">
   <section class="daymap" data-daymap aria-labelledby="dm-title">
-  <div class="daymap-head"><h2 id="dm-title">One Friday at a fictional bar and grill</h2><p>Choose a bar to see what it means. Example only, not a real venue.</p></div>
+  <div class="daymap-head"><h2 id="dm-title">A Friday at a made-up bar</h2><p>Each line is one way the bar uses music. Tap a bar to see what it means.</p></div>
   <div class="dm-grid">
     <div class="dm-axis" aria-hidden="true"><span style="left:0%">10a</span><span style="left:12.5%">12p</span><span style="left:25%">2p</span><span style="left:37.5%">4p</span><span style="left:50%">6p</span><span style="left:62.5%">8p</span><span style="left:75%">10p</span><span style="left:87.5%">12a</span><span style="left:100%">2a</span></div>
     <div class="dm-lab">Background music</div><div class="dm-track"><button class="seg covered" type="button" style="--s:0;--l:15" aria-pressed="false" data-title="Background music: covered by the music service" data-text="A business music service usually covers the recorded music it supplies for public areas. Check its terms: that coverage does not extend to live sets, DJs or karaoke."><span>Music service</span></button></div>
     <div class="dm-lab">Live band</div><div class="dm-track"><button class="seg gap" type="button" style="--s:10.5;--l:3" aria-pressed="false" data-title="Live band, 8:30 to 11:30 pm: gap" data-text="Live sets can draw on every catalog. This venue pays ASCAP and BMI directly, but not SESAC or GMR, and the music service does not cover live performance. Songs from SESAC or GMR writers would be unlicensed." data-default><span>Live band</span></button></div>
     <div class="dm-lab">DJ or karaoke</div><div class="dm-track"><button class="seg gap" type="button" style="--s:13.5;--l:2" aria-pressed="false" data-title="DJ set, 11:30 pm to 1:30 am: gap" data-text="A DJ plays recorded songs from every catalog. Background-music services generally do not cover DJ sets, and two direct licenses still leave two catalogs uncovered."><span>DJ</span></button></div>
     <div class="dm-lab">TV and radio</div><div class="dm-track"><button class="seg unknown" type="button" style="--s:1;--l:12" aria-pressed="false" data-title="Game-day TV: depends on size and equipment" data-text="At 4,200 sq ft this venue is over the 3,750 sq ft threshold for food and drink venues, so the broadcast exemption depends on how many speakers and screens it has (17 U.S.C. §110(5)(B)). The audit checks this against your floor plan."><span>Game-day TV</span></button></div>
-    <div class="dm-lab">Social video</div><div class="dm-track"><button class="seg unknown" type="button" style="--s:7.5;--l:0.9" aria-pressed="false" data-title="Social video: needs a check" data-text="Music in a video you post is a different use from music played in the room. The audit checks your posts against the platform’s music terms."><span>Post</span></button><button class="seg unknown" type="button" style="--s:12;--l:0.9" aria-pressed="false" data-title="Social video: needs a check" data-text="Music in a video you post is a different use from music played in the room. The audit checks your posts against the platform’s music terms."><span>Post</span></button></div>
+    <div class="dm-lab">Social videos</div><div class="dm-track"><button class="seg unknown" type="button" style="--s:7.5;--l:0.9" aria-pressed="false" data-title="Social video: needs a check" data-text="Music in a video you post is a different use from music played in the room. The audit checks your posts against the platform’s music terms."><span>Post</span></button><button class="seg unknown" type="button" style="--s:12;--l:0.9" aria-pressed="false" data-title="Social video: needs a check" data-text="Music in a video you post is a different use from music played in the room. The audit checks your posts against the platform’s music terms."><span>Post</span></button></div>
     <div class="dm-licenses" aria-label="Licenses this venue holds">
       <b>Licenses held:</b>
       <span class="chip held">ASCAP</span><span class="chip held">BMI</span>
@@ -78,7 +77,7 @@
     <li><i class="covered"></i>Covered</li><li><i class="gap"></i>Gap</li><li><i class="unknown"></i>Needs a check</li>
   </ul>
 </section>
-  <p class="hero-caption">Illustrative image and example venue. Not a client.</p>
+  <p class="hero-caption">Example venue, not a client.</p>
 </div>
 
 <div class="wrap">
@@ -86,7 +85,7 @@
     <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12V5h7l9 9-7 7-9-9z"/><circle cx="8" cy="9" r="1"/></svg><b>$495 per venue</b><span>Fixed price, agreed in writing before work starts</span></li>
     <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><b>Five business days</b><span>A written report by email</span></li>
     <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 20.5V4.5h9v16M4 20.5h16"/><circle cx="12.3" cy="12.5" r=".7"/></svg><b>No call, no site visit</b><span>Everything runs by email</span></li>
-    <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 14a3.5 3.5 0 0 0 5 0l3-3a3.5 3.5 0 0 0-5-5l-1 1M14 10a3.5 3.5 0 0 0-5 0l-3 3a3.5 3.5 0 0 0 5 5l1-1"/></svg><b>Sources on every rule</b><span>US statute and primary pages, linked</span></li>
+    <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 14a3.5 3.5 0 0 0 5 0l3-3a3.5 3.5 0 0 0-5-5l-1 1M14 10a3.5 3.5 0 0 0-5 0l-3 3a3.5 3.5 0 0 0 5 5l1-1"/></svg><b>Sources on every rule</b><span>Linked to the law and to each provider’s own terms</span></li>
   </ul>
 </div>
 
@@ -94,10 +93,9 @@
   <div class="wrap">
     <div class="why-grid">
       <div>
-        <p class="eyebrow">How music licensing works in the US</p>
-        <h2>Music in a venue is licensed several times over. Here is how it works in the US.</h2>
+        <h2>Why one license is rarely enough</h2>
         <div class="prose">
-          <p>Playing recorded or live music in a business is a public performance. In the US, songwriters are paid through performing rights organizations (PROs), mainly ASCAP, BMI, SESAC and GMR. Each licenses only the works of its own members, so one license does not cover another’s songs. A business music service generally covers only the recorded music it supplies, not your band, DJ or karaoke night.</p>
+          <p>When a business plays music for customers, the law treats it as a public performance, and that needs permission. Here is how it works in the US. Songwriters are paid through groups called performing rights organizations, or PROs. The main four are ASCAP, BMI, SESAC and GMR. Each one licenses only its own members’ songs, so one license does not cover another group’s songs. A business music service usually covers only the recorded music it supplies, not your band, DJ or karaoke night.</p>
         </div>
       </div>
       <div>
@@ -122,15 +120,15 @@
 
 <section class="sec band" id="delivers">
   <div class="wrap">
-    <div class="sec-head"><p class="eyebrow">The report</p><h2>What the report contains</h2><p>Specific to your venue, not a generic guide.</p></div>
+    <div class="sec-head"><h2>What you get</h2><p>A report about your venue, not a general guide.</p></div>
     
 <div class="grid3">
-  <article><span class="icon-disc"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h10M8 12h12M4 17h7"/></svg></span><h3>Music use map</h3><p>Each room and each moment of the day: what plays, from where, how loud, and who changes it.</p></article>
-  <article><span class="icon-disc"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="5" width="16" height="14" rx="1.5"/><path d="M4 10h16M10 10v9"/></svg></span><h3>License table</h3><p>ASCAP, BMI, SESAC, GMR and your music service: held, needed, overlapping or missing.</p></article>
-  <article><span class="icon-disc"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 17a8 8 0 0 1 16 0"/><path d="M12 17l4-5"/><path d="M3 20h18"/></svg></span><h3>Exposure range</h3><p>What a gap could cost under US copyright law, stated as a range from the statute, never as a prediction.</p></article>
-  <article><span class="icon-disc"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12V5h7l9 9-7 7-9-9z"/><circle cx="8" cy="9" r="1"/></svg></span><h3>Savings to verify</h3><p>Where you may be paying twice, with the exact question to ask each provider in writing before you cancel anything.</p></article>
-  <article><span class="icon-disc"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 7l1.6 1.6L9.5 5.5M5 14l1.6 1.6 2.9-3.1M12 8h8M12 15h8"/></svg></span><h3>Action list</h3><p>Ten actions in order, with who to contact and what to keep on file.</p></article>
-  <article><span class="icon-disc"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h5M13 6h7M4 12h9M17 12h3M4 18h3M11 18h9"/><circle cx="11" cy="6" r="2"/><circle cx="15" cy="12" r="2"/><circle cx="9" cy="18" r="2"/></svg></span><h3>Volume and daypart rules</h3><p>A one-page operating sheet so your team plays the right music at the right level at the right time.</p></article>
+  <article><span class="icon-disc"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h10M8 12h12M4 17h7"/></svg></span><h3>A map of your music</h3><p>Every room and every part of the day: what plays, where it comes from, how loud it is, and who changes it.</p></article>
+  <article><span class="icon-disc"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="5" width="16" height="14" rx="1.5"/><path d="M4 10h16M10 10v9"/></svg></span><h3>Your licenses, side by side</h3><p>ASCAP, BMI, SESAC, GMR and your music service: which you have, which you need, which overlap and which are missing.</p></article>
+  <article><span class="icon-disc"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 17a8 8 0 0 1 16 0"/><path d="M12 17l4-5"/><path d="M3 20h18"/></svg></span><h3>What a gap could cost</h3><p>The range US copyright law allows, quoted from the law itself. A range, never a prediction.</p></article>
+  <article><span class="icon-disc"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12V5h7l9 9-7 7-9-9z"/><circle cx="8" cy="9" r="1"/></svg></span><h3>Where you may pay twice</h3><p>Where you may be paying twice, and the exact question to ask each provider, in writing, before you cancel anything.</p></article>
+  <article><span class="icon-disc"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 7l1.6 1.6L9.5 5.5M5 14l1.6 1.6 2.9-3.1M12 8h8M12 15h8"/></svg></span><h3>Your next steps</h3><p>Ten steps in order: who to contact, and what to keep on file.</p></article>
+  <article><span class="icon-disc"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h5M13 6h7M4 12h9M17 12h3M4 18h3M11 18h9"/><circle cx="11" cy="6" r="2"/><circle cx="15" cy="12" r="2"/><circle cx="9" cy="18" r="2"/></svg></span><h3>Simple rules for your team</h3><p>One page so your staff play the right music, at the right volume, at the right time.</p></article>
 </div>
   </div>
 </section>
@@ -138,9 +136,8 @@
 <section class="sec" id="sample-teaser">
   <div class="wrap teaser">
     <div>
-      <p class="eyebrow">Sample report</p>
       <h2>Read a complete sample before you commit</h2>
-      <p class="muted">The sample follows a fictional tavern through the same six sections you would receive. It is published in full, with no form to fill in.</p>
+      <p class="muted">It follows a made-up tavern through the same six sections you would get. It is free to read in full, with no form to fill in.</p>
       <p><a class="btn" href="/sample/">Open the sample report</a></p>
     </div>
     <a href="/sample/" aria-label="Open the sample report"><img src="/assets/sample-preview.webp" alt="A page from the sample report showing a music use map for a fictional tavern" width="1100" height="1100" loading="lazy"></a>
@@ -149,24 +146,24 @@
 
 <section class="sec band" id="how">
   <div class="wrap">
-    <div class="sec-head"><p class="eyebrow">Process</p><h2>How an audit works</h2><p>Four steps, handled entirely by email.</p></div>
+    <div class="sec-head"><h2>How an audit works</h2><p>Four steps, handled entirely by email.</p></div>
     
 <ol class="steps">
   <li><h3>Request</h3><p>Email us, or send your answers from the free check. We confirm scope and price in writing.</p></li>
-  <li><h3>Intake</h3><p>A short form: rooms, music sources, live nights, plus copies of your music service contract and any PRO invoices or letters.</p></li>
-  <li><h3>Audit</h3><p>We map every use against every license you hold and your music service terms.</p></li>
-  <li><h3>Report</h3><p>A written report with overlaps, gaps, the exposure range and what to do first. One round of questions by email is included.</p></li>
+  <li><h3>Your details</h3><p>A short form: rooms, music sources, live nights, plus copies of your music service contract and any PRO invoices or letters.</p></li>
+  <li><h3>Audit</h3><p>We compare every way you use music with every license you hold and with your music service’s terms.</p></li>
+  <li><h3>Report</h3><p>You get a written report: overlaps, gaps, what a gap could cost, and what to do first. One round of questions by email is included.</p></li>
 </ol>
   </div>
 </section>
 
 <section class="sec" id="standards">
   <div class="wrap">
-    <div class="sec-head"><p class="eyebrow">Our standards</p><h2>How we work</h2></div>
+    <div class="sec-head"><h2>How we work</h2></div>
     <div class="standards">
       <article><h3>Every rule is cited</h3><p>Each legal or numeric statement points to its source: the US Code, the U.S. Copyright Office, or the provider’s own published terms.</p></article>
       <article><h3>Independent</h3><p>Sereinora is not affiliated with ASCAP, BMI, SESAC, GMR or any music service, and has no stake in what you decide to buy.</p></article>
-      <article><h3>Clear about our role</h3><p>Sereinora is not a law firm. The report sets out the facts, and says plainly when a question needs a US attorney.</p></article>
+      <article><h3>Clear about our role</h3><p>Sereinora is not a law firm. The report sets out the facts, and says plainly when a question needs an attorney.</p></article>
       <article><h3>Your documents stay private</h3><p>Documents you send are used only for your audit. Your name and results are never published without your written permission.</p></article>
     </div>
   </div>
@@ -174,7 +171,7 @@
 
 <section class="sec band" id="pricing">
   <div class="wrap">
-    <div class="sec-head"><p class="eyebrow">Services and fees</p><h2>Fixed fees, agreed in writing</h2><p>Fees are confirmed before any work starts and exclude any license fees you decide to pay.</p></div>
+    <div class="sec-head"><h2>Fixed prices, agreed in writing</h2><p>We confirm the price in writing before any work starts. It does not include any license fees you decide to pay.</p></div>
     
 <div class="menu">
   <article class="menu-item main" id="venue">
@@ -185,8 +182,8 @@
         <li>Every music use: background, live, DJ, karaoke, TV, social</li>
         <li>Licenses held and needed, by PRO</li>
         <li>Overlap check against your music service</li>
-        <li>Small-business exemption screen</li>
-        <li>Exposure range in dollars and a 10-point action list</li>
+        <li>Whether the small-business exemption applies</li>
+        <li>What a gap could cost, and 10 next steps</li>
       </ul>
     </div>
     <a class="btn" href="mailto:contact@sereinora.com?subject=Venue%20Music%20Audit%20request&body=Business%20name%3A%0AVenue%20city%2C%20state%3A%0ANumber%20of%20venues%3A%0AMy%20name%20and%20role%3A">Request an audit</a>
@@ -225,7 +222,7 @@
 
 <section class="sec" id="limits">
   <div class="wrap">
-    <div class="sec-head"><p class="eyebrow">Scope</p><h2>What the service covers, and what it does not</h2></div>
+    <div class="sec-head"><h2>What the service covers, and what it does not</h2></div>
     
 <div class="split">
   <div class="yes">
@@ -233,7 +230,7 @@
     <ul>
       <li>Maps every music use in the venue</li>
       <li>Compares what you play with what you hold and with your music service terms</li>
-      <li>States exposure as a range taken from the statute</li>
+      <li>Shows what a gap could cost, as the range in the law</li>
       <li>Lists the questions to ask each provider before you cancel anything</li>
       <li>Gives your attorney the facts, if you need one</li>
     </ul>
@@ -254,7 +251,7 @@
 
 <section class="sec band" id="faq">
   <div class="wrap">
-    <div class="sec-head"><p class="eyebrow">Questions</p><h2>Frequently asked questions</h2></div>
+    <div class="sec-head"><h2>Frequently asked questions</h2></div>
     <div class="prose" style="max-width:50rem"><div class="faq"><details><summary>Is this legal advice?</summary><div class="a"><p>No. Sereinora is not a law firm. The audit is a factual map of what you play, what you hold and where the two do not match. If you have a lawsuit, a demand with a deadline or a lawyer’s letter, speak to a licensed attorney first. Our report gives them the facts.</p></div></details><details><summary>Do I have to get on a call?</summary><div class="a"><p>No. Everything runs by email: a short intake form, the documents you already have, a written report, and one round of follow-up questions.</p></div></details><details><summary>What do you need from me?</summary><div class="a"><p>Your music service contract (or its name), any PRO invoices or letters, a list of rooms and live-music nights, the venue’s approximate floor area, and whether you post videos with music.</p></div></details><details><summary>Can you promise I will save money?</summary><div class="a"><p>No. The report shows where you may be paying twice and gives you the exact question to ask each provider, in writing, before you cancel anything.</p></div></details><details><summary>What happens to the documents I send?</summary><div class="a"><p>They are used only for your audit. We never publish your name or results without your written permission. See the <a href="/privacy/">privacy page</a> for details, including deletion on request.</p></div></details><details><summary>What if the audit finds a gap?</summary><div class="a"><p>The report states the exposure as a range under US copyright law and lists ten actions in order. It does not predict what a PRO or a court would do.</p></div></details></div></div>
     <p style="margin-top:22px"><a class="textlink" href="/audit/#faq">More questions on the audit page</a></p>
   </div>
@@ -263,9 +260,8 @@
 <section class="cta-band" id="contact-sec">
   <img src="/assets/cta-water.webp" alt="" width="1280" height="720" loading="lazy">
   <div class="wrap">
-    <p class="eyebrow">Next step</p>
-    <h2>Begin with the free Music Exposure Check</h2>
-    <p>Ten questions, about two minutes, and nothing is stored. If you prefer, write to us first. Everything is handled by email.</p>
+    <h2>Start with the free 2-minute check</h2>
+    <p>Ten questions, about two minutes, and nothing is stored. Prefer to write first? Everything is handled by email. Audits currently cover venues in the United States; if your venue is somewhere else, write to contact@sereinora.com and we will tell you when your country is covered.</p>
     <div class="btn-row"><a class="btn" href="/check/">Start the free check</a><a class="btn ghost" href="/request/">Request an audit</a></div>
     <p class="small" style="margin-top:18px;color:#d9ccb6">Questions first? <a href="mailto:contact@sereinora.com">contact@sereinora.com</a></p>
   </div>

@@ -516,3 +516,67 @@ h1,h2,h3,h4{font-weight:600;letter-spacing:-.01em;font-optical-sizing:auto}
 h1,.hero h1,.page-hero h1{letter-spacing:-.015em}
 h1 em,h2 em,h3 em{font-weight:600}
 body{font-optical-sizing:auto;font-kerning:normal;line-height:1.62}
+
+
+/* ==========================================================================
+   v2 (Nov 2026): clear, global, confident.
+   The venue's day is the hero. Calm everywhere, one loud signal: amber stripes = gap.
+   Sentence case everywhere; no tracked capitals.
+   ========================================================================== */
+:root{
+  --paper:#f3f5f2; --paper-2:#fbfcfa; --ivory:#e7ece8;
+  --ink:#10243a; --ink-2:#46566a; --rule:#cbd3d9;
+  --brown:#1d4f7a; --sage:#2e6b57; --focus:#1d4f7a;
+  --signal:#f2b632; --signal-2:#dd9d17; --signal-ink:#4d3600;
+  --r:6px;
+}
+body{font-size:1.125rem;line-height:1.65}
+.eyebrow,.sec-head p.eyebrow,.crumbs,.dm-lab,.menu-btn,.lang-btn,.chip,.nav a,.btn,.legend{letter-spacing:0;text-transform:none}
+.eyebrow,.sec-head p.eyebrow{font:600 1rem var(--f-ui);color:var(--brown);font-style:normal}
+.crumbs{font:500 .92rem var(--f-ui)}
+.nav a{font:600 .98rem var(--f-ui)}
+.btn{font:650 1.02rem var(--f-ui);border-radius:var(--r);min-height:54px;padding:0 26px}
+.btn.ghost{border-color:var(--ink)}
+.menu-btn,.lang-btn{font:600 .9rem var(--f-ui);border-radius:var(--r)}
+
+/* Hero: headline left, promise and actions right; the day map sits right under it */
+.hero2{padding:clamp(32px,5vw,72px) 0 clamp(20px,3vw,32px)}
+.hero2-top{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,4vw,64px);align-items:start}
+.hero2 h1{margin:0;font:600 clamp(2.6rem,5.4vw,4.7rem)/1 var(--f-disp);font-variation-settings:"opsz" 60;letter-spacing:-.03em;color:var(--ink);max-width:13ch}
+.hero2 .lede{font-size:1.15rem;line-height:1.6;color:var(--ink);margin:0 0 22px;max-width:44ch}
+.hero2 .btn-row{display:flex;flex-wrap:wrap;gap:12px}
+.hero2 .small{margin:16px 0 0;font-size:.98rem;color:var(--ink-2)}
+@media (max-width:860px){.hero2-top{grid-template-columns:1fr;align-items:start}}
+
+/* Day map, restyled as the hero object */
+.daymap-wrap{margin-top:0}
+.daymap{background:var(--paper-2);border:1px solid var(--rule);outline:0;box-shadow:0 1px 0 var(--rule);border-radius:calc(var(--r) * 2)}
+.daymap-head h2{font:600 clamp(1.25rem,2vw,1.6rem)/1.2 var(--f-ui);letter-spacing:-.01em}
+.daymap-head p{font:500 .98rem var(--f-ui)}
+.dm-axis{height:26px;font:600 .82rem var(--f-ui);letter-spacing:0;color:var(--ink-2)}
+.dm-lab{font:600 .98rem/1.25 var(--f-ui);color:var(--ink)}
+.dm-track{height:46px;border-radius:var(--r)}
+.seg{top:5px;bottom:5px;border-radius:var(--r);font:600 .9rem var(--f-ui);letter-spacing:0}
+.seg.covered{background:var(--sage);color:#fff}
+.seg.gap{background-color:var(--signal);background-image:repeating-linear-gradient(135deg,var(--signal) 0 9px,var(--signal-2) 9px 18px);color:var(--signal-ink)}
+.seg.unknown{background-color:#fdf3dc;background-image:none;color:var(--signal-ink);box-shadow:inset 0 0 0 2px var(--signal-2)}
+.seg[aria-pressed="true"]{outline:3px solid var(--ink);outline-offset:2px}
+.dm-note{background:var(--ivory);border-radius:var(--r);border-left-width:6px;font-size:1.05rem}
+.chip{font:600 .85rem var(--f-ui);border-radius:999px;padding:4px 12px}
+.legend{font:600 .92rem var(--f-ui)}
+.legend i{width:22px;height:12px;border-radius:3px}
+.legend .gap{background-color:var(--signal);background-image:repeating-linear-gradient(135deg,var(--signal) 0 4px,var(--signal-2) 4px 8px)}
+.legend .unknown{background:#fdf3dc;box-shadow:inset 0 0 0 2px var(--signal-2)}
+.hero-caption{font:500 .88rem var(--f-ui)}
+@media (max-width:640px){
+  .dm-grid{grid-template-columns:1fr;row-gap:4px}
+  .dm-axis{grid-column:1}
+  .dm-lab{margin-top:8px}
+}
+
+/* v2: no tracked capitals anywhere; readable links on dark */
+.dm-licenses b,.promise strong,.sources h2,.sources h3,.toc p,.copy-btn,.signal,.sheet-flag,thead th,.foot h2,.textlink{letter-spacing:0;text-transform:none}
+.dm-licenses b,.promise strong,.toc p,.foot h2,thead th{font-family:var(--f-ui);font-weight:650;font-size:.95rem}
+.textlink{font:650 1rem var(--f-ui)}
+.cta-band a:not(.btn),.dark a:not(.btn),.site-footer a{color:#f3e7cf}
+.cta-band a:not(.btn):hover,.dark a:not(.btn):hover,.site-footer a:hover{color:#fff}
