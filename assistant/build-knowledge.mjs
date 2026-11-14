@@ -4,8 +4,9 @@
 // Output: assistant/worker/src/knowledge.js (bundled into the Worker).
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const root = new URL('..', import.meta.url).pathname;
+const root = fileURLToPath(new URL('..', import.meta.url));
 // Public pages the assistant may draw on (the art page /elements/ is excluded: it is not about the service).
 const PAGES = ['/', '/check/', '/audit/', '/sample/', '/about/', '/coverage/', '/help/', '/answers/', '/answers/pro-letter/',
   '/answers/spotify-for-business/', '/answers/small-business-exemption/', '/answers/live-music-dj-karaoke/',

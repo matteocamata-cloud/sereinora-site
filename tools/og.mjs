@@ -5,9 +5,10 @@ import { createServer } from 'node:http';
 import { readFileSync, writeFileSync, existsSync, statSync, readdirSync, mkdirSync } from 'node:fs';
 import { join, extname, relative, sep } from 'node:path';
 import { createRequire } from 'node:module';
+import { fileURLToPath } from 'node:url';
 const { chromium } = createRequire(import.meta.url)('playwright'); // pre-installed globally
 
-const root = new URL('..', import.meta.url).pathname;
+const root = fileURLToPath(new URL('..', import.meta.url));
 const TYPES = { '.woff2': 'font/woff2', '.html': 'text/html', '.css': 'text/css', '.png': 'image/png', '.webp': 'image/webp', '.svg': 'image/svg+xml' };
 const server = createServer((req, res) => {
   let p = join(root, decodeURIComponent(req.url.split('?')[0]));

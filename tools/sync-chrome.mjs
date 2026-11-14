@@ -4,8 +4,9 @@
 //         node tools/sync-chrome.mjs --check  (report drift, exit 1 if any)
 import { readFileSync, writeFileSync, readdirSync, statSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const root = new URL('..', import.meta.url).pathname;
+const root = fileURLToPath(new URL('..', import.meta.url));
 const header = readFileSync(join(root, 'tools/partials/header.html'), 'utf8').trimEnd();
 const footer = readFileSync(join(root, 'tools/partials/footer.html'), 'utf8').trimEnd();
 const check = process.argv.includes('--check');

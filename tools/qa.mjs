@@ -7,9 +7,10 @@ import { createServer } from 'node:http';
 import { readFileSync, existsSync, statSync, readdirSync, mkdirSync } from 'node:fs';
 import { join, extname, relative, sep } from 'node:path';
 import { createRequire } from 'node:module';
+import { fileURLToPath } from 'node:url';
 const { chromium } = createRequire(import.meta.url)('playwright'); // pre-installed globally
 
-const root = new URL('..', import.meta.url).pathname;
+const root = fileURLToPath(new URL('..', import.meta.url));
 const shotsArg = process.argv.indexOf('--shots');
 const shots = shotsArg > -1 ? process.argv[shotsArg + 1] : null;
 if (shots) mkdirSync(shots, { recursive: true });
