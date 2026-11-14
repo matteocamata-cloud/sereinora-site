@@ -38,21 +38,22 @@ const FONTS = `
 @font-face{font-family:"Bodoni Moda";src:url(${base}/assets/fonts/bodoni-moda.woff2) format("woff2");font-weight:400 700}`;
 const card = (kicker, title) => `<!doctype html><html><head><meta charset="utf-8"><style>${FONTS}
 *{box-sizing:border-box;margin:0}
-body{width:1200px;height:630px;background:#f7f1e7;color:#10243a;font-family:"Mona Sans",Arial,sans-serif;position:relative;overflow:hidden}
-.frame{position:absolute;inset:28px;border:1.5px solid #10243a}
-.frame::after{content:"";position:absolute;inset:7px;border:1px solid #10243a}
+body{width:1200px;height:630px;background:#0a1828;color:#e9edf1;font-family:"Mona Sans",Arial,sans-serif;position:relative;overflow:hidden}
+body::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 520px at 78% 18%,rgba(176,148,97,.10),transparent 60%)}
+.frame{position:absolute;inset:28px;border:1px solid rgba(214,224,234,.16)}
+.frame::after{content:"";position:absolute;left:-1px;right:-1px;top:-1px;height:2px;background:#b09461}
 .in{position:absolute;inset:80px 96px 76px;display:flex;flex-direction:column}
-.brand{font:500 44px/1 "Bodoni Moda",Georgia,serif;letter-spacing:.05em}
-.kicker{margin-top:auto;font:600 19px "Mona Sans";letter-spacing:.2em;text-transform:uppercase;color:#684832}
-h1{margin-top:18px;font:600 ${title.length > 60 ? 54 : 64}px/1.08 "Source Serif 4",Georgia,serif;letter-spacing:-.015em;max-width:960px}
-.rule{margin-top:34px;height:1px;background:#d3c6b0}
-.foot{margin-top:18px;display:flex;justify-content:space-between;font:500 20px "Mona Sans";color:#43536a}
+.brand{font:500 42px/1 "Bodoni Moda",Georgia,serif;letter-spacing:.05em;color:#e9edf1}
+.kicker{margin-top:auto;font:600 18px "Mona Sans";letter-spacing:.2em;text-transform:uppercase;color:#b09461}
+h1{margin-top:18px;font:500 ${title.length > 60 ? 50 : 58}px/1.1 "Source Serif 4",Georgia,serif;letter-spacing:-.012em;max-width:960px;color:#f3f5f7}
+.rule{margin-top:34px;height:1px;background:rgba(214,224,234,.14)}
+.foot{margin-top:18px;display:flex;justify-content:space-between;font:500 19px "Mona Sans";color:#a9b6c3}
 </style></head><body><div class="frame"></div><div class="in">
 <div class="brand">Sereinora</div><div class="kicker">${esc(kicker)}</div><h1>${esc(title)}</h1><div class="rule"></div>
 <div class="foot"><span>Music-license audits for restaurants, bars and hotels</span><span>sereinora.com</span></div></div></body></html>`;
 const icon = (size, pad) => `<!doctype html><html><head><meta charset="utf-8"><style>${FONTS}
-*{margin:0}body{width:${size}px;height:${size}px;background:#10243a;display:grid;place-items:center}
-span{font:500 ${Math.round(size * (pad ? 0.5 : 0.66))}px/1 "Bodoni Moda",Georgia,serif;color:#f7f1e7;transform:translateY(-3%)}
+*{margin:0}body{width:${size}px;height:${size}px;background:#0a1828;display:grid;place-items:center}
+span{font:500 ${Math.round(size * (pad ? 0.5 : 0.66))}px/1 "Bodoni Moda",Georgia,serif;color:#e9edf1;transform:translateY(-3%)}
 </style></head><body><span>S</span></body></html>`;
 
 const browser = await chromium.launch();
